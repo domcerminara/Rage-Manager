@@ -127,3 +127,155 @@ Started POST "/sessions" for 127.0.0.1 at 2011-04-20 18:31:26 -0400
   [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."email" = 'MrsH' LIMIT 1[0m
 Rendered sessions/new.html.erb within layouts/application (11.0ms)
 Completed 200 OK in 226ms (Views: 107.0ms | ActiveRecord: 2.0ms)
+  [1m[36mSQL (4.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateGuests (20110420220337)
+Migrating to CreateGifts (20110420220453)
+Migrating to CreateLocations (20110420220717)
+Migrating to CreatePartyTypes (20110420220835)
+Migrating to CreateParties (20110420221031)
+Migrating to CreateInvitations (20110420221400)
+Migrating to CreateHosts (20110420221739)
+Migrating to Fixhosts (20110421005433)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.0ms)[0m  [1mCREATE TABLE "hosts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "email" varchar(255), "username" varchar(255), "password" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+SQLite3::SQLException: table "hosts" already exists: CREATE TABLE "hosts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "email" varchar(255), "username" varchar(255), "password" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (3.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateGuests (20110420220337)
+Migrating to CreateGifts (20110420220453)
+Migrating to CreateLocations (20110420220717)
+Migrating to CreatePartyTypes (20110420220835)
+Migrating to CreateParties (20110420221031)
+Migrating to CreateInvitations (20110420221400)
+Migrating to CreateHosts (20110420221739)
+Migrating to Fixhosts (20110421005433)
+  [1m[35mSQL (1.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (3.0ms)[0m  [1mALTER TABLE "hosts" ADD "first_name" varchar(255)[0m
+  [1m[35mSQL (0.0ms)[0m  ALTER TABLE "hosts" ADD "last_name" varchar(255)
+  [1m[36mSQL (1.0ms)[0m  [1mALTER TABLE "hosts" ADD "email" varchar(255)[0m
+SQLite3::SQLException: duplicate column name: email: ALTER TABLE "hosts" ADD "email" varchar(255)
+  [1m[36mSQL (2.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateGuests (20110420220337)
+Migrating to CreateGifts (20110420220453)
+Migrating to CreateLocations (20110420220717)
+Migrating to CreatePartyTypes (20110420220835)
+Migrating to CreateParties (20110420221031)
+Migrating to CreateInvitations (20110420221400)
+Migrating to CreateHosts (20110420221739)
+Migrating to Fixhosts (20110421005433)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (3.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateGuests (20110420220337)
+Migrating to CreateGifts (20110420220453)
+Migrating to CreateLocations (20110420220717)
+Migrating to CreatePartyTypes (20110420220835)
+Migrating to CreateParties (20110420221031)
+Migrating to CreateInvitations (20110420221400)
+Migrating to CreateHosts (20110420221739)
+Migrating to Fixhosts (20110421005433)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (2.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateGuests (20110420220337)
+Migrating to CreateGifts (20110420220453)
+Migrating to CreateLocations (20110420220717)
+Migrating to CreatePartyTypes (20110420220835)
+Migrating to CreateParties (20110420221031)
+Migrating to CreateInvitations (20110420221400)
+Migrating to CreateHosts (20110420221739)
+Migrating to Fixhosts (20110421005433)
+  [1m[35mSQL (1.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.0ms)[0m  [1mALTER TABLE "host" ADD "first_name" varchar(255)[0m
+SQLite3::SQLException: no such table: host: ALTER TABLE "host" ADD "first_name" varchar(255)
+  [1m[36mSQL (3.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateGuests (20110420220337)
+Migrating to CreateGifts (20110420220453)
+Migrating to CreateLocations (20110420220717)
+Migrating to CreatePartyTypes (20110420220835)
+Migrating to CreateParties (20110420221031)
+Migrating to CreateInvitations (20110420221400)
+Migrating to CreateHosts (20110420221739)
+Migrating to Fixhosts (20110421005433)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (4.0ms)[0m  [1mALTER TABLE "hosts" ADD "first_name" varchar(255)[0m
+  [1m[35mSQL (0.0ms)[0m  ALTER TABLE "hosts" ADD "last_name" varchar(255)
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110421005433')[0m
+Migrating to AddDefaulHost (20110421010616)
+  [1m[36mSQL (2.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateGuests (20110420220337)
+Migrating to CreateGifts (20110420220453)
+Migrating to CreateLocations (20110420220717)
+Migrating to CreatePartyTypes (20110420220835)
+Migrating to CreateParties (20110420221031)
+Migrating to CreateInvitations (20110420221400)
+Migrating to CreateHosts (20110420221739)
+Migrating to Fixhosts (20110421005433)
+Migrating to AddDefaulHost (20110421010616)
+  [1m[35mSQL (1.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "hosts" WHERE ("hosts"."username" = 'MrsH') LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "hosts" WHERE ("hosts"."email" = 'dcermina@andrew.cmu.edu') LIMIT 1
+  [1m[36mAREL (3.0ms)[0m  [1mINSERT INTO "hosts" ("username", "email", "password_hash", "password_salt", "created_at", "updated_at", "first_name", "last_name") VALUES ('MrsH', 'dcermina@andrew.cmu.edu', '$2a$10$z/Rl8sLFAJ5kQ77SJRyz/.NWqE3WPVysxe4Sley7F6ljzKslAewkW', '$2a$10$z/Rl8sLFAJ5kQ77SJRyz/.', '2011-04-21 01:20:38.084420', '2011-04-21 01:20:38.084420', NULL, NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110421010616')
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("gifts")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("guests")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("hosts")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("invitations")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("locations")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("parties")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("party_types")
