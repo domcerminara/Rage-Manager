@@ -279,3 +279,1380 @@ Migrating to AddDefaulHost (20110421010616)
   [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("locations")
   [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("parties")[0m
   [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("party_types")
+
+
+Started GET "/login" for 127.0.0.1 at 2011-04-21 11:35:16 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 191ms (Views: 190.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-04-21 11:35:26 -0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KaPRzm356WX1zB399UNAdHmSgXcCV0urD8o2TKMrtf4=", "login"=>"MrsH", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mHost Load (2.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."username" = 'MrsH' LIMIT 1
+Completed   in 1542ms
+
+NameError (undefined local variable or method `root_url' for #<SessionsController:0x336c768>):
+  app/controllers/sessions_controller.rb:9:in `create'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (108.0ms)
+
+
+Started GET "/parties" for 127.0.0.1 at 2011-04-21 11:38:24 -0400
+  Processing by PartiesController#index as HTML
+  [1m[36mParty Load (3.0ms)[0m  [1mSELECT "parties".* FROM "parties"[0m
+Rendered parties/index.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 436ms (Views: 223.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/guests" for 127.0.0.1 at 2011-04-21 11:38:29 -0400
+  Processing by GuestsController#index as HTML
+  [1m[35mGuest Load (2.0ms)[0m  SELECT "guests".* FROM "guests"
+Rendered guests/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 479ms (Views: 199.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/guests/new" for 127.0.0.1 at 2011-04-21 11:38:32 -0400
+  Processing by GuestsController#new as HTML
+Rendered guests/_form.html.erb (135.0ms)
+Rendered guests/new.html.erb within layouts/application (200.0ms)
+Completed 200 OK in 451ms (Views: 386.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-04-21 21:13:12 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 184ms (Views: 184.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-04-21 21:13:37 -0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KaPRzm356WX1zB399UNAdHmSgXcCV0urD8o2TKMrtf4=", "login"=>"MrsH", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mHost Load (2.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."username" = 'MrsH' LIMIT 1
+Completed   in 1635ms
+
+NameError (undefined local variable or method `root_url' for #<SessionsController:0x3fc7920>):
+  app/controllers/sessions_controller.rb:9:in `create'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (111.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-04-21 21:14:20 -0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KaPRzm356WX1zB399UNAdHmSgXcCV0urD8o2TKMrtf4=", "login"=>"MrsH", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."username" = 'MrsH' LIMIT 1[0m
+Completed   in 291ms
+
+NameError (undefined local variable or method `root_url' for #<SessionsController:0x3fb6250>):
+  app/controllers/sessions_controller.rb:9:in `create'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (110.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-04-21 21:18:59 -0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KaPRzm356WX1zB399UNAdHmSgXcCV0urD8o2TKMrtf4=", "login"=>"MrsH", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[35mHost Load (2.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."username" = 'MrsH' LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 291ms
+
+
+Started GET "/login" for 127.0.0.1 at 2011-04-21 21:19:31 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 200ms (Views: 199.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-04-21 21:19:34 -0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KaPRzm356WX1zB399UNAdHmSgXcCV0urD8o2TKMrtf4=", "login"=>"MrsH", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mHost Load (2.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."username" = 'MrsH' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 359ms
+
+
+Started GET "/logout" for 127.0.0.1 at 2011-04-21 21:19:55 -0400
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms
+
+
+Started GET "/login" for 127.0.0.1 at 2011-04-21 21:20:00 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 231ms (Views: 231.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-04-21 21:20:03 -0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KaPRzm356WX1zB399UNAdHmSgXcCV0urD8o2TKMrtf4=", "login"=>"MrsH", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[35mHost Load (2.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."username" = 'MrsH' LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 298ms
+
+
+Started GET "/parties" for 127.0.0.1 at 2011-04-21 21:20:20 -0400
+  Processing by PartiesController#index as HTML
+  [1m[36mParty Load (2.0ms)[0m  [1mSELECT "parties".* FROM "parties"[0m
+Rendered parties/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 500ms (Views: 205.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-21 21:20:24 -0400
+  Processing by PartiesController#new as HTML
+Rendered parties/_form.html.erb (239.0ms)
+Rendered parties/new.html.erb within layouts/application (338.0ms)
+Completed 200 OK in 703ms (Views: 556.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2011-04-21 21:20:33 -0400
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms
+  [1m[36mSQL (2.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateGuests (20110420220337)
+Migrating to CreateGifts (20110420220453)
+Migrating to CreateLocations (20110420220717)
+Migrating to CreatePartyTypes (20110420220835)
+Migrating to CreateParties (20110420221031)
+Migrating to CreateInvitations (20110420221400)
+Migrating to CreateHosts (20110420221739)
+Migrating to Fixhosts (20110421005433)
+Migrating to AddDefaulHost (20110421010616)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("gifts")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("guests")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("hosts")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("invitations")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("locations")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("parties")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("party_types")
+
+
+Started GET "/login" for 127.0.0.1 at 2011-04-21 21:25:11 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 208ms (Views: 208.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-04-21 21:25:25 -0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KaPRzm356WX1zB399UNAdHmSgXcCV0urD8o2TKMrtf4=", "login"=>"MrsH", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mHost Load (35.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."username" = 'MrsH' LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 1785ms
+
+
+Started GET "/home" for 127.0.0.1 at 2011-04-21 21:27:58 -0400
+
+ActionController::RoutingError (No route matches "/home"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+  [1m[36mSQL (2.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateGuests (20110420220337)
+Migrating to CreateGifts (20110420220453)
+Migrating to CreateLocations (20110420220717)
+Migrating to CreatePartyTypes (20110420220835)
+Migrating to CreateParties (20110420221031)
+Migrating to CreateInvitations (20110420221400)
+Migrating to CreateHosts (20110420221739)
+Migrating to Fixhosts (20110421005433)
+Migrating to AddDefaulHost (20110421010616)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("gifts")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("guests")[0m
+  [1m[35mSQL (1.0ms)[0m  PRAGMA index_list("hosts")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("invitations")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("locations")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("parties")[0m
+  [1m[35mSQL (1.0ms)[0m  PRAGMA index_list("party_types")
+
+
+Started GET "/login" for 127.0.0.1 at 2011-04-21 21:31:56 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 187ms (Views: 187.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-04-21 21:32:10 -0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KaPRzm356WX1zB399UNAdHmSgXcCV0urD8o2TKMrtf4=", "login"=>"MrsH", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."username" = 'MrsH' LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 1626ms
+
+
+Started GET "/login" for 127.0.0.1 at 2011-04-21 21:37:22 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 184ms (Views: 183.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-04-21 21:37:37 -0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KaPRzm356WX1zB399UNAdHmSgXcCV0urD8o2TKMrtf4=", "login"=>"MrsH", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mHost Load (2.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."username" = 'MrsH' LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 1596ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-21 21:39:12 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mHost Load (3.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (454.0ms)
+Completed   in 664ms
+
+ActionView::Template::Error (undefined method `name' for #<Host:0x40c5780>):
+    1: <h1>Welcome to Rage Manager</h1>
+    2: <% if logged_in? %>
+    3:   <p>Welcome, <%= current_host.name %>!</p>
+    4: <% end %>
+    5: <p>Rage Manager is the premier party planning tool!</p>
+  app/views/home/index.html.erb:3:in `_app_views_home_index_html_erb___352204472_34700220__30756719'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (104.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-21 21:39:33 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Rendered home/index.html.erb within layouts/application (128.0ms)
+Completed 200 OK in 308ms (Views: 307.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-21 21:40:07 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mHost Load (2.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (149.0ms)
+Completed 200 OK in 388ms (Views: 385.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-21 21:41:54 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mHost Load (2.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Rendered home/index.html.erb within layouts/application (126.0ms)
+Completed 200 OK in 302ms (Views: 300.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-21 21:42:00 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (128.0ms)
+Completed 200 OK in 304ms (Views: 303.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/parties" for 127.0.0.1 at 2011-04-21 21:42:06 -0400
+  Processing by PartiesController#index as HTML
+  [1m[35mParty Load (2.0ms)[0m  SELECT "parties".* FROM "parties"
+Rendered parties/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 400ms (Views: 191.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-21 21:42:12 -0400
+  Processing by PartiesController#new as HTML
+Rendered parties/_form.html.erb (263.0ms)
+Rendered parties/new.html.erb within layouts/application (323.0ms)
+Completed 200 OK in 611ms (Views: 534.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-21 21:47:02 -0400
+  Processing by PartiesController#new as HTML
+Rendered parties/_form.html.erb (48.0ms)
+Rendered parties/new.html.erb within layouts/application (147.0ms)
+Completed 200 OK in 401ms (Views: 323.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-21 21:57:44 -0400
+  Processing by PartiesController#new as HTML
+Rendered parties/_form.html.erb (47.0ms)
+Rendered parties/new.html.erb within layouts/application (115.0ms)
+Completed 200 OK in 378ms (Views: 303.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-21 22:14:04 -0400
+  Processing by PartiesController#new as HTML
+  [1m[36mLocation Load (1.0ms)[0m  [1mSELECT "locations".* FROM "locations"[0m
+Rendered parties/_form.html.erb (249.0ms)
+Rendered parties/new.html.erb within layouts/application (310.0ms)
+Completed 200 OK in 621ms (Views: 485.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-21 22:14:13 -0400
+  Processing by PartiesController#new as HTML
+  [1m[35mLocation Load (1.0ms)[0m  SELECT "locations".* FROM "locations"
+Rendered parties/_form.html.erb (142.0ms)
+Rendered parties/new.html.erb within layouts/application (208.0ms)
+Completed 200 OK in 651ms (Views: 539.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-21 22:14:39 -0400
+  Processing by PartiesController#new as HTML
+  [1m[36mLocation Load (0.0ms)[0m  [1mSELECT "locations".* FROM "locations"[0m
+  [1m[35mPartyType Load (1.0ms)[0m  SELECT "party_types".* FROM "party_types"
+Rendered parties/_form.html.erb (290.0ms)
+Rendered parties/new.html.erb within layouts/application (369.0ms)
+Completed 200 OK in 637ms (Views: 558.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-21 22:14:59 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 344ms (Views: 343.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-04-21 22:15:08 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 210ms (Views: 209.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-04-21 22:15:18 -0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FDTUdx89L/tIwuNcBrLfxYWKEHS08jmsiWaqkeBPp/Y=", "login"=>"MrsH", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."username" = 'MrsH' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 292ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-21 22:15:19 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Rendered home/index.html.erb within layouts/application (137.0ms)
+Completed 200 OK in 322ms (Views: 320.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/parties" for 127.0.0.1 at 2011-04-21 22:15:23 -0400
+  Processing by PartiesController#index as HTML
+  [1m[36mParty Load (2.0ms)[0m  [1mSELECT "parties".* FROM "parties"[0m
+Rendered parties/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 365ms (Views: 201.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-21 22:15:26 -0400
+  Processing by PartiesController#new as HTML
+  [1m[35mLocation Load (1.0ms)[0m  SELECT "locations".* FROM "locations"
+  [1m[36mPartyType Load (1.0ms)[0m  [1mSELECT "party_types".* FROM "party_types"[0m
+Rendered parties/_form.html.erb (229.0ms)
+Rendered parties/new.html.erb within layouts/application (290.0ms)
+Completed 200 OK in 552ms (Views: 474.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/locations" for 127.0.0.1 at 2011-04-21 22:15:49 -0400
+  Processing by LocationsController#index as HTML
+  [1m[35mLocation Load (2.0ms)[0m  SELECT "locations".* FROM "locations"
+Rendered locations/index.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 467ms (Views: 307.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/locations/new" for 127.0.0.1 at 2011-04-21 22:15:51 -0400
+  Processing by LocationsController#new as HTML
+Rendered locations/_form.html.erb (34.0ms)
+Rendered locations/new.html.erb within layouts/application (118.0ms)
+Completed 200 OK in 373ms (Views: 306.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/locations" for 127.0.0.1 at 2011-04-21 22:16:21 -0400
+  Processing by LocationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FDTUdx89L/tIwuNcBrLfxYWKEHS08jmsiWaqkeBPp/Y=", "location"=>{"host_id"=>"", "name"=>"Blah", "street"=>"forbes", "city"=>"lkjsd", "state"=>"pa", "zip"=>"28383", "latitude"=>"12.2", "longitude"=>"23.2"}, "commit"=>"Create Location"}
+  [1m[36mAREL (3.0ms)[0m  [1mINSERT INTO "locations" ("host_id", "name", "street", "city", "state", "zip", "latitude", "longitude", "created_at", "updated_at") VALUES (NULL, 'Blah', 'forbes', 'lkjsd', 'pa', 28383, 12.2, 23.2, '2011-04-22 02:16:22.007096', '2011-04-22 02:16:22.007096')[0m
+Redirected to http://localhost:3000/locations/1
+Completed 302 Found in 625ms
+
+
+Started GET "/locations/1" for 127.0.0.1 at 2011-04-21 22:16:22 -0400
+  Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mLocation Load (1.0ms)[0m  SELECT "locations".* FROM "locations" WHERE "locations"."id" = 1 LIMIT 1
+Rendered locations/show.html.erb within layouts/application (51.0ms)
+Completed 200 OK in 345ms (Views: 274.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/parties" for 127.0.0.1 at 2011-04-21 22:16:31 -0400
+  Processing by PartiesController#index as HTML
+  [1m[36mParty Load (2.0ms)[0m  [1mSELECT "parties".* FROM "parties"[0m
+Rendered parties/index.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 367ms (Views: 202.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-21 22:16:33 -0400
+  Processing by PartiesController#new as HTML
+  [1m[35mLocation Load (2.0ms)[0m  SELECT "locations".* FROM "locations"
+  [1m[36mPartyType Load (1.0ms)[0m  [1mSELECT "party_types".* FROM "party_types"[0m
+Rendered parties/_form.html.erb (453.0ms)
+Rendered parties/new.html.erb within layouts/application (516.0ms)
+Completed 200 OK in 818ms (Views: 700.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/parties" for 127.0.0.1 at 2011-04-21 22:17:45 -0400
+  Processing by PartiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FDTUdx89L/tIwuNcBrLfxYWKEHS08jmsiWaqkeBPp/Y=", "party"=>{"name"=>"jlj", "location_id"=>"1", "party_date(2i)"=>"4", "party_date(3i)"=>"22", "party_date(1i)"=>"2011", "start_time(1i)"=>"2011", "start_time(2i)"=>"4", "start_time(3i)"=>"22", "start_time(4i)"=>"02", "start_time(5i)"=>"16", "end_time(1i)"=>"2011", "end_time(2i)"=>"4", "end_time(3i)"=>"22", "end_time(4i)"=>"02", "end_time(5i)"=>"16", "description"=>"", "rsvp_date(2i)"=>"4", "rsvp_date(3i)"=>"22", "rsvp_date(1i)"=>"2011"}, "commit"=>"Create Party"}
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+  [1m[36mAREL (3.0ms)[0m  [1mINSERT INTO "parties" ("party_type_id", "host_id", "name", "location_id", "party_date", "start_time", "end_time", "description", "rsvp_date", "created_at", "updated_at") VALUES (NULL, 1, 'jlj', 1, '2011-04-22', '2011-04-22 02:16:00.000000', '2011-04-22 02:16:00.000000', '', '2011-04-22', '2011-04-22 02:17:46.819947', '2011-04-22 02:17:46.819947')[0m
+Redirected to http://localhost:3000/parties/1
+Completed 302 Found in 391ms
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-04-21 22:17:47 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mParty Load (1.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+Rendered parties/show.html.erb within layouts/application (58.0ms)
+Completed 200 OK in 348ms (Views: 269.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-04-21 22:19:20 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mParty Load (2.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1[0m
+Rendered parties/show.html.erb within layouts/application (35.0ms)
+Completed   in 325ms
+
+ActionView::Template::Error (undefined method `name' for 1:Fixnum):
+    6: </p>
+    7: <p>
+    8:   <strong>Host:</strong>
+    9:   <%= @party.host_id.name %>
+    10: </p>
+    11: <p>
+    12:   <strong>Name:</strong>
+  app/views/parties/show.html.erb:9:in `_app_views_parties_show_html_erb__283867844_34175376__30756719'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (115.0ms)
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-04-21 22:20:42 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mParty Load (1.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+Rendered parties/show.html.erb within layouts/application (31.0ms)
+Completed   in 325ms
+
+ActionView::Template::Error (undefined method `name' for 1:Fixnum):
+    6: </p>
+    7: <p>
+    8:   <strong>Host:</strong>
+    9:   <%= @party.host_id.name %>
+    10: </p>
+    11: <p>
+    12:   <strong>Name:</strong>
+  app/views/parties/show.html.erb:9:in `_app_views_parties_show_html_erb__283867844_34856604__30756719'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (108.0ms)
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-04-21 22:20:55 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mParty Load (2.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1[0m
+Rendered parties/show.html.erb within layouts/application (33.0ms)
+Completed   in 293ms
+
+ActionView::Template::Error (undefined method `name' for 1:Fixnum):
+    6: </p>
+    7: <p>
+    8:   <strong>Host:</strong>
+    9:   <%= @party.host_id.name %>
+    10: </p>
+    11: <p>
+    12:   <strong>Name:</strong>
+  app/views/parties/show.html.erb:9:in `_app_views_parties_show_html_erb__283867844_33958512__30756719'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (44.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (148.0ms)
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-04-21 22:21:36 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mParty Load (2.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+Rendered parties/show.html.erb within layouts/application (33.0ms)
+Completed   in 324ms
+
+ActionView::Template::Error (undefined method `username' for 1:Fixnum):
+    6: </p>
+    7: <p>
+    8:   <strong>Host:</strong>
+    9:   <%= @party.host_id.username %>
+    10: </p>
+    11: <p>
+    12:   <strong>Name:</strong>
+  app/views/parties/show.html.erb:9:in `_app_views_parties_show_html_erb__283867844_34815420__30756719'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (107.0ms)
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-04-21 22:21:54 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mParty Load (2.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1[0m
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE ("hosts".party_id = 1) LIMIT 1
+SQLite3::SQLException: no such column: hosts.party_id: SELECT  "hosts".* FROM "hosts" WHERE ("hosts".party_id = 1) LIMIT 1
+Rendered parties/show.html.erb within layouts/application (191.0ms)
+Completed   in 459ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: hosts.party_id: SELECT  "hosts".* FROM "hosts" WHERE ("hosts".party_id = 1) LIMIT 1):
+    6: </p>
+    7: <p>
+    8:   <strong>Host:</strong>
+    9:   <%= @party.host.username %>
+    10: </p>
+    11: <p>
+    12:   <strong>Name:</strong>
+  app/views/parties/show.html.erb:9:in `_app_views_parties_show_html_erb__283867844_33904752__30756719'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (106.0ms)
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-04-21 22:22:51 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mParty Load (1.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1[0m
+Rendered parties/show.html.erb within layouts/application (31.0ms)
+Completed   in 289ms
+
+ActionView::Template::Error (undefined method `username' for 1:Fixnum):
+    6: </p>
+    7: <p>
+    8:   <strong>Host:</strong>
+    9:   <%= @party.host_id.username %>
+    10: </p>
+    11: <p>
+    12:   <strong>Name:</strong>
+  app/views/parties/show.html.erb:9:in `_app_views_parties_show_html_erb__283867844_34516512__30756719'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (109.0ms)
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-04-21 22:23:38 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mParty Load (2.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE ("hosts".party_id = 1) LIMIT 1[0m
+SQLite3::SQLException: no such column: hosts.party_id: SELECT  "hosts".* FROM "hosts" WHERE ("hosts".party_id = 1) LIMIT 1
+Rendered parties/show.html.erb within layouts/application (121.0ms)
+Completed   in 447ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: hosts.party_id: SELECT  "hosts".* FROM "hosts" WHERE ("hosts".party_id = 1) LIMIT 1):
+    6: </p>
+    7: <p>
+    8:   <strong>Host:</strong>
+    9:   <%= @party.host.username %>
+    10: </p>
+    11: <p>
+    12:   <strong>Name:</strong>
+  app/views/parties/show.html.erb:9:in `_app_views_parties_show_html_erb__283867844_35122428__30756719'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (111.0ms)
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-04-21 22:24:23 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mParty Load (1.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mHost Load (2.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Rendered parties/show.html.erb within layouts/application (222.0ms)
+Completed   in 481ms
+
+ActionView::Template::Error (undefined method `name' for 1:Fixnum):
+    14: </p>
+    15: <p>
+    16:   <strong>Location:</strong>
+    17:   <%= @party.location_id.name %>
+    18: </p>
+    19: <p>
+    20:   <strong>Party Date:</strong>
+  app/views/parties/show.html.erb:17:in `_app_views_parties_show_html_erb__283867844_33924228__30756719'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (105.0ms)
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-04-21 22:25:10 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mParty Load (2.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+  [1m[35mLocation Load (1.0ms)[0m  SELECT "locations".* FROM "locations" WHERE ("locations".party_id = 1) LIMIT 1
+SQLite3::SQLException: no such column: locations.party_id: SELECT  "locations".* FROM "locations" WHERE ("locations".party_id = 1) LIMIT 1
+Rendered parties/show.html.erb within layouts/application (288.0ms)
+Completed   in 545ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: locations.party_id: SELECT  "locations".* FROM "locations" WHERE ("locations".party_id = 1) LIMIT 1):
+    14: </p>
+    15: <p>
+    16:   <strong>Location:</strong>
+    17:   <%= @party.location.name %>
+    18: </p>
+    19: <p>
+    20:   <strong>Party Date:</strong>
+  app/views/parties/show.html.erb:17:in `_app_views_parties_show_html_erb__283867844_33943548__30756719'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (105.0ms)
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-04-21 22:25:40 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mParty Load (2.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1[0m
+  [1m[35mHost Load (2.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+  [1m[36mLocation Load (1.0ms)[0m  [1mSELECT "locations".* FROM "locations" WHERE ("locations".party_id = 1) LIMIT 1[0m
+SQLite3::SQLException: no such column: locations.party_id: SELECT  "locations".* FROM "locations" WHERE ("locations".party_id = 1) LIMIT 1
+Rendered parties/show.html.erb within layouts/application (286.0ms)
+Completed   in 543ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: locations.party_id: SELECT  "locations".* FROM "locations" WHERE ("locations".party_id = 1) LIMIT 1):
+    14: </p>
+    15: <p>
+    16:   <strong>Location:</strong>
+    17:   <%= @party.location.name %>
+    18: </p>
+    19: <p>
+    20:   <strong>Party Date:</strong>
+  app/views/parties/show.html.erb:17:in `_app_views_parties_show_html_erb__283867844_33868080__30756719'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (108.0ms)
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-04-21 22:28:12 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mParty Load (1.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mHost Load (2.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Rendered parties/show.html.erb within layouts/application (152.0ms)
+Completed   in 441ms
+
+ActionView::Template::Error (undefined method `name' for 1:Fixnum):
+    14: </p>
+    15: <p>
+    16:   <strong>Location:</strong>
+    17:   <%= @party.location_id.name %>
+    18: </p>
+    19: <p>
+    20:   <strong>Party Date:</strong>
+  app/views/parties/show.html.erb:17:in `_app_views_parties_show_html_erb__283867844_34978176__30756719'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (106.0ms)
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-04-21 22:28:42 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mParty Load (1.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+  [1m[35mLocation Load (1.0ms)[0m  SELECT "locations".* FROM "locations" WHERE ("locations".party_id = 1) LIMIT 1
+SQLite3::SQLException: no such column: locations.party_id: SELECT  "locations".* FROM "locations" WHERE ("locations".party_id = 1) LIMIT 1
+Rendered parties/show.html.erb within layouts/application (222.0ms)
+Completed   in 521ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: locations.party_id: SELECT  "locations".* FROM "locations" WHERE ("locations".party_id = 1) LIMIT 1):
+    14: </p>
+    15: <p>
+    16:   <strong>Location:</strong>
+    17:   <%= @party.location.name %>
+    18: </p>
+    19: <p>
+    20:   <strong>Party Date:</strong>
+  app/views/parties/show.html.erb:17:in `_app_views_parties_show_html_erb__283867844_35015796__30756719'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (108.0ms)
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-04-21 22:29:48 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mParty Load (1.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1[0m
+Rendered parties/show.html.erb within layouts/application (33.0ms)
+Completed   in 288ms
+
+ActionView::Template::Error (undefined method `partytype' for #<Party:0x4203d38>):
+    2: 
+    3: <p>
+    4:   <strong>Party Type:</strong>
+    5:   <%= @party.partytype.name %>
+    6: </p>
+    7: <p>
+    8:   <strong>Host:</strong>
+  app/views/parties/show.html.erb:5:in `_app_views_parties_show_html_erb__283867844_34601820__30756719'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (114.0ms)
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-04-21 22:30:39 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed   in 61ms
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/models/party.rb:4:in `<class:Party>'
+  app/models/party.rb:1:in `<top (required)>'
+  app/controllers/parties_controller.rb:7:in `show'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (108.0ms)
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-04-21 22:30:51 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed   in 48ms
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/models/party.rb:4:in `<class:Party>'
+  app/models/party.rb:1:in `<top (required)>'
+  app/controllers/parties_controller.rb:7:in `show'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (115.0ms)
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-04-21 22:31:19 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed   in 51ms
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/models/party.rb:4:in `<class:Party>'
+  app/models/party.rb:1:in `<top (required)>'
+  app/controllers/parties_controller.rb:7:in `show'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (103.0ms)
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-04-21 22:31:34 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mParty Load (2.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+Rendered parties/show.html.erb within layouts/application (34.0ms)
+Completed   in 341ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    2: 
+    3: <p>
+    4:   <strong>Party Type:</strong>
+    5:   <%= @party.party_type_id.name %>
+    6: </p>
+    7: <p>
+    8:   <strong>Host:</strong>
+  app/views/parties/show.html.erb:5:in `_app_views_parties_show_html_erb__283867844_35222280__30756719'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (113.0ms)
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-04-21 22:31:48 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mParty Load (1.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1[0m
+  [1m[35mPartyType Load (2.0ms)[0m  SELECT "party_types".* FROM "party_types" WHERE ("party_types".party_id = 1) LIMIT 1
+SQLite3::SQLException: no such column: party_types.party_id: SELECT  "party_types".* FROM "party_types" WHERE ("party_types".party_id = 1) LIMIT 1
+Rendered parties/show.html.erb within layouts/application (99.0ms)
+Completed   in 357ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: party_types.party_id: SELECT  "party_types".* FROM "party_types" WHERE ("party_types".party_id = 1) LIMIT 1):
+    2: 
+    3: <p>
+    4:   <strong>Party Type:</strong>
+    5:   <%= @party.party_type.name %>
+    6: </p>
+    7: <p>
+    8:   <strong>Host:</strong>
+  app/views/parties/show.html.erb:5:in `_app_views_parties_show_html_erb__283867844_34402104__30756719'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (161.0ms)
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-04-21 22:32:19 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mParty Load (2.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1[0m
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+  [1m[36mLocation Load (1.0ms)[0m  [1mSELECT "locations".* FROM "locations" WHERE ("locations".party_id = 1) LIMIT 1[0m
+SQLite3::SQLException: no such column: locations.party_id: SELECT  "locations".* FROM "locations" WHERE ("locations".party_id = 1) LIMIT 1
+Rendered parties/show.html.erb within layouts/application (305.0ms)
+Completed   in 626ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: locations.party_id: SELECT  "locations".* FROM "locations" WHERE ("locations".party_id = 1) LIMIT 1):
+    14: </p>
+    15: <p>
+    16:   <strong>Location:</strong>
+    17:   <%= @party.location.name %>
+    18: </p>
+    19: <p>
+    20:   <strong>Party Date:</strong>
+  app/views/parties/show.html.erb:17:in `_app_views_parties_show_html_erb__283867844_34832052__30756719'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (109.0ms)
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-04-21 22:32:29 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mParty Load (2.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mHost Load (2.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Rendered parties/show.html.erb within layouts/application (170.0ms)
+Completed 200 OK in 524ms (Views: 357.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-04-21 22:33:17 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mParty Load (1.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+Rendered parties/show.html.erb within layouts/application (31.0ms)
+Completed   in 286ms
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    2: 
+    3: <p>
+    4:   <strong>Party Type:</strong>
+    5:   <%= @party.party_type.name %>
+    6: </p>
+    7: <p>
+    8:   <strong>Host:</strong>
+  app/views/parties/show.html.erb:5:in `_app_views_parties_show_html_erb__283867844_34469808__30756719'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (107.0ms)
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-04-21 22:33:55 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mParty Load (1.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1[0m
+  [1m[35mPartyType Load (1.0ms)[0m  SELECT "party_types".* FROM "party_types" WHERE ("party_types".party_id = 1) LIMIT 1
+SQLite3::SQLException: no such column: party_types.party_id: SELECT  "party_types".* FROM "party_types" WHERE ("party_types".party_id = 1) LIMIT 1
+Rendered parties/show.html.erb within layouts/application (98.0ms)
+Completed   in 391ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: party_types.party_id: SELECT  "party_types".* FROM "party_types" WHERE ("party_types".party_id = 1) LIMIT 1):
+    2: 
+    3: <p>
+    4:   <strong>Party Type:</strong>
+    5:   <%= @party.party_type.name %>
+    6: </p>
+    7: <p>
+    8:   <strong>Host:</strong>
+  app/views/parties/show.html.erb:5:in `_app_views_parties_show_html_erb__283867844_35117784__30756719'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (110.0ms)
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-04-21 22:41:00 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mParty Load (0.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1[0m
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Rendered parties/show.html.erb within layouts/application (234.0ms)
+Completed 200 OK in 499ms (Views: 421.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-04-21 22:41:40 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mParty Load (0.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1[0m
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Rendered parties/show.html.erb within layouts/application (234.0ms)
+Completed   in 515ms
+
+ActionView::Template::Error (undefined method `name' for 1:Fixnum):
+    14: </p>
+    15: <p>
+    16:   <strong>Location:</strong>
+    17:   <%= @party.location_id.name %>
+    18: </p>
+    19: <p>
+    20:   <strong>Party Date:</strong>
+  app/views/parties/show.html.erb:17:in `_app_views_parties_show_html_erb__283867844_33886572__30756719'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (109.2ms)
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-04-21 22:41:44 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mParty Load (0.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1[0m
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+  [1m[36mLocation Load (0.0ms)[0m  [1mSELECT "locations".* FROM "locations" WHERE ("locations".party_id = 1) LIMIT 1[0m
+SQLite3::SQLException: no such column: locations.party_id: SELECT  "locations".* FROM "locations" WHERE ("locations".party_id = 1) LIMIT 1
+Rendered parties/show.html.erb within layouts/application (265.2ms)
+Completed   in 530ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: locations.party_id: SELECT  "locations".* FROM "locations" WHERE ("locations".party_id = 1) LIMIT 1):
+    14: </p>
+    15: <p>
+    16:   <strong>Location:</strong>
+    17:   <%= @party.location.name %>
+    18: </p>
+    19: <p>
+    20:   <strong>Party Date:</strong>
+  app/views/parties/show.html.erb:17:in `_app_views_parties_show_html_erb__283867844_33994656__30756719'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (109.2ms)
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-04-21 22:41:57 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mParty Load (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mHost Load (15.6ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+  [1m[35mLocation Load (15.6ms)[0m  SELECT "locations".* FROM "locations" WHERE ("locations".party_id = 1) LIMIT 1
+SQLite3::SQLException: no such column: locations.party_id: SELECT  "locations".* FROM "locations" WHERE ("locations".party_id = 1) LIMIT 1
+Rendered parties/show.html.erb within layouts/application (280.8ms)
+Completed   in 562ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: locations.party_id: SELECT  "locations".* FROM "locations" WHERE ("locations".party_id = 1) LIMIT 1):
+    14: </p>
+    15: <p>
+    16:   <strong>Location:</strong>
+    17:   <%= @party.location.street %>
+    18: </p>
+    19: <p>
+    20:   <strong>Party Date:</strong>
+  app/views/parties/show.html.erb:17:in `_app_views_parties_show_html_erb__283867844_33924276__30756719'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (15.6ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (109.2ms)
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-04-21 22:42:06 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mParty Load (0.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1[0m
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Rendered parties/show.html.erb within layouts/application (218.4ms)
+Completed 200 OK in 468ms (Views: 390.0ms | ActiveRecord: 31.2ms)
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-04-21 22:43:25 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mParty Load (0.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1[0m
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Rendered parties/show.html.erb within layouts/application (156.0ms)
+Completed   in 515ms
+
+ActionView::Template::Error (undefined method `strftime' for "":String):
+    30: </p>
+    31: <p>
+    32:   <strong>Description:</strong>
+    33:   <%= @party.description.strftime("%I:%M %p") %>
+    34: </p>
+    35: <p>
+    36:   <strong>Rsvp Date:</strong>
+  app/views/parties/show.html.erb:33:in `_app_views_parties_show_html_erb__283867844_34859916__30756719'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (109.2ms)
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-04-21 22:43:41 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mParty Load (0.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1[0m
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Rendered parties/show.html.erb within layouts/application (171.6ms)
+Completed 200 OK in 468ms (Views: 343.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/parties/1/edit" for 127.0.0.1 at 2011-04-21 22:50:28 -0400
+  Processing by PartiesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (3.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mParty Load (1.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mLocation Load (2.0ms)[0m  [1mSELECT "locations".* FROM "locations"[0m
+  [1m[35mPartyType Load (1.0ms)[0m  SELECT "party_types".* FROM "party_types"
+Rendered parties/_form.html.erb (499.0ms)
+Rendered parties/edit.html.erb within layouts/application (564.0ms)
+Completed 200 OK in 2452ms (Views: 742.0ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/parties/1" for 127.0.0.1 at 2011-04-21 22:51:00 -0400
+  Processing by PartiesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FDTUdx89L/tIwuNcBrLfxYWKEHS08jmsiWaqkeBPp/Y=", "party"=>{"name"=>"jlj", "location_id"=>"1", "party_type_id"=>"1", "party_date(2i)"=>"4", "party_date(3i)"=>"22", "party_date(1i)"=>"2011", "start_time(1i)"=>"2000", "start_time(2i)"=>"1", "start_time(3i)"=>"1", "start_time(4i)"=>"02", "start_time(5i)"=>"16", "end_time(1i)"=>"2000", "end_time(2i)"=>"1", "end_time(3i)"=>"1", "end_time(4i)"=>"02", "end_time(5i)"=>"16", "description"=>"", "rsvp_date(2i)"=>"4", "rsvp_date(3i)"=>"22", "rsvp_date(1i)"=>"2011"}, "commit"=>"Update Party", "id"=>"1"}
+  [1m[36mParty Load (1.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (3.0ms)[0m  UPDATE "parties" SET "party_type_id" = 1, "updated_at" = '2011-04-22 02:51:01.557500' WHERE "parties"."id" = 1
+Redirected to http://localhost:3000/parties/1
+Completed 302 Found in 636ms
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-04-21 22:51:02 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mParty Load (1.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1[0m
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Rendered parties/show.html.erb within layouts/application (193.0ms)
+Completed 200 OK in 544ms (Views: 395.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/parties" for 127.0.0.1 at 2011-04-21 22:52:25 -0400
+  Processing by PartiesController#index as HTML
+  [1m[36mParty Load (2.0ms)[0m  [1mSELECT "parties".* FROM "parties"[0m
+Rendered parties/index.html.erb within layouts/application (52.0ms)
+Completed 200 OK in 310ms (Views: 239.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/guests" for 127.0.0.1 at 2011-04-21 22:52:37 -0400
+  Processing by GuestsController#index as HTML
+  [1m[35mGuest Load (2.0ms)[0m  SELECT "guests".* FROM "guests"
+Rendered guests/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 344ms (Views: 201.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/guests/new" for 127.0.0.1 at 2011-04-21 22:52:40 -0400
+  Processing by GuestsController#new as HTML
+Rendered guests/_form.html.erb (21.0ms)
+Rendered guests/new.html.erb within layouts/application (124.0ms)
+Completed 200 OK in 381ms (Views: 313.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/guests" for 127.0.0.1 at 2011-04-21 22:53:00 -0400
+  Processing by GuestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FDTUdx89L/tIwuNcBrLfxYWKEHS08jmsiWaqkeBPp/Y=", "guest"=>{"name"=>"Nikki", "email"=>"blah@bla.com", "host_id"=>"", "notes"=>"Blacklisted"}, "commit"=>"Create Guest"}
+  [1m[36mAREL (3.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Nikki', 'blah@bla.com', NULL, 'Blacklisted', '2011-04-22 02:53:01.478359', '2011-04-22 02:53:01.478359')[0m
+Redirected to http://localhost:3000/guests/1
+Completed 302 Found in 182ms
+
+
+Started GET "/guests/1" for 127.0.0.1 at 2011-04-21 22:53:01 -0400
+  Processing by GuestsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGuest Load (1.0ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = 1 LIMIT 1
+Rendered guests/show.html.erb within layouts/application (44.0ms)
+Completed 200 OK in 307ms (Views: 239.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/guests/1" for 127.0.0.1 at 2011-04-21 22:59:30 -0400
+  Processing by GuestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FDTUdx89L/tIwuNcBrLfxYWKEHS08jmsiWaqkeBPp/Y=", "id"=>"1"}
+  [1m[36mGuest Load (1.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (3.0ms)[0m  DELETE FROM "guests" WHERE "guests"."id" = 1
+Redirected to http://localhost:3000/guests
+Completed 302 Found in 293ms
+
+
+Started GET "/guests" for 127.0.0.1 at 2011-04-21 22:59:31 -0400
+  Processing by GuestsController#index as HTML
+  [1m[36mGuest Load (2.0ms)[0m  [1mSELECT "guests".* FROM "guests"[0m
+Rendered guests/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 478ms (Views: 393.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/guests/new" for 127.0.0.1 at 2011-04-21 22:59:44 -0400
+  Processing by GuestsController#new as HTML
+Rendered guests/_form.html.erb (20.0ms)
+Rendered guests/new.html.erb within layouts/application (85.0ms)
+Completed 200 OK in 428ms (Views: 263.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guests/new" for 127.0.0.1 at 2011-04-21 23:00:07 -0400
+  Processing by GuestsController#new as HTML
+Rendered guests/_form.html.erb (18.0ms)
+Rendered guests/new.html.erb within layouts/application (89.0ms)
+Completed 200 OK in 341ms (Views: 274.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/guests" for 127.0.0.1 at 2011-04-21 23:00:17 -0400
+  Processing by GuestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FDTUdx89L/tIwuNcBrLfxYWKEHS08jmsiWaqkeBPp/Y=", "guest"=>{"name"=>"Dom", "email"=>"dksfj@dld.com", "notes"=>"ldsjkf"}, "commit"=>"Create Guest"}
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+  [1m[36mAREL (3.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Dom', 'dksfj@dld.com', 1, 'ldsjkf', '2011-04-22 03:00:17.960325', '2011-04-22 03:00:17.960325')[0m
+Redirected to http://localhost:3000/guests/2
+Completed 302 Found in 397ms
+
+
+Started GET "/guests/2" for 127.0.0.1 at 2011-04-21 23:00:18 -0400
+  Processing by GuestsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mGuest Load (1.0ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = 2 LIMIT 1
+Rendered guests/show.html.erb within layouts/application (42.0ms)
+Completed 200 OK in 317ms (Views: 230.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/guests/2" for 127.0.0.1 at 2011-04-21 23:00:27 -0400
+  Processing by GuestsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGuest Load (1.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 2 LIMIT 1[0m
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Rendered guests/show.html.erb within layouts/application (280.0ms)
+Completed 200 OK in 530ms (Views: 461.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/locations" for 127.0.0.1 at 2011-04-21 23:02:22 -0400
+  Processing by LocationsController#index as HTML
+  [1m[36mLocation Load (2.0ms)[0m  [1mSELECT "locations".* FROM "locations"[0m
+Rendered locations/index.html.erb within layouts/application (48.0ms)
+Completed 200 OK in 287ms (Views: 225.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/locations/new" for 127.0.0.1 at 2011-04-21 23:02:27 -0400
+  Processing by LocationsController#new as HTML
+Rendered locations/_form.html.erb (32.0ms)
+Rendered locations/new.html.erb within layouts/application (96.0ms)
+Completed 200 OK in 387ms (Views: 280.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/locations" for 127.0.0.1 at 2011-04-21 23:02:31 -0400
+  Processing by LocationsController#index as HTML
+  [1m[35mLocation Load (3.0ms)[0m  SELECT "locations".* FROM "locations"
+Rendered locations/index.html.erb within layouts/application (49.0ms)
+Completed 200 OK in 318ms (Views: 255.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/locations/1" for 127.0.0.1 at 2011-04-21 23:02:36 -0400
+  Processing by LocationsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FDTUdx89L/tIwuNcBrLfxYWKEHS08jmsiWaqkeBPp/Y=", "id"=>"1"}
+  [1m[36mLocation Load (1.0ms)[0m  [1mSELECT "locations".* FROM "locations" WHERE "locations"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (4.0ms)[0m  DELETE FROM "locations" WHERE "locations"."id" = 1
+Redirected to http://localhost:3000/locations
+Completed 302 Found in 217ms
+
+
+Started GET "/locations" for 127.0.0.1 at 2011-04-21 23:02:37 -0400
+  Processing by LocationsController#index as HTML
+  [1m[36mLocation Load (2.0ms)[0m  [1mSELECT "locations".* FROM "locations"[0m
+Rendered locations/index.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 356ms (Views: 293.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/partytypes" for 127.0.0.1 at 2011-04-21 23:04:04 -0400
+
+ActionController::RoutingError (No route matches "/partytypes"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/party_types" for 127.0.0.1 at 2011-04-21 23:04:11 -0400
+  Processing by PartyTypesController#index as HTML
+  [1m[35mPartyType Load (2.0ms)[0m  SELECT "party_types".* FROM "party_types"
+Rendered party_types/index.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 265ms (Views: 208.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/party_types/new" for 127.0.0.1 at 2011-04-21 23:04:18 -0400
+  Processing by PartyTypesController#new as HTML
+Rendered party_types/_form.html.erb (16.0ms)
+Rendered party_types/new.html.erb within layouts/application (80.0ms)
+Completed 200 OK in 321ms (Views: 263.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/party_types/new" for 127.0.0.1 at 2011-04-21 23:04:31 -0400
+  Processing by PartyTypesController#new as HTML
+Rendered party_types/_form.html.erb (54.0ms)
+Rendered party_types/new.html.erb within layouts/application (241.0ms)
+Completed 200 OK in 483ms (Views: 422.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/party_types" for 127.0.0.1 at 2011-04-21 23:16:34 -0400
+  Processing by PartyTypesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FDTUdx89L/tIwuNcBrLfxYWKEHS08jmsiWaqkeBPp/Y=", "party_type"=>{"name"=>"d"}, "commit"=>"Create Party type"}
+Completed   in 71ms
+
+NoMethodError (undefined method `party_type' for #<PartyType:0x3f152a0>):
+  app/controllers/party_types_controller.rb:16:in `create'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (113.0ms)
+
+
+Started POST "/party_types" for 127.0.0.1 at 2011-04-21 23:16:44 -0400
+  Processing by PartyTypesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FDTUdx89L/tIwuNcBrLfxYWKEHS08jmsiWaqkeBPp/Y=", "party_type"=>{"name"=>"d"}, "commit"=>"Create Party type"}
+Completed   in 71ms
+
+NoMethodError (undefined method `partytype' for #<PartyType:0x3e2b7f8>):
+  app/controllers/party_types_controller.rb:16:in `create'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (111.0ms)
+
+
+Started POST "/party_types" for 127.0.0.1 at 2011-04-21 23:17:08 -0400
+  Processing by PartyTypesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FDTUdx89L/tIwuNcBrLfxYWKEHS08jmsiWaqkeBPp/Y=", "party_type"=>{"name"=>"d"}, "commit"=>"Create Party type"}
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'd') LIMIT 1[0m
+  [1m[35mAREL (2.0ms)[0m  INSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('d', NULL, '2011-04-22 03:17:09.903205', '2011-04-22 03:17:09.903205')
+Redirected to http://localhost:3000/party_types/2
+Completed 302 Found in 569ms
+
+
+Started GET "/party_types/2" for 127.0.0.1 at 2011-04-21 23:17:10 -0400
+  Processing by PartyTypesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPartyType Load (2.0ms)[0m  [1mSELECT "party_types".* FROM "party_types" WHERE "party_types"."id" = 2 LIMIT 1[0m
+Rendered party_types/show.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 316ms (Views: 216.0ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/party_types/2" for 127.0.0.1 at 2011-04-21 23:23:26 -0400
+  Processing by PartyTypesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FDTUdx89L/tIwuNcBrLfxYWKEHS08jmsiWaqkeBPp/Y=", "id"=>"2"}
+  [1m[36mSQL (2.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mPartyType Load (2.0ms)[0m  SELECT "party_types".* FROM "party_types" WHERE "party_types"."id" = 2 LIMIT 1
+  [1m[36mAREL (2.0ms)[0m  [1mDELETE FROM "party_types" WHERE "party_types"."id" = 2[0m
+Redirected to http://localhost:3000/party_types
+Completed 302 Found in 1403ms
+
+
+Started GET "/party_types" for 127.0.0.1 at 2011-04-21 23:23:39 -0400
+  Processing by PartyTypesController#index as HTML
+  [1m[35mPartyType Load (2.0ms)[0m  SELECT "party_types".* FROM "party_types"
+Rendered party_types/index.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 268ms (Views: 211.0ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/party_types/1" for 127.0.0.1 at 2011-04-21 23:23:46 -0400
+  Processing by PartyTypesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPartyType Load (1.0ms)[0m  [1mSELECT "party_types".* FROM "party_types" WHERE "party_types"."id" = 1 LIMIT 1[0m
+Rendered party_types/show.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 274ms (Views: 211.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/party_types" for 127.0.0.1 at 2011-04-21 23:23:51 -0400
+  Processing by PartyTypesController#index as HTML
+  [1m[35mPartyType Load (3.0ms)[0m  SELECT "party_types".* FROM "party_types"
+Rendered party_types/index.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 276ms (Views: 217.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/party_types/new" for 127.0.0.1 at 2011-04-21 23:23:54 -0400
+  Processing by PartyTypesController#new as HTML
+Rendered party_types/_form.html.erb (234.0ms)
+Rendered party_types/new.html.erb within layouts/application (301.0ms)
+Completed 200 OK in 546ms (Views: 483.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/party_types" for 127.0.0.1 at 2011-04-21 23:23:58 -0400
+  Processing by PartyTypesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FDTUdx89L/tIwuNcBrLfxYWKEHS08jmsiWaqkeBPp/Y=", "party_type"=>{"name"=>"bro"}, "commit"=>"Create Party type"}
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'bro') LIMIT 1[0m
+  [1m[35mAREL (3.0ms)[0m  INSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('bro', 'f', '2011-04-22 03:24:00.325679', '2011-04-22 03:24:00.325679')
+Redirected to http://localhost:3000/party_types/3
+Completed 302 Found in 1111ms
+
+
+Started GET "/party_types/3" for 127.0.0.1 at 2011-04-21 23:24:00 -0400
+  Processing by PartyTypesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPartyType Load (1.0ms)[0m  [1mSELECT "party_types".* FROM "party_types" WHERE "party_types"."id" = 3 LIMIT 1[0m
+Rendered party_types/show.html.erb within layouts/application (107.0ms)
+Completed 200 OK in 358ms (Views: 292.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/party_types" for 127.0.0.1 at 2011-04-21 23:24:03 -0400
+  Processing by PartyTypesController#index as HTML
+  [1m[35mPartyType Load (3.0ms)[0m  SELECT "party_types".* FROM "party_types"
+Rendered party_types/index.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 350ms (Views: 218.0ms | ActiveRecord: 3.0ms)

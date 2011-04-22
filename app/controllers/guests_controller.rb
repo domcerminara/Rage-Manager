@@ -13,6 +13,7 @@ class GuestsController < ApplicationController
 
   def create
     @guest = Guest.new(params[:guest])
+    @guest.host_id = current_host.id
     if @guest.save
       redirect_to @guest, :notice => "Successfully created guest."
     else

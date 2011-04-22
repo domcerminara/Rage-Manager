@@ -6,7 +6,7 @@
 </p>
 <p>
   <strong>Host:</strong>
-  <%= @party.host_id %>
+  <%= @party.host.username %>
 </p>
 <p>
   <strong>Name:</strong>
@@ -18,15 +18,15 @@
 </p>
 <p>
   <strong>Party Date:</strong>
-  <%= @party.party_date %>
+  <%= @party.party_date.strftime("%B %e, %Y") %>
 </p>
 <p>
   <strong>Start Time:</strong>
-  <%= @party.start_time %>
+  <%= @party.start_time.strftime("%I:%M %p") %>
 </p>
 <p>
   <strong>End Time:</strong>
-  <%= @party.end_time %>
+  <%= @party.end_time.strftime("%I:%M %p") %>
 </p>
 <p>
   <strong>Description:</strong>
@@ -34,7 +34,7 @@
 </p>
 <p>
   <strong>Rsvp Date:</strong>
-  <%= @party.rsvp_date %>
+  <%= @party.rsvp_date.strftime("%B %e, %Y") %>
 </p>
 
 <p>

@@ -13,6 +13,7 @@ class PartyTypesController < ApplicationController
 
   def create
     @party_type = PartyType.new(params[:party_type])
+    @party_type.active = false
     if @party_type.save
       redirect_to @party_type, :notice => "Successfully created party type."
     else
