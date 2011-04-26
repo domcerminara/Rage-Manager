@@ -2543,3 +2543,440 @@ DEPRECATION WARNING: before_validation_on_create is deprecated. Please use befor
 Rendered invitations/_form.html.erb (200.0ms)
 Rendered invitations/new.html.erb within layouts/application (239.0ms)
 Completed 200 OK in 386ms (Views: 342.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/guests" for 127.0.0.1 at 2011-04-26 13:39:28 -0400
+  Processing by GuestsController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1
+Creating scope :all. Overwriting existing method Guest.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Guest> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/guest.rb:19)
+  [1m[36mGuest Load (1.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE ("guests".host_id = 2) ORDER BY name[0m
+Rendered guests/index.html.erb within layouts/application (39.0ms)
+Completed 200 OK in 507ms (Views: 223.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/invitations" for 127.0.0.1 at 2011-04-26 13:39:34 -0400
+  Processing by InvitationsController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1
+Creating scope :all. Overwriting existing method Guest.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Guest> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/guest.rb:19)
+Creating scope :all. Overwriting existing method Invitation.all.
+  [1m[36mInvitation Load (0.0ms)[0m  [1mSELECT "invitations".* FROM "invitations" INNER JOIN "guests" ON "invitations".guest_id = "guests".id WHERE (("guests".host_id = 2)) ORDER BY name[0m
+Rendered invitations/index.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 509ms (Views: 207.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/invitations/new" for 127.0.0.1 at 2011-04-26 13:39:53 -0400
+  Processing by InvitationsController#new as HTML
+Creating scope :all. Overwriting existing method Invitation.all.
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[35mParty Load (1.0ms)[0m  SELECT "parties".* FROM "parties" ORDER BY name
+Creating scope :all. Overwriting existing method Guest.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Guest> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/guest.rb:19)
+  [1m[36mGuest Load (1.0ms)[0m  [1mSELECT "guests".* FROM "guests" ORDER BY name[0m
+Rendered invitations/_form.html.erb (370.0ms)
+Rendered invitations/new.html.erb within layouts/application (432.0ms)
+Completed 200 OK in 720ms (Views: 611.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/guests" for 127.0.0.1 at 2011-04-26 13:40:19 -0400
+  Processing by GuestsController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1
+Creating scope :all. Overwriting existing method Guest.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Guest> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/guest.rb:19)
+  [1m[36mGuest Load (1.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE ("guests".host_id = 2) ORDER BY name[0m
+Rendered guests/index.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 465ms (Views: 219.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/guests/3" for 127.0.0.1 at 2011-04-26 13:40:23 -0400
+  Processing by GuestsController#show as HTML
+  Parameters: {"id"=>"3"}
+Creating scope :all. Overwriting existing method Guest.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Guest> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/guest.rb:19)
+  [1m[35mGuest Load (1.0ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = 3 LIMIT 1
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1[0m
+Rendered guests/show.html.erb within layouts/application (220.0ms)
+Completed 200 OK in 484ms (Views: 401.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/guests/3/edit" for 127.0.0.1 at 2011-04-26 13:40:26 -0400
+  Processing by GuestsController#edit as HTML
+  Parameters: {"id"=>"3"}
+Creating scope :all. Overwriting existing method Guest.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Guest> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/guest.rb:19)
+  [1m[35mGuest Load (1.0ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = 3 LIMIT 1
+Rendered guests/_form.html.erb (29.0ms)
+Rendered guests/edit.html.erb within layouts/application (95.0ms)
+Completed 200 OK in 369ms (Views: 288.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/invitations/n" for 127.0.0.1 at 2011-04-26 13:45:26 -0400
+  Processing by InvitationsController#show as HTML
+  Parameters: {"id"=>"n"}
+Creating scope :all. Overwriting existing method Invitation.all.
+  [1m[36mInvitation Load (1.0ms)[0m  [1mSELECT "invitations".* FROM "invitations" WHERE "invitations"."id" = 0 LIMIT 1[0m
+Completed   in 118ms
+
+ActiveRecord::RecordNotFound (Couldn't find Invitation with ID=n):
+  app/controllers/invitations_controller.rb:7:in `show'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (117.0ms)
+
+
+Started GET "/invitations/new" for 127.0.0.1 at 2011-04-26 13:45:29 -0400
+  Processing by InvitationsController#new as HTML
+Creating scope :all. Overwriting existing method Invitation.all.
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[36mParty Load (1.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE ("parties".host_id = 2)[0m
+Creating scope :all. Overwriting existing method Guest.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Guest> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/guest.rb:19)
+  [1m[35mGuest Load (1.0ms)[0m  SELECT "guests".* FROM "guests" WHERE ("guests".host_id = 2)
+Rendered invitations/_form.html.erb (471.0ms)
+Rendered invitations/new.html.erb within layouts/application (543.0ms)
+Completed 200 OK in 801ms (Views: 727.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/invitations/parties" for 127.0.0.1 at 2011-04-26 13:45:40 -0400
+  Processing by InvitationsController#show as HTML
+  Parameters: {"id"=>"parties"}
+Creating scope :all. Overwriting existing method Invitation.all.
+  [1m[36mInvitation Load (1.0ms)[0m  [1mSELECT "invitations".* FROM "invitations" WHERE "invitations"."id" = 0 LIMIT 1[0m
+Completed   in 76ms
+
+ActiveRecord::RecordNotFound (Couldn't find Invitation with ID=parties):
+  app/controllers/invitations_controller.rb:7:in `show'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (185.0ms)
+
+
+Started GET "/parties" for 127.0.0.1 at 2011-04-26 13:45:49 -0400
+  Processing by PartiesController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[36mParty Load (1.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE ("parties".host_id = 2) ORDER BY name[0m
+Rendered parties/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 546ms (Views: 214.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-26 13:45:51 -0400
+  Processing by PartiesController#new as HTML
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Rendered parties/_form.html.erb (126.0ms)
+Rendered parties/new.html.erb within layouts/application (175.0ms)
+Completed   in 479ms
+
+ActionView::Template::Error (undefined method `validates_unqiqueness_of' for #<Class:0x3d2a608>):
+    6:   </p>
+    7:   <p>
+    8:     <%= f.label :location_id %><br />
+    9:     <%= f.collection_select :location_id, Location.all, :id, :name %>
+    10:   </p>
+    11:   <p>
+    12:     <%= f.label :party_type_id %><br />
+  app/models/location.rb:5:in `<class:Location>'
+  app/models/location.rb:1:in `<top (required)>'
+  app/views/parties/_form.html.erb:9:in `block in _app_views_parties__form_html_erb__734833359_34136988_484203288'
+  app/views/parties/_form.html.erb:1:in `_app_views_parties__form_html_erb__734833359_34136988_484203288'
+  app/views/parties/new.html.erb:3:in `_app_views_parties_new_html_erb___32740841_34145700__805210110'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (113.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-26 13:47:37 -0400
+  Processing by PartiesController#new as HTML
+Creating scope :all. Overwriting existing method Party.all.
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[36mLocation Load (1.0ms)[0m  [1mSELECT "locations".* FROM "locations" ORDER BY name[0m
+Creating scope :all. Overwriting existing method PartyType.all.
+  [1m[35mPartyType Load (44.0ms)[0m  SELECT "party_types".* FROM "party_types" ORDER BY name
+Rendered parties/_form.html.erb (332.0ms)
+Rendered parties/new.html.erb within layouts/application (396.0ms)
+Completed 200 OK in 696ms (Views: 549.0ms | ActiveRecord: 45.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-26 13:48:26 -0400
+  Processing by PartiesController#new as HTML
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[35mLocation Load (1.0ms)[0m  SELECT "locations".* FROM "locations" WHERE ("locations".host_id = 2)
+Rendered parties/_form.html.erb (384.0ms)
+Rendered parties/new.html.erb within layouts/application (451.0ms)
+Completed   in 797ms
+
+ActionView::Template::Error (undefined method `partytypes' for #<Host:0x4160508>):
+    10:   </p>
+    11:   <p>
+    12:     <%= f.label :party_type_id %><br />
+    13:     <%= f.collection_select :party_type_id, current_host.partytypes, :id, :name %>
+    14:   </p>
+    15:   <p>
+    16:     <%= f.label :party_date %><br />
+  app/views/parties/_form.html.erb:13:in `block in _app_views_parties__form_html_erb__734833359_32574036_484203288'
+  app/views/parties/_form.html.erb:1:in `_app_views_parties__form_html_erb__734833359_32574036_484203288'
+  app/views/parties/new.html.erb:3:in `_app_views_parties_new_html_erb___32740841_32596968__805210110'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (112.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-26 13:48:40 -0400
+  Processing by PartiesController#new as HTML
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[35mLocation Load (1.0ms)[0m  SELECT "locations".* FROM "locations" WHERE ("locations".host_id = 2)
+Rendered parties/_form.html.erb (307.0ms)
+Rendered parties/new.html.erb within layouts/application (357.0ms)
+Completed   in 747ms
+
+ActionView::Template::Error (Could not find the association :party in model Host):
+    10:   </p>
+    11:   <p>
+    12:     <%= f.label :party_type_id %><br />
+    13:     <%= f.collection_select :party_type_id, current_host.party_types, :id, :name %>
+    14:   </p>
+    15:   <p>
+    16:     <%= f.label :party_date %><br />
+  app/views/parties/_form.html.erb:13:in `block in _app_views_parties__form_html_erb__734833359_35333808_484203288'
+  app/views/parties/_form.html.erb:1:in `_app_views_parties__form_html_erb__734833359_35333808_484203288'
+  app/views/parties/new.html.erb:3:in `_app_views_parties_new_html_erb___32740841_35360484__805210110'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (108.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-26 13:49:19 -0400
+  Processing by PartiesController#new as HTML
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Rendered parties/_form.html.erb (287.0ms)
+Rendered parties/new.html.erb within layouts/application (336.0ms)
+Completed   in 626ms
+
+ActionView::Template::Error (undefined method `locations' for #<Class:0x4316df0>):
+    6:   </p>
+    7:   <p>
+    8:     <%= f.label :location_id %><br />
+    9:     <%= f.collection_select :location_id, current_host.parties.locations, :id, :name %>
+    10:   </p>
+    11:   <p>
+    12:     <%= f.label :party_type_id %><br />
+  app/views/parties/_form.html.erb:9:in `block in _app_views_parties__form_html_erb__734833359_34180980_484203288'
+  app/views/parties/_form.html.erb:1:in `_app_views_parties__form_html_erb__734833359_34180980_484203288'
+  app/views/parties/new.html.erb:3:in `_app_views_parties_new_html_erb___32740841_34191012__805210110'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (109.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-26 13:51:59 -0400
+  Processing by PartiesController#new as HTML
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1[0m
+Rendered parties/_form.html.erb (259.0ms)
+Rendered parties/new.html.erb within layouts/application (308.0ms)
+Completed   in 597ms
+
+ActionView::Template::Error (undefined method `party' for #<Host:0x43173f0>):
+    6:   </p>
+    7:   <p>
+    8:     <%= f.label :location_id %><br />
+    9:     <%= f.collection_select :location_id, current_host.party.locations, :id, :name %>
+    10:   </p>
+    11:   <p>
+    12:     <%= f.label :party_type_id %><br />
+  app/views/parties/_form.html.erb:9:in `block in _app_views_parties__form_html_erb__734833359_33911352_484203288'
+  app/views/parties/_form.html.erb:1:in `_app_views_parties__form_html_erb__734833359_33911352_484203288'
+  app/views/parties/new.html.erb:3:in `_app_views_parties_new_html_erb___32740841_33927852__805210110'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (114.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-26 13:52:30 -0400
+  Processing by PartiesController#new as HTML
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[35mHost Load (2.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Rendered parties/_form.html.erb (263.0ms)
+Rendered parties/new.html.erb within layouts/application (314.0ms)
+Completed   in 628ms
+
+ActionView::Template::Error (undefined method `locations' for #<Class:0x426e508>):
+    6:   </p>
+    7:   <p>
+    8:     <%= f.label :location_id %><br />
+    9:     <%= f.collection_select :location_id, current_host.parties.locations, :id, :name %>
+    10:   </p>
+    11:   <p>
+    12:     <%= f.label :party_type_id %><br />
+  app/views/parties/_form.html.erb:9:in `block in _app_views_parties__form_html_erb__734833359_33929976_484203288'
+  app/views/parties/_form.html.erb:1:in `_app_views_parties__form_html_erb__734833359_33929976_484203288'
+  app/views/parties/new.html.erb:3:in `_app_views_parties_new_html_erb___32740841_33940488__805210110'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (118.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-26 14:08:48 -0400
+  Processing by PartiesController#new as HTML
+Creating scope :all. Overwriting existing method Party.all.
+Rendered parties/_form.html.erb (137.0ms)
+Rendered parties/new.html.erb within layouts/application (189.0ms)
+Completed   in 492ms
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Locations):
+    6:   </p>
+    7:   <p>
+    8:     <%= f.label :location_id %><br />
+    9:     <%= f.collection_select :location_id, Locations.all, :id, :name %>
+    10:   </p>
+    11:   <p>
+    12:     <%= f.label :party_type_id %><br />
+  app/views/parties/_form.html.erb:9:in `block in _app_views_parties__form_html_erb__734833359_34032780_484203288'
+  app/views/parties/_form.html.erb:1:in `_app_views_parties__form_html_erb__734833359_34032780_484203288'
+  app/views/parties/new.html.erb:3:in `_app_views_parties_new_html_erb___32740841_34060956__805210110'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (127.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-26 14:08:57 -0400
+  Processing by PartiesController#new as HTML
+Creating scope :all. Overwriting existing method Party.all.
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[35mLocation Load (0.0ms)[0m  SELECT "locations".* FROM "locations" ORDER BY name
+Creating scope :all. Overwriting existing method PartyType.all.
+Rendered parties/_form.html.erb (211.0ms)
+Rendered parties/new.html.erb within layouts/application (263.0ms)
+Completed   in 595ms
+
+ActionView::Template::Error (Expected c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/party_type.rb to define Party_type):
+    10:   </p>
+    11:   <p>
+    12:     <%= f.label :party_type_id %><br />
+    13:     <%= f.collection_select :party_type_id, Party_type.all, :id, :name %>
+    14:   </p>
+    15:   <p>
+    16:     <%= f.label :party_date %><br />
+  app/views/parties/_form.html.erb:13:in `block in _app_views_parties__form_html_erb__734833359_35303172_484203288'
+  app/views/parties/_form.html.erb:1:in `_app_views_parties__form_html_erb__734833359_35303172_484203288'
+  app/views/parties/new.html.erb:3:in `_app_views_parties_new_html_erb___32740841_35332224__805210110'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (116.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-26 14:16:48 -0400
+  Processing by PartiesController#new as HTML
+Creating scope :all. Overwriting existing method Party.all.
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[36mLocation Load (1.0ms)[0m  [1mSELECT "locations".* FROM "locations" ORDER BY name[0m
+Rendered parties/_form.html.erb (263.0ms)
+Rendered parties/new.html.erb within layouts/application (315.0ms)
+Completed   in 597ms
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Partytype):
+    10:   </p>
+    11:   <p>
+    12:     <%= f.label :party_type_id %><br />
+    13:     <%= f.collection_select :party_type_id, Partytype.all, :id, :name %>
+    14:   </p>
+    15:   <p>
+    16:     <%= f.label :party_date %><br />
+  app/views/parties/_form.html.erb:13:in `block in _app_views_parties__form_html_erb__734833359_33910836_484203288'
+  app/views/parties/_form.html.erb:1:in `_app_views_parties__form_html_erb__734833359_33910836_484203288'
+  app/views/parties/new.html.erb:3:in `_app_views_parties_new_html_erb___32740841_33921324__805210110'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (111.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-26 14:16:57 -0400
+  Processing by PartiesController#new as HTML
+Creating scope :all. Overwriting existing method Party.all.
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[35mLocation Load (1.0ms)[0m  SELECT "locations".* FROM "locations" ORDER BY name
+Creating scope :all. Overwriting existing method PartyType.all.
+Rendered parties/_form.html.erb (210.0ms)
+Rendered parties/new.html.erb within layouts/application (261.0ms)
+Completed   in 541ms
+
+ActionView::Template::Error (Expected c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/party_type.rb to define Party_Type):
+    10:   </p>
+    11:   <p>
+    12:     <%= f.label :party_type_id %><br />
+    13:     <%= f.collection_select :party_type_id, Party_Type.all, :id, :name %>
+    14:   </p>
+    15:   <p>
+    16:     <%= f.label :party_date %><br />
+  app/views/parties/_form.html.erb:13:in `block in _app_views_parties__form_html_erb__734833359_34177632_484203288'
+  app/views/parties/_form.html.erb:1:in `_app_views_parties__form_html_erb__734833359_34177632_484203288'
+  app/views/parties/new.html.erb:3:in `_app_views_parties_new_html_erb___32740841_34188012__805210110'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (109.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-26 14:17:38 -0400
+  Processing by PartiesController#new as HTML
+Creating scope :all. Overwriting existing method Party.all.
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[36mLocation Load (1.0ms)[0m  [1mSELECT "locations".* FROM "locations" ORDER BY name[0m
+Creating scope :all. Overwriting existing method PartyType.all.
+  [1m[35mPartyType Load (2.0ms)[0m  SELECT "party_types".* FROM "party_types" ORDER BY name
+Rendered parties/_form.html.erb (357.0ms)
+Rendered parties/new.html.erb within layouts/application (421.0ms)
+Completed 200 OK in 703ms (Views: 601.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/loc" for 127.0.0.1 at 2011-04-26 14:17:51 -0400
+
+ActionController::RoutingError (No route matches "/loc"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/locations" for 127.0.0.1 at 2011-04-26 14:17:54 -0400
+  Processing by LocationsController#index as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[35mLocation Load (1.0ms)[0m  SELECT "locations".* FROM "locations" WHERE ("locations".host_id = 2) ORDER BY name
+Rendered locations/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 439ms (Views: 231.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/locations/new" for 127.0.0.1 at 2011-04-26 14:17:56 -0400
+  Processing by LocationsController#new as HTML
+Creating scope :all. Overwriting existing method Location.all.
+Rendered locations/_form.html.erb (201.0ms)
+Rendered locations/new.html.erb within layouts/application (268.0ms)
+Completed 200 OK in 545ms (Views: 470.0ms | ActiveRecord: 0.0ms)

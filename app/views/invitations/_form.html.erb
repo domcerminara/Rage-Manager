@@ -2,11 +2,11 @@
   <%= f.error_messages %>
   <p>
     <%= f.label :party_id %><br />
-    <%= f.collection_select :party_id, Party.all, :id, :name %>
+    <%= f.collection_select :party_id, current_host.parties, :id, :name %>
   </p>
   <p>
     <%= f.label :guest_id %><br />
-    <%= f.collection_select :guest_id, Guest.all, :id, :name %>
+    <%= f.collection_select :guest_id, current_host.guests, :id, :name %>
   </p>
   <p>
     <%= f.label :expected_attendees %><br />
