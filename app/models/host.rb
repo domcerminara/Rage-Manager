@@ -17,7 +17,7 @@ class Host < ActiveRecord::Base
   has_many :party_types, :through => :party
   has_many :locations
   has_many :guests
-  has_many :invitaions, :through => :guest
+  has_many :invitations, :through => :guests
 
   # login can be either username or email address
   def self.authenticate(login, pass)
