@@ -1,15 +1,30 @@
 body {
-  background-color: #4B7399;
-  font-family: Verdana, Helvetica, Arial;
+  background-color: #880C0E;
+  font-family: verdana;
   font-size: 14px;
-}
-
-a img {
-  border: none;
 }
 
 a {
   color: #0000FF;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#nav li {
+  list-style-type: none;
+  display: inline;
+  padding-left: 10px;
+}
+
+#nav {
+  position: relative; 
+}
+
+#footer {
+  text-align: center;
 }
 
 .clear {
@@ -30,6 +45,7 @@ a {
 #flash_notice, #flash_error, #flash_alert {
   padding: 5px 8px;
   margin: 10px 0;
+  margin-top: 30px;
 }
 
 #flash_notice {
@@ -72,4 +88,18 @@ a {
 
 .error_messages ul {
   margin: 0;
+}
+
+td {
+  margin-left: 50px;
+  padding-left: 5px;
+  text-align: center;
+  background-color: #CBCACA;
+}
+
+th {
+  margin-left: 50px;
+  padding-left: 5px;
+  text-align: center;
+  text-decoration: underline;
 }

@@ -14,10 +14,10 @@ class Host < ActiveRecord::Base
   validates_length_of :password, :minimum => 4, :allow_blank => true
   
   has_many :parties
-  has_many :party_types, :through => :party
   has_many :locations
   has_many :guests
   has_many :invitations, :through => :guests
+  has_many :party_types, :through => :parties
 
   # login can be either username or email address
   def self.authenticate(login, pass)

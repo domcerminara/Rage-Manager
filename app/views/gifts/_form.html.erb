@@ -2,7 +2,7 @@
   <%= f.error_messages %>
   <p>
     <%= f.label :invitation_id %><br />
-    <%= f.text_field :invitation_id %>
+    <%= f.collection_select :invitation_id, Invitation.all, :id, :invite_code %>
   </p>
   <p>
     <%= f.label :description %><br />
@@ -10,7 +10,7 @@
   </p>
   <p>
     <%= f.label :note_sent_on %><br />
-    <%= f.date_select :note_sent_on %>
+    <%= f.date_select :note_sent_on, :order => [:month, :day, :year] %>
   </p>
   <p><%= f.submit %></p>
 <% end %>

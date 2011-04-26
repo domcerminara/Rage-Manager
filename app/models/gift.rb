@@ -5,6 +5,4 @@ class Gift < ActiveRecord::Base
   
   belongs_to :invitation
   
-  scope :all, order('name')
-  
 end

@@ -8,6 +8,4 @@ class Invitation < ActiveRecord::Base
   belongs_to :guest
   belongs_to :party
   
-  scope :all, order('name')
-  
 end
