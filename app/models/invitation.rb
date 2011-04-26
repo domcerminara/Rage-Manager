@@ -9,4 +9,7 @@ class Invitation < ActiveRecord::Base
   has_many :gifts
   belongs_to :guest
   belongs_to :party
+  
+  scope :all, order('name')
+  
 end

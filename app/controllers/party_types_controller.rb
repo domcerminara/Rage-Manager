@@ -1,6 +1,6 @@
 class PartyTypesController < ApplicationController
   def index
-    @party_types = PartyType.all
+    @party_types = current_host.party_types.all
   end
 
   def show

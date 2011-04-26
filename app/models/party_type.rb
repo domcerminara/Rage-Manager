@@ -5,4 +5,7 @@ class PartyType < ActiveRecord::Base
   validates_uniqueness_of :name
   
   has_many :parties
+  
+  scope :all, order('name')
+  
 end

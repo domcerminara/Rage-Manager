@@ -13,4 +13,6 @@ class Party < ActiveRecord::Base
   has_one :location
   has_many :invitations
   has_many :guests, :through => :invitations
+  
+  scope :all, order('name')
 end

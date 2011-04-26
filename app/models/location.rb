@@ -8,4 +8,7 @@ class Location < ActiveRecord::Base
 
   belongs_to :host, :dependent => :destroy
   has_many :parties  
+  
+  scope :all, order('name')
+  
 end

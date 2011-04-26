@@ -1,6 +1,6 @@
 class InvitationsController < ApplicationController
   def index
-    @invitations = Invitation.all
+    @invitations = current_host.invitations.all
   end
 
   def show

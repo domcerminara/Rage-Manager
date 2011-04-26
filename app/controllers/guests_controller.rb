@@ -1,6 +1,6 @@
 class GuestsController < ApplicationController
   def index
-    @guests = Guest.all
+    @guests = current_host.guests.all
   end
 
   def show

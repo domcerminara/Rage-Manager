@@ -9,4 +9,6 @@ class Guest < ActiveRecord::Base
   has_many :invitations
   has_one :gift, :through => :invitation
   
+  scope :all, order('name')
+  
 end

@@ -1656,3 +1656,242 @@ Started GET "/party_types" for 127.0.0.1 at 2011-04-21 23:24:03 -0400
   [1m[35mPartyType Load (3.0ms)[0m  SELECT "party_types".* FROM "party_types"
 Rendered party_types/index.html.erb within layouts/application (35.0ms)
 Completed 200 OK in 350ms (Views: 218.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-26 00:14:26 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 113ms (Views: 112.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-04-26 00:14:41 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 112ms (Views: 112.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-04-26 00:14:44 -0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qOy3SC+yvkgwKESi1nAUnv1KK8wPneAw0gkHln7VAn8=", "login"=>"MrsH", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."username" = 'MrsH' LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 1199ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-26 00:14:45 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (114.4ms)
+Completed 200 OK in 248ms (Views: 246.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/parties" for 127.0.0.1 at 2011-04-26 00:14:54 -0400
+  Processing by PartiesController#index as HTML
+  [1m[35mParty Load (2.0ms)[0m  SELECT "parties".* FROM "parties"
+Rendered parties/index.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 402ms (Views: 141.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2011-04-26 00:15:02 -0400
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-26 00:15:02 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 114ms (Views: 114.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-04-26 00:15:06 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 114ms (Views: 114.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-04-26 00:15:08 -0400
+  Processing by HostsController#new as HTML
+Rendered hosts/_form.html.erb (190.0ms)
+Rendered hosts/new.html.erb within layouts/application (230.0ms)
+Completed 200 OK in 504ms (Views: 360.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-04-26 00:17:42 -0400
+  Processing by HostsController#new as HTML
+Rendered hosts/_form.html.erb (13.0ms)
+Rendered hosts/new.html.erb within layouts/application (50.0ms)
+Completed 200 OK in 200ms (Views: 150.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/hosts" for 127.0.0.1 at 2011-04-26 00:17:59 -0400
+  Processing by HostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qOy3SC+yvkgwKESi1nAUnv1KK8wPneAw0gkHln7VAn8=", "host"=>{"first_name"=>"Dom", "last_name"=>"Cerminara", "username"=>"Dom", "email"=>"dompkt2013@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "hosts" WHERE ("hosts"."username" = 'Dom') LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "hosts" WHERE ("hosts"."email" = 'dompkt2013@gmail.com') LIMIT 1
+  [1m[36mAREL (2.0ms)[0m  [1mINSERT INTO "hosts" ("username", "email", "password_hash", "password_salt", "created_at", "updated_at", "first_name", "last_name") VALUES ('Dom', 'dompkt2013@gmail.com', '$2a$10$ZJDHzOCaVl/BEJuXEmzn4e/RLPd0MEpDXayAVx1T3ZktU.gkB56Bm', '$2a$10$ZJDHzOCaVl/BEJuXEmzn4e', '2011-04-26 04:18:00.417704', '2011-04-26 04:18:00.417704', 'Dom', 'Cerminara')[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 827ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-26 00:18:00 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1
+Rendered home/index.html.erb within layouts/application (79.0ms)
+Completed 200 OK in 211ms (Views: 211.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/parties" for 127.0.0.1 at 2011-04-26 00:18:09 -0400
+  Processing by PartiesController#index as HTML
+  [1m[36mParty Load (1.0ms)[0m  [1mSELECT "parties".* FROM "parties"[0m
+Rendered parties/index.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 188ms (Views: 137.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2011-04-26 00:23:40 -0400
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 0ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-26 00:23:41 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 122ms (Views: 122.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-04-26 00:23:46 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 116ms (Views: 115.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-04-26 00:23:59 -0400
+  Processing by HostsController#new as HTML
+Rendered hosts/_form.html.erb (23.0ms)
+Rendered hosts/new.html.erb within layouts/application (65.0ms)
+Completed 200 OK in 274ms (Views: 174.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-04-26 00:24:05 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (36.0ms)
+Completed 200 OK in 141ms (Views: 141.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-04-26 00:24:08 -0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qOy3SC+yvkgwKESi1nAUnv1KK8wPneAw0gkHln7VAn8=", "login"=>"MrsH", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."username" = 'MrsH' LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 192ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-26 00:24:08 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (106.0ms)
+Completed 200 OK in 209ms (Views: 209.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/party_types" for 127.0.0.1 at 2011-04-26 00:25:02 -0400
+  Processing by PartyTypesController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Completed   in 64ms
+
+NoMethodError (undefined method `party_types' for #<Host:0x411cbb8>):
+  app/controllers/party_types_controller.rb:3:in `index'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (74.0ms)
+
+
+Started GET "/party_types" for 127.0.0.1 at 2011-04-26 00:26:03 -0400
+  Processing by PartyTypesController#index as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Completed   in 83ms
+
+NoMethodError (undefined method `party_types' for #<Host:0x4279140>):
+  app/controllers/party_types_controller.rb:3:in `index'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (66.0ms)
+
+
+Started GET "/parties" for 127.0.0.1 at 2011-04-26 00:28:20 -0400
+  Processing by PartiesController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Completed   in 91ms
+
+NoMethodError (undefined method `parties' for #<Host:0x40f4d48>):
+  app/controllers/parties_controller.rb:3:in `index'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (62.0ms)
+
+
+Started GET "/parties" for 127.0.0.1 at 2011-04-26 00:31:26 -0400
+  Processing by PartiesController#index as HTML
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[35mParty Load (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE ("parties".host_id = 1) ORDER BY name
+Rendered parties/index.html.erb within layouts/application (31.0ms)
+Completed 200 OK in 285ms (Views: 132.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2011-04-26 00:31:40 -0400
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-26 00:31:41 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 116ms (Views: 116.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-04-26 00:31:46 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 159ms (Views: 159.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-04-26 00:31:50 -0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qOy3SC+yvkgwKESi1nAUnv1KK8wPneAw0gkHln7VAn8=", "login"=>"dom", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."username" = 'dom' LIMIT 1[0m
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."email" = 'dom' LIMIT 1
+Rendered sessions/new.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 249ms (Views: 117.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-04-26 00:31:56 -0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qOy3SC+yvkgwKESi1nAUnv1KK8wPneAw0gkHln7VAn8=", "login"=>"Dom", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."username" = 'Dom' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 198ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-26 00:31:56 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1
+Rendered home/index.html.erb within layouts/application (145.6ms)
+Completed 200 OK in 234ms (Views: 233.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/parties" for 127.0.0.1 at 2011-04-26 00:32:04 -0400
+  Processing by PartiesController#index as HTML
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[35mParty Load (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE ("parties".host_id = 2) ORDER BY name
+Rendered parties/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 290ms (Views: 141.0ms | ActiveRecord: 0.0ms)
