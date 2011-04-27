@@ -1,4 +1,5 @@
 class InvitationsController < ApplicationController
+before_filter :login_required
   def index
     @invitations = current_host.invitations.all
   end

@@ -7,5 +7,16 @@ class Invitation < ActiveRecord::Base
   has_many :gifts
   belongs_to :guest
   belongs_to :party
+  has_one :host, :through => :guest
+  
+  scope :all, order('party_id')
+  
+  #Callbacks
+  before_validation_on_create(:random_invite_code)
+  
+  #Adds random invite code
+  def random_invite_code
+    self.invite_code = rand(36**16).to_s(36)
+  end
   
 end

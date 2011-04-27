@@ -15,12 +15,5 @@ class Guest < ActiveRecord::Base
   #scope :all, where(:host_id => current_host)
   scope :all, order('name')
   
-  #Callbacks
-  before_validation_on_create(:random_invite_code)
-  
-  #Adds random invite code
-  def random_invite_code
-    self.invite_code = rand(36**16).to_s(36)
-  end
   
 end

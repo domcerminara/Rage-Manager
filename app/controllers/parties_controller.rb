@@ -1,4 +1,5 @@
 class PartiesController < ApplicationController
+before_filter :login_required
   def index
     @parties = current_host.parties.all
   end
