@@ -6508,3 +6508,178 @@ DEPRECATION WARNING: before_validation_on_create is deprecated. Please use befor
   [1m[35mInvitation Load (1.0ms)[0m  SELECT "invitations".* FROM "invitations" WHERE "invitations"."id" = 3 LIMIT 1
 Rendered invitations/show.html.erb within layouts/application (28.0ms)
 Completed 200 OK in 282ms (Views: 135.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/gift" for 127.0.0.1 at 2011-04-27 16:17:58 -0400
+  Processing by GiftsController#index as HTML
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1[0m
+  [1m[35mGift Load (0.0ms)[0m  SELECT "gifts".* FROM "gifts"
+Rendered gifts/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 217ms (Views: 118.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gifts/new" for 127.0.0.1 at 2011-04-27 16:18:00 -0400
+  Processing by GiftsController#new as HTML
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+  [1m[35mInvitation Load (2.0ms)[0m  SELECT "invitations".* FROM "invitations" ORDER BY party_id
+Rendered gifts/_form.html.erb (91.0ms)
+Rendered gifts/new.html.erb within layouts/application (135.0ms)
+Completed 200 OK in 384ms (Views: 245.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/gifts" for 127.0.0.1 at 2011-04-27 16:18:19 -0400
+  Processing by GiftsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5wR076N5V82Vnkz6lAfjLHGuNYyBpUTU9+VrcWxyBh4=", "gift"=>{"invitation_id"=>"3", "description"=>"yesssssssssssssssssssssssssssssssssssss", "note_sent_on(2i)"=>"4", "note_sent_on(3i)"=>"27", "note_sent_on(1i)"=>"2011"}, "commit"=>"Create Gift"}
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1[0m
+  [1m[35mAREL (2.0ms)[0m  INSERT INTO "gifts" ("invitation_id", "description", "note_sent_on", "created_at", "updated_at") VALUES (3, 'yesssssssssssssssssssssssssssssssssssss', '2011-04-27', '2011-04-27 20:18:20.502865', '2011-04-27 20:18:20.502865')
+Redirected to http://localhost:3000/gifts/1
+Completed 302 Found in 265ms
+
+
+Started GET "/gifts/1" for 127.0.0.1 at 2011-04-27 16:18:20 -0400
+  Processing by GiftsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1[0m
+  [1m[35mGift Load (0.0ms)[0m  SELECT "gifts".* FROM "gifts" WHERE "gifts"."id" = 1 LIMIT 1
+Rendered gifts/show.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 297ms (Views: 135.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/gift" for 127.0.0.1 at 2011-04-27 16:18:37 -0400
+  Processing by GiftsController#index as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1[0m
+  [1m[35mGift Load (1.0ms)[0m  SELECT "gifts".* FROM "gifts"
+Rendered gifts/index.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 261ms (Views: 132.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2011-04-27 16:18:39 -0400
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-27 16:18:39 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 123ms (Views: 122.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-04-27 16:18:41 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 126ms (Views: 126.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-04-27 16:18:51 -0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5wR076N5V82Vnkz6lAfjLHGuNYyBpUTU9+VrcWxyBh4=", "login"=>"MrsH", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."username" = 'MrsH' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 181ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-27 16:18:52 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Rendered home/index.html.erb within layouts/application (156.0ms)
+Completed 200 OK in 266ms (Views: 266.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/invitation" for 127.0.0.1 at 2011-04-27 16:18:54 -0400
+  Processing by InvitationsController#index as HTML
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Guest.all.
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+  [1m[35mInvitation Load (1.0ms)[0m  SELECT "invitations".* FROM "invitations" INNER JOIN "guests" ON "invitations".guest_id = "guests".id WHERE (("guests".host_id = 1)) ORDER BY party_id
+Rendered invitations/index.html.erb within layouts/application (33.0ms)
+Completed 200 OK in 481ms (Views: 305.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/gift" for 127.0.0.1 at 2011-04-27 16:18:57 -0400
+  Processing by GiftsController#index as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+  [1m[35mGift Load (0.0ms)[0m  SELECT "gifts".* FROM "gifts"
+Rendered gifts/index.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 417ms (Views: 137.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/host/edit" for 127.0.0.1 at 2011-04-27 16:19:33 -0400
+  Processing by HostsController#edit as HTML
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Rendered hosts/_form.html.erb (50.0ms)
+Rendered hosts/edit.html.erb within layouts/application (93.0ms)
+Completed 200 OK in 266ms (Views: 196.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guest" for 127.0.0.1 at 2011-04-27 16:19:36 -0400
+  Processing by GuestsController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[36mGuest Load (1.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE ("guests".host_id = 1) ORDER BY name[0m
+Rendered guests/index.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 285ms (Views: 132.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/party" for 127.0.0.1 at 2011-04-27 16:19:38 -0400
+  Processing by PartiesController#index as HTML
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[36mParty Load (0.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE ("parties".host_id = 1) ORDER BY name[0m
+Rendered parties/index.html.erb within layouts/application (36.0ms)
+Completed 200 OK in 308ms (Views: 141.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/guest" for 127.0.0.1 at 2011-04-27 16:19:42 -0400
+  Processing by GuestsController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[36mGuest Load (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE ("guests".host_id = 1) ORDER BY name[0m
+Rendered guests/index.html.erb within layouts/application (63.0ms)
+Completed 200 OK in 287ms (Views: 167.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/location" for 127.0.0.1 at 2011-04-27 16:19:43 -0400
+  Processing by LocationsController#index as HTML
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[36mLocation Load (1.0ms)[0m  [1mSELECT "locations".* FROM "locations" WHERE ("locations".host_id = 1) ORDER BY name[0m
+Rendered locations/index.html.erb within layouts/application (38.0ms)
+Completed 200 OK in 320ms (Views: 154.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/party_type" for 127.0.0.1 at 2011-04-27 16:19:45 -0400
+  Processing by PartyTypesController#index as HTML
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Party.all.
+Creating scope :all. Overwriting existing method PartyType.all.
+  [1m[36mPartyType Load (1.0ms)[0m  [1mSELECT "party_types".* FROM "party_types" INNER JOIN "parties" ON "party_types".party_id = "parties".id WHERE (("parties".host_id = 1)) ORDER BY name[0m
+SQLite3::SQLException: no such column: party_types.party_id: SELECT "party_types".* FROM "party_types" INNER JOIN "parties" ON "party_types".party_id = "parties".id WHERE (("parties".host_id = 1)) ORDER BY name
+Rendered party_types/index.html.erb within layouts/application (4.0ms)
+Completed   in 341ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: party_types.party_id: SELECT "party_types".* FROM "party_types" INNER JOIN "parties" ON "party_types".party_id = "parties".id WHERE (("parties".host_id = 1)) ORDER BY name):
+    5:     <th>Name</th>
+    6:     <th>Active</th>
+    7:   </tr>
+    8:   <% for party_type in @party_types %>
+    9:     <tr>
+    10:       <td><%= party_type.name %></td>
+    11:       <td><%= party_type.active %></td>
+  app/views/party_types/index.html.erb:8:in `_app_views_party_types_index_html_erb___307993199_36335016_853052180'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  [1m[35mPartyType Load (1.0ms)[0m  SELECT "party_types".* FROM "party_types" INNER JOIN "parties" ON "party_types".party_id = "parties".id WHERE (("parties".host_id = 1)) ORDER BY name
+SQLite3::SQLException: no such column: party_types.party_id: SELECT "party_types".* FROM "party_types" INNER JOIN "parties" ON "party_types".party_id = "parties".id WHERE (("parties".host_id = 1)) ORDER BY name
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (64.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-28 13:32:23 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (131.0ms)
+Completed 200 OK in 277ms (Views: 276.0ms | ActiveRecord: 0.0ms)
