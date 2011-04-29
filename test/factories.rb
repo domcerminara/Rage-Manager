@@ -35,7 +35,7 @@
   Factory.define :invitation do |i|
     i.association :party
     i.association :guest
-    i.invite_code "tqbFjotlD"
+    i.invite_code nil
     i.expected_attendees 5
     i.actual_attendees 5
   end

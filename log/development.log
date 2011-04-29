@@ -6744,3 +6744,882 @@ ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: party_typ
 Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
 Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.0ms)
 Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (129.0ms)
+  [1m[36mSQL (10.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (150.0ms)[0m  CREATE TABLE "gifts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "invitation_id" integer, "description" text, "note_sent_on" date, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (90.0ms)[0m  CREATE TABLE "guests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "host_id" integer, "notes" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (10.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (120.0ms)[0m  CREATE TABLE "hosts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "password_hash" varchar(255), "password_salt" varchar(255), "created_at" datetime, "updated_at" datetime, "first_name" varchar(255), "last_name" varchar(255)) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (260.0ms)[0m  CREATE TABLE "invitations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "party_id" integer, "guest_id" integer, "invite_code" varchar(255), "expected_attendees" integer, "actual_attendees" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (130.0ms)[0m  CREATE TABLE "locations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "host_id" integer, "name" varchar(255), "street" varchar(255), "city" varchar(255), "state" varchar(255), "zip" integer, "latitude" float, "longitude" float, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (110.0ms)[0m  CREATE TABLE "parties" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "party_type_id" integer, "host_id" integer, "name" varchar(255), "location_id" integer, "party_date" date, "start_time" time, "end_time" time, "description" text, "rsvp_date" date, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (130.0ms)[0m  CREATE TABLE "party_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "active" boolean, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (130.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (120.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (100.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110421010616')[0m
+  [1m[35mSQL (110.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110420220337')
+  [1m[36mSQL (110.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110420220453')[0m
+  [1m[35mSQL (120.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110420220717')
+  [1m[36mSQL (140.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110420220835')[0m
+  [1m[35mSQL (130.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110420221031')
+  [1m[36mSQL (120.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110420221400')[0m
+  [1m[35mSQL (100.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110420221739')
+  [1m[36mSQL (100.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110421005433')[0m
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-29 01:45:16 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 204ms (Views: 203.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 01:45:29 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-04-29 01:45:35 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 212ms (Views: 211.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 01:45:36 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-04-29 01:45:46 -0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nhIoqtiZjLH7GI89rv/UscdCp0/D9fk89/NYvY+YMmY=", "login"=>"MrsH", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."username" = 'MrsH' LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 2205ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-29 01:45:49 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (243.0ms)
+Completed 200 OK in 445ms (Views: 444.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 01:45:50 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/party" for 127.0.0.1 at 2011-04-29 01:45:56 -0400
+  Processing by PartiesController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[36mParty Load (1.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE ("parties".host_id = 1) ORDER BY name[0m
+Rendered parties/index.html.erb within layouts/application (56.0ms)
+Completed 200 OK in 1431ms (Views: 267.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 01:45:58 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-29 01:46:00 -0400
+  Processing by PartiesController#new as HTML
+  [1m[35mHost Load (2.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Party.all.
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[36mLocation Load (1.0ms)[0m  [1mSELECT "locations".* FROM "locations" ORDER BY name[0m
+Creating scope :all. Overwriting existing method PartyType.all.
+  [1m[35mPartyType Load (2.0ms)[0m  SELECT "party_types".* FROM "party_types" ORDER BY name
+Rendered parties/_form.html.erb (2263.1ms)
+Rendered parties/new.html.erb within layouts/application (2339.1ms)
+Completed 200 OK in 2755ms (Views: 2532.1ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 01:46:03 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/location" for 127.0.0.1 at 2011-04-29 01:46:18 -0400
+  Processing by LocationsController#index as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[35mLocation Load (1.0ms)[0m  SELECT "locations".* FROM "locations" WHERE ("locations".host_id = 1) ORDER BY name
+Rendered locations/index.html.erb within layouts/application (50.0ms)
+Completed 200 OK in 542ms (Views: 259.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 01:46:20 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/party_type" for 127.0.0.1 at 2011-04-29 01:46:22 -0400
+  Processing by PartyTypesController#index as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Party.all.
+Creating scope :all. Overwriting existing method PartyType.all.
+  [1m[35mPartyType Load (1.0ms)[0m  SELECT "party_types".* FROM "party_types" INNER JOIN "parties" ON "party_types".party_id = "parties".id WHERE (("parties".host_id = 1)) ORDER BY name
+SQLite3::SQLException: no such column: party_types.party_id: SELECT "party_types".* FROM "party_types" INNER JOIN "parties" ON "party_types".party_id = "parties".id WHERE (("parties".host_id = 1)) ORDER BY name
+Rendered party_types/index.html.erb within layouts/application (322.0ms)
+Completed   in 850ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: party_types.party_id: SELECT "party_types".* FROM "party_types" INNER JOIN "parties" ON "party_types".party_id = "parties".id WHERE (("parties".host_id = 1)) ORDER BY name):
+    5:     <th>Name</th>
+    6:     <th>Active</th>
+    7:   </tr>
+    8:   <% for party_type in @party_types %>
+    9:     <tr>
+    10:       <td><%= party_type.name %></td>
+    11:       <td><%= party_type.active %></td>
+  app/views/party_types/index.html.erb:8:in `_app_views_party_types_index_html_erb__752460149_46713432__1016792419'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+  [1m[36mPartyType Load (2.0ms)[0m  [1mSELECT "party_types".* FROM "party_types" INNER JOIN "parties" ON "party_types".party_id = "parties".id WHERE (("parties".host_id = 1)) ORDER BY name[0m
+SQLite3::SQLException: no such column: party_types.party_id: SELECT "party_types".* FROM "party_types" INNER JOIN "parties" ON "party_types".party_id = "parties".id WHERE (("parties".host_id = 1)) ORDER BY name
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (111.0ms)
+
+
+Started GET "/party_type" for 127.0.0.1 at 2011-04-29 01:47:33 -0400
+  Processing by PartyTypesController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Party.all.
+Creating scope :all. Overwriting existing method PartyType.all.
+  [1m[36mPartyType Load (5.0ms)[0m  [1mSELECT "party_types".* FROM "party_types" INNER JOIN "parties" ON "party_types".id = "parties".party_type_id WHERE (("parties".host_id = 1)) ORDER BY name[0m
+Rendered party_types/index.html.erb within layouts/application (50.0ms)
+Completed 200 OK in 836ms (Views: 332.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 01:47:35 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/party" for 127.0.0.1 at 2011-04-29 01:47:57 -0400
+  Processing by PartiesController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[36mParty Load (1.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE ("parties".host_id = 1) ORDER BY name[0m
+Rendered parties/index.html.erb within layouts/application (69.0ms)
+Completed 200 OK in 869ms (Views: 380.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 01:47:58 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-29 01:48:01 -0400
+  Processing by PartiesController#new as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Party.all.
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[36mLocation Load (3.0ms)[0m  [1mSELECT "locations".* FROM "locations" ORDER BY name[0m
+Creating scope :all. Overwriting existing method PartyType.all.
+  [1m[35mPartyType Load (2.0ms)[0m  SELECT "party_types".* FROM "party_types" ORDER BY name
+Rendered parties/_form.html.erb (542.0ms)
+Rendered parties/new.html.erb within layouts/application (631.0ms)
+Completed 200 OK in 1184ms (Views: 872.1ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 01:48:03 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/party_type" for 127.0.0.1 at 2011-04-29 01:48:09 -0400
+  Processing by PartyTypesController#index as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Party.all.
+Creating scope :all. Overwriting existing method PartyType.all.
+  [1m[35mPartyType Load (1.0ms)[0m  SELECT "party_types".* FROM "party_types" INNER JOIN "parties" ON "party_types".id = "parties".party_type_id WHERE (("parties".host_id = 1)) ORDER BY name
+Rendered party_types/index.html.erb within layouts/application (45.0ms)
+Completed 200 OK in 767ms (Views: 285.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 01:48:10 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (7.0ms)
+
+
+Started GET "/party" for 127.0.0.1 at 2011-04-29 01:53:26 -0400
+  Processing by PartiesController#index as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[35mParty Load (2.0ms)[0m  SELECT "parties".* FROM "parties" WHERE ("parties".host_id = 1) ORDER BY name
+Rendered parties/index.html.erb within layouts/application (56.0ms)
+Completed 200 OK in 515ms (Views: 283.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 01:53:28 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-29 01:53:30 -0400
+  Processing by PartiesController#new as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Party.all.
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[35mLocation Load (0.0ms)[0m  SELECT "locations".* FROM "locations" ORDER BY name
+Rendered parties/_form.html.erb (229.0ms)
+Rendered parties/new.html.erb within layouts/application (279.0ms)
+Completed   in 687ms
+
+ActionView::Template::Error (undefined method `PartyType' for #<Host:0x3f5ca90>):
+    10:   </p>
+    11:   <p>
+    12:     <%= f.label :party_type_id %><br />
+    13:     <%= f.collection_select :party_type_id, current_host.PartyType.all, :id, :name %>
+    14:   </p>
+    15:   <p>
+    16:     <%= f.label :party_date %><br />
+  app/views/parties/_form.html.erb:13:in `block in _app_views_parties__form_html_erb__608898833_28942884__251904306'
+  app/views/parties/_form.html.erb:1:in `_app_views_parties__form_html_erb__608898833_28942884__251904306'
+  app/views/parties/new.html.erb:3:in `_app_views_parties_new_html_erb___647705345_28950660__1016792419'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (110.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-29 01:53:43 -0400
+  Processing by PartiesController#new as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Party.all.
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[35mLocation Load (1.0ms)[0m  SELECT "locations".* FROM "locations" ORDER BY name
+Rendered parties/_form.html.erb (234.0ms)
+Rendered parties/new.html.erb within layouts/application (284.0ms)
+Completed   in 733ms
+
+ActionView::Template::Error (undefined method `party_type' for #<Host:0x38243e8>):
+    10:   </p>
+    11:   <p>
+    12:     <%= f.label :party_type_id %><br />
+    13:     <%= f.collection_select :party_type_id, current_host.party_type.all, :id, :name %>
+    14:   </p>
+    15:   <p>
+    16:     <%= f.label :party_date %><br />
+  app/views/parties/_form.html.erb:13:in `block in _app_views_parties__form_html_erb__608898833_35278596__251904306'
+  app/views/parties/_form.html.erb:1:in `_app_views_parties__form_html_erb__608898833_35278596__251904306'
+  app/views/parties/new.html.erb:3:in `_app_views_parties_new_html_erb___647705345_35292624__1016792419'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (111.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-29 01:54:48 -0400
+  Processing by PartiesController#new as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Party.all.
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[35mLocation Load (1.0ms)[0m  SELECT "locations".* FROM "locations" ORDER BY name
+Creating scope :all. Overwriting existing method PartyType.all.
+  [1m[36mPartyType Load (2.0ms)[0m  [1mSELECT "party_types".* FROM "party_types" INNER JOIN "parties" ON "party_types".id = "parties".party_type_id WHERE (("parties".host_id = 1))[0m
+Rendered parties/_form.html.erb (486.0ms)
+Rendered parties/new.html.erb within layouts/application (553.0ms)
+Completed 200 OK in 950ms (Views: 736.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 01:54:49 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/location" for 127.0.0.1 at 2011-04-29 02:01:17 -0400
+  Processing by LocationsController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[36mLocation Load (1.0ms)[0m  [1mSELECT "locations".* FROM "locations" WHERE ("locations".host_id = 1) ORDER BY name[0m
+Rendered locations/index.html.erb within layouts/application (51.0ms)
+Completed 200 OK in 490ms (Views: 238.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 02:01:18 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/locations/new" for 127.0.0.1 at 2011-04-29 02:01:20 -0400
+  Processing by LocationsController#new as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Location.all.
+Rendered locations/_form.html.erb (39.0ms)
+Rendered locations/new.html.erb within layouts/application (134.0ms)
+Completed 200 OK in 551ms (Views: 325.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 02:01:22 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/party" for 127.0.0.1 at 2011-04-29 02:01:26 -0400
+  Processing by PartiesController#index as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[35mParty Load (1.0ms)[0m  SELECT "parties".* FROM "parties" WHERE ("parties".host_id = 1) ORDER BY name
+Rendered parties/index.html.erb within layouts/application (56.0ms)
+Completed 200 OK in 563ms (Views: 290.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 02:01:27 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-29 02:01:28 -0400
+  Processing by PartiesController#new as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Party.all.
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[35mLocation Load (1.0ms)[0m  SELECT "locations".* FROM "locations" WHERE ("locations".host_id = 1)
+Creating scope :all. Overwriting existing method PartyType.all.
+  [1m[36mPartyType Load (2.0ms)[0m  [1mSELECT "party_types".* FROM "party_types" INNER JOIN "parties" ON "party_types".id = "parties".party_type_id WHERE (("parties".host_id = 1))[0m
+Rendered parties/_form.html.erb (427.0ms)
+Rendered parties/new.html.erb within layouts/application (493.0ms)
+Completed 200 OK in 897ms (Views: 681.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 02:01:30 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-29 14:41:59 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 113ms (Views: 113.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 14:42:08 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/party" for 127.0.0.1 at 2011-04-29 14:47:06 -0400
+  Processing by PartiesController#index as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms
+
+
+Started GET "/login" for 127.0.0.1 at 2011-04-29 14:47:06 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 222ms (Views: 222.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/party" for 127.0.0.1 at 2011-04-29 14:47:07 -0400
+  Processing by PartiesController#index as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms
+
+
+Started GET "/login" for 127.0.0.1 at 2011-04-29 14:47:08 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 150ms (Views: 149.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 14:47:08 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-04-29 14:47:32 -0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OWS4HBvRhJ+CPmnjp9xfVhNv6pIflojGFIBNi+z+ICs=", "login"=>"MrsH", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."username" = 'MrsH' LIMIT 1
+Redirected to http://localhost:3000/party
+Completed 302 Found in 1710ms
+
+
+Started GET "/party" for 127.0.0.1 at 2011-04-29 14:47:34 -0400
+  Processing by PartiesController#index as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[35mParty Load (1.0ms)[0m  SELECT "parties".* FROM "parties" WHERE ("parties".host_id = 1) ORDER BY name
+Rendered parties/index.html.erb within layouts/application (60.0ms)
+Completed 200 OK in 882ms (Views: 210.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 14:47:36 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-29 14:47:39 -0400
+  Processing by PartiesController#new as HTML
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Party.all.
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[35mLocation Load (1.0ms)[0m  SELECT "locations".* FROM "locations" WHERE ("locations".host_id = 1)
+Creating scope :all. Overwriting existing method PartyType.all.
+  [1m[36mPartyType Load (1.0ms)[0m  [1mSELECT "party_types".* FROM "party_types" INNER JOIN "parties" ON "party_types".id = "parties".party_type_id WHERE (("parties".host_id = 1))[0m
+Rendered parties/_form.html.erb (1779.9ms)
+Rendered parties/new.html.erb within layouts/application (1823.9ms)
+Completed 200 OK in 2187ms (Views: 1973.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 14:47:42 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/guest" for 127.0.0.1 at 2011-04-29 14:48:02 -0400
+  Processing by GuestsController#index as HTML
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[36mGuest Load (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE ("guests".host_id = 1) ORDER BY name[0m
+Rendered guests/index.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 361ms (Views: 217.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 14:48:03 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/invitation" for 127.0.0.1 at 2011-04-29 14:48:05 -0400
+  Processing by InvitationsController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Guest.all.
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+  [1m[36mInvitation Load (5.0ms)[0m  [1mSELECT "invitations".* FROM "invitations" INNER JOIN "guests" ON "invitations".guest_id = "guests".id WHERE (("guests".host_id = 1)) ORDER BY party_id[0m
+Rendered invitations/index.html.erb within layouts/application (110.0ms)
+Completed 200 OK in 552ms (Views: 247.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 14:48:06 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/location" for 127.0.0.1 at 2011-04-29 14:48:11 -0400
+  Processing by LocationsController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[36mLocation Load (1.0ms)[0m  [1mSELECT "locations".* FROM "locations" WHERE ("locations".host_id = 1) ORDER BY name[0m
+Rendered locations/index.html.erb within layouts/application (40.0ms)
+Completed 200 OK in 358ms (Views: 200.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 14:48:12 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/host/edit" for 127.0.0.1 at 2011-04-29 14:48:15 -0400
+  Processing by HostsController#edit as HTML
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Rendered hosts/_form.html.erb (71.0ms)
+Rendered hosts/edit.html.erb within layouts/application (144.0ms)
+Completed 200 OK in 395ms (Views: 316.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 14:48:16 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateGuests (20110420220337)
+Migrating to CreateGifts (20110420220453)
+Migrating to CreateLocations (20110420220717)
+Migrating to CreatePartyTypes (20110420220835)
+Migrating to CreateParties (20110420221031)
+Migrating to CreateInvitations (20110420221400)
+Migrating to CreateHosts (20110420221739)
+Migrating to Fixhosts (20110421005433)
+Migrating to AddDefaulHost (20110421010616)
+Migrating to AddDefaultPartyTypes (20110429185321)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+Creating scope :all. Overwriting existing method PartyType.all.
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110429185321')[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("gifts")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("guests")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("hosts")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("invitations")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("locations")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("parties")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("party_types")[0m
+
+
+Started GET "/party" for 127.0.0.1 at 2011-04-29 15:07:13 -0400
+  Processing by PartiesController#index as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[35mParty Load (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE ("parties".host_id = 1) ORDER BY name
+Rendered parties/index.html.erb within layouts/application (33.0ms)
+Completed 200 OK in 295ms (Views: 137.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 15:07:14 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-29 15:07:16 -0400
+  Processing by PartiesController#new as HTML
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Party.all.
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[35mLocation Load (0.0ms)[0m  SELECT "locations".* FROM "locations" WHERE ("locations".host_id = 1)
+Rendered parties/_form.html.erb (322.0ms)
+Rendered parties/new.html.erb within layouts/application (356.0ms)
+Completed   in 612ms
+
+ActionView::Template::Error (undefined method `party_types' for #<Host:0x5ce17d8>):
+    10:   </p>
+    11:   <p>
+    12:     <%= f.label :party_type_id %><br />
+    13:     <%= f.collection_select :party_type_id, current_host.party_types, :id, :name %>
+    14:   </p>
+    15:   <p>
+    16:     <%= f.label :party_date %><br />
+  app/views/parties/_form.html.erb:13:in `block in _app_views_parties__form_html_erb__295244641_35169432__934846548'
+  app/views/parties/_form.html.erb:1:in `_app_views_parties__form_html_erb__295244641_35169432__934846548'
+  app/views/parties/new.html.erb:3:in `_app_views_parties_new_html_erb___656939262_35246916_289863660'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (73.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-29 15:07:55 -0400
+  Processing by PartiesController#new as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Party.all.
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[35mLocation Load (1.0ms)[0m  SELECT "locations".* FROM "locations" WHERE ("locations".host_id = 1)
+Rendered parties/_form.html.erb (181.0ms)
+Rendered parties/new.html.erb within layouts/application (209.0ms)
+Completed   in 463ms
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Party_types):
+    10:   </p>
+    11:   <p>
+    12:     <%= f.label :party_type_id %><br />
+    13:     <%= f.collection_select :party_type_id, Party_types.all, :id, :name %>
+    14:   </p>
+    15:   <p>
+    16:     <%= f.label :party_date %><br />
+  app/views/parties/_form.html.erb:13:in `block in _app_views_parties__form_html_erb__295244641_48802068__934846548'
+  app/views/parties/_form.html.erb:1:in `_app_views_parties__form_html_erb__295244641_48802068__934846548'
+  app/views/parties/new.html.erb:3:in `_app_views_parties_new_html_erb___656939262_48820284_289863660'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (62.2ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-29 15:08:19 -0400
+  Processing by PartiesController#new as HTML
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Party.all.
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[35mLocation Load (1.0ms)[0m  SELECT "locations".* FROM "locations" WHERE ("locations".host_id = 1)
+Rendered parties/_form.html.erb (190.0ms)
+Rendered parties/new.html.erb within layouts/application (219.0ms)
+Completed   in 442ms
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::PartyTypes):
+    10:   </p>
+    11:   <p>
+    12:     <%= f.label :party_type_id %><br />
+    13:     <%= f.collection_select :party_type_id, PartyTypes.all, :id, :name %>
+    14:   </p>
+    15:   <p>
+    16:     <%= f.label :party_date %><br />
+  app/views/parties/_form.html.erb:13:in `block in _app_views_parties__form_html_erb__295244641_34079508__934846548'
+  app/views/parties/_form.html.erb:1:in `_app_views_parties__form_html_erb__295244641_34079508__934846548'
+  app/views/parties/new.html.erb:3:in `_app_views_parties_new_html_erb___656939262_34087980_289863660'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (61.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-29 15:10:05 -0400
+  Processing by PartiesController#new as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Party.all.
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[35mLocation Load (1.0ms)[0m  SELECT "locations".* FROM "locations" WHERE ("locations".host_id = 1)
+Creating scope :all. Overwriting existing method PartyType.all.
+  [1m[36mPartyType Load (2.0ms)[0m  [1mSELECT "party_types".* FROM "party_types" ORDER BY name[0m
+Rendered parties/_form.html.erb (203.0ms)
+Rendered parties/new.html.erb within layouts/application (243.0ms)
+Completed 200 OK in 496ms (Views: 344.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 15:10:06 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-29 15:10:18 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 125ms (Views: 124.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 15:10:20 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/party" for 127.0.0.1 at 2011-04-29 15:13:01 -0400
+  Processing by PartiesController#index as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 0ms
+
+
+Started GET "/login" for 127.0.0.1 at 2011-04-29 15:13:02 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 125ms (Views: 124.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 15:13:03 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-29 15:13:04 -0400
+  Processing by PartiesController#new as HTML
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Party.all.
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[36mLocation Load (1.0ms)[0m  [1mSELECT "locations".* FROM "locations" WHERE ("locations".host_id = 1)[0m
+Creating scope :all. Overwriting existing method PartyType.all.
+  [1m[35mPartyType Load (1.0ms)[0m  SELECT "party_types".* FROM "party_types" ORDER BY name
+Rendered parties/_form.html.erb (316.0ms)
+Rendered parties/new.html.erb within layouts/application (355.0ms)
+Completed 200 OK in 591ms (Views: 478.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 15:13:05 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateGuests (20110420220337)
+Migrating to CreateGifts (20110420220453)
+Migrating to CreateLocations (20110420220717)
+Migrating to CreatePartyTypes (20110420220835)
+Migrating to CreateParties (20110420221031)
+Migrating to CreateInvitations (20110420221400)
+Migrating to CreateHosts (20110420221739)
+Migrating to Fixhosts (20110421005433)
+Migrating to AddDefaulHost (20110421010616)
+Migrating to AddDefaultPartyTypes (20110429185321)
+Migrating to AddPartyTypes (20110429191743)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+Creating scope :all. Overwriting existing method PartyType.all.
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Graduation Party') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Graduation Party', NULL, '2011-04-29 19:19:51.423513', '2011-04-29 19:19:51.423513')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Baby Shower') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Baby Shower', NULL, '2011-04-29 19:19:51.485913', '2011-04-29 19:19:51.485913')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Birthday Party') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Birthday Party', NULL, '2011-04-29 19:19:51.485913', '2011-04-29 19:19:51.485913')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Generic Party') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Generic Party', NULL, '2011-04-29 19:19:51.485913', '2011-04-29 19:19:51.485913')
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110429191743')[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("gifts")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("guests")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("hosts")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("invitations")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("locations")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("parties")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("party_types")[0m
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-04-29 15:19:58 -0400
+  Processing by PartiesController#new as HTML
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Party.all.
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[35mLocation Load (0.0ms)[0m  SELECT "locations".* FROM "locations" WHERE ("locations".host_id = 1)
+Creating scope :all. Overwriting existing method PartyType.all.
+  [1m[36mPartyType Load (2.0ms)[0m  [1mSELECT "party_types".* FROM "party_types" ORDER BY name[0m
+Rendered parties/_form.html.erb (213.0ms)
+Rendered parties/new.html.erb within layouts/application (256.0ms)
+Completed 200 OK in 528ms (Views: 382.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 15:19:59 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)

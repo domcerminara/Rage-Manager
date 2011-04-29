@@ -3,6 +3,6 @@ class Gift < ActiveRecord::Base
   
   validates_presence_of :invitation_id, :description, :note_sent_on
   
-  belongs_to :invitation
+  belongs_to :invitation, :dependent => :destroy
   
 end

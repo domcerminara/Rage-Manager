@@ -4,9 +4,9 @@ class PartyType < ActiveRecord::Base
   validates_presence_of :name
   validates_uniqueness_of :name
   
-  belongs_to :party
-  has_one :host, :through => :party
+  has_many :parties
   
   scope :all, order('name')
   
 end
+

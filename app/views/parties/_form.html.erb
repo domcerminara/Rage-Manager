@@ -6,7 +6,7 @@
   </p>
   <p>
     <%= f.label :location_id %><br />
-    <%= f.collection_select :location_id, Location.all, :id, :name %>
+    <%= f.collection_select :location_id, current_host.locations, :id, :name %>
   </p>
   <p>
     <%= f.label :party_type_id %><br />

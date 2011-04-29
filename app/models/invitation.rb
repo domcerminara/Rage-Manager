@@ -5,8 +5,8 @@ class Invitation < ActiveRecord::Base
   validates_numericality_of :expected_attendees, :only_integer => true, :greater_than => 0
   
   has_many :gifts
-  belongs_to :guest
-  belongs_to :party
+  belongs_to :guest, :dependent => :destroy
+  belongs_to :party, :dependent => :destroy
   has_one :host, :through => :guest
   
   scope :all, order('party_id')

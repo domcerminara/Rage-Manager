@@ -9,7 +9,6 @@ Feature: Manage parties
 	# READ METHODS
 	Scenario: View my parties
 		When I go to my parties page
-		# Then show me the page
 		Then I should see "My Parties" within "h1"
 		And I should see "RSVPs"
 		And I should not see "Start time"
@@ -18,7 +17,6 @@ Feature: Manage parties
 		Given an existing birthday party
 		Given another host with parties
 		When I go to my parties page
-		# Then show me the page
 		Then I should see "Birthday!"
 		And I should not see "Toga Party"
 	
@@ -55,7 +53,7 @@ Feature: Manage parties
 		When I go to the new party page
 		And I fill in "party_name" with "Birthday for Dusty"
 		And I select "My house" from "party_location_id"
-		# Then show me the page
+		And I select "Birthday Party" from "party_party_type_id"
 		And I select "2011" from "party_party_date_1i"
 		And I select "October" from "party_party_date_2i"
 		And I select "27" from "party_party_date_3i"
@@ -76,6 +74,7 @@ Feature: Manage parties
 	Scenario: Create a new party fails without a name
 		When I go to the new party page
 		And I select "My house" from "party_location_id"
+		And I select "Birthday Party" from "party_party_type_id"
 		And I select "2011" from "party_party_date_1i"
 		And I select "October" from "party_party_date_2i"
 		And I select "27" from "party_party_date_3i"
@@ -93,6 +92,7 @@ Feature: Manage parties
 		When I go to the new party page
 		And I fill in "party_name" with "Birthday for Dusty"
 		And I select "My house" from "party_location_id"
+		And I select "Birthday Party" from "party_party_type_id"
 		And I select "2011" from "party_party_date_1i"
 		And I select "January" from "party_party_date_2i"
 		And I select "27" from "party_party_date_3i"
@@ -109,7 +109,7 @@ Feature: Manage parties
 	Scenario: Create a new party fails because rsvp date after party date
 		When I go to the new party page
 		And I fill in "party_name" with "Birthday for Dusty"
-		# Then show me the page
+		And I select "Birthday Party" from "party_party_type_id"
 		And I select "My house" from "party_location_id" 
 		And I select "2011" from "party_party_date_1i"
 		And I select "October" from "party_party_date_2i"
@@ -127,6 +127,7 @@ Feature: Manage parties
 	Scenario: Create an invalid party with end time before start time
 		When I go to the new party page
 		And I fill in "party_name" with "Birthday for Dusty"
+		And I select "Birthday Party" from "party_party_type_id"
 		And I select "My house" from "party_location_id"
 		And I select "2011" from "party_party_date_1i"
 		And I select "October" from "party_party_date_2i"
@@ -140,6 +141,23 @@ Feature: Manage parties
 		And I select "30" from "party_end_time_5i"
 		And I press "Create Party"
 		Then I should see "End time must be after"
+
+	Scenario: Create an invalid party with a missing party type
+		When I go to the new party page
+		And I fill in "party_name" with "Birthday for Dusty"
+		And I select "My house" from "party_location_id"
+		And I select "2011" from "party_party_date_1i"
+		And I select "October" from "party_party_date_2i"
+		And I select "27" from "party_party_date_3i"
+		And I select "2011" from "party_rsvp_date_1i"
+		And I select "October" from "party_rsvp_date_2i"
+		And I select "26" from "party_rsvp_date_3i"
+		And I select "18" from "party_start_time_4i"
+		And I select "00" from "party_start_time_5i"
+		And I select "22" from "party_end_time_4i"
+		And I select "30" from "party_end_time_5i"
+		And I press "Create Party"
+		Then I should see "Party type is not a number"
 		
 		
 	# UPDATE METHODS
