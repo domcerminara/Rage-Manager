@@ -6683,3 +6683,64 @@ Started GET "/" for 127.0.0.1 at 2011-04-28 13:32:23 -0400
   [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
 Rendered home/index.html.erb within layouts/application (131.0ms)
 Completed 200 OK in 277ms (Views: 276.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/party_type" for 127.0.0.1 at 2011-04-28 17:37:52 -0400
+  Processing by PartyTypesController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Party.all.
+Creating scope :all. Overwriting existing method PartyType.all.
+  [1m[36mPartyType Load (1.0ms)[0m  [1mSELECT "party_types".* FROM "party_types" INNER JOIN "parties" ON "party_types".party_id = "parties".id WHERE (("parties".host_id = 1)) ORDER BY name[0m
+SQLite3::SQLException: no such column: party_types.party_id: SELECT "party_types".* FROM "party_types" INNER JOIN "parties" ON "party_types".party_id = "parties".id WHERE (("parties".host_id = 1)) ORDER BY name
+Rendered party_types/index.html.erb within layouts/application (5.0ms)
+Completed   in 548ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: party_types.party_id: SELECT "party_types".* FROM "party_types" INNER JOIN "parties" ON "party_types".party_id = "parties".id WHERE (("parties".host_id = 1)) ORDER BY name):
+    5:     <th>Name</th>
+    6:     <th>Active</th>
+    7:   </tr>
+    8:   <% for party_type in @party_types %>
+    9:     <tr>
+    10:       <td><%= party_type.name %></td>
+    11:       <td><%= party_type.active %></td>
+  app/views/party_types/index.html.erb:8:in `_app_views_party_types_index_html_erb___307993199_36087192_853052180'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+  [1m[35mPartyType Load (1.0ms)[0m  SELECT "party_types".* FROM "party_types" INNER JOIN "parties" ON "party_types".party_id = "parties".id WHERE (("parties".host_id = 1)) ORDER BY name
+SQLite3::SQLException: no such column: party_types.party_id: SELECT "party_types".* FROM "party_types" INNER JOIN "parties" ON "party_types".party_id = "parties".id WHERE (("parties".host_id = 1)) ORDER BY name
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (147.0ms)
+
+
+Started GET "/invitation" for 127.0.0.1 at 2011-04-28 17:38:15 -0400
+  Processing by InvitationsController#index as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Guest.all.
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+  [1m[35mInvitation Load (2.0ms)[0m  SELECT "invitations".* FROM "invitations" INNER JOIN "guests" ON "invitations".guest_id = "guests".id WHERE (("guests".host_id = 1)) ORDER BY party_id
+Rendered invitations/index.html.erb within layouts/application (55.0ms)
+Completed 200 OK in 605ms (Views: 240.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-28 17:38:22 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (167.0ms)
+Completed 200 OK in 347ms (Views: 346.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/party_type" for 127.0.0.1 at 2011-04-28 17:42:44 -0400
+  Processing by PartyTypesController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[36mPartyType Load (1.0ms)[0m  [1mSELECT "party_types".* FROM "party_types" INNER JOIN "parties" ON "party_types".party_id = "parties".id WHERE (("parties".host_id = 1))[0m
+SQLite3::SQLException: no such column: party_types.party_id: SELECT "party_types".* FROM "party_types" INNER JOIN "parties" ON "party_types".party_id = "parties".id WHERE (("parties".host_id = 1))
+Completed   in 391ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: party_types.party_id: SELECT "party_types".* FROM "party_types" INNER JOIN "parties" ON "party_types".party_id = "parties".id WHERE (("parties".host_id = 1))):
+  app/controllers/party_types_controller.rb:4:in `index'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (129.0ms)
