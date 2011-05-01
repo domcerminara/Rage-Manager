@@ -1,5 +1,5 @@
 <h1>Welcome to Rage Manager</h1>
 <% if logged_in? %>
-  <p>Welcome, <%= current_host.username %>!</p>
+  <p>Welcome, <%= current_host.first_name + ' ' + current_host.last_name %>!</p>
 <% end %>
 <p>Rage Manager is the premier party planning tool!</p>

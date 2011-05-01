@@ -1,4 +1,4 @@
-<% title "Invitations" %>
+<h1>My Invitations</h1>
 
 <table>
   <tr>
@@ -10,8 +10,8 @@
   </tr>
   <% for invitation in @invitations %>
     <tr>
-      <td><%= invitation.party_id %></td>
-      <td><%= invitation.guest_id %></td>
+      <td><%= invitation.party.name %></td>
+      <td><%= invitation.guest.name %></td>
       <td><%= invitation.invite_code %></td>
       <td><%= invitation.expected_attendees %></td>
       <td><%= invitation.actual_attendees %></td>
@@ -22,4 +22,4 @@
   <% end %>
 </table>
 
-<p><%= link_to "New Invitation", new_invitation_path %></p>
+<p><%= link_to "Add A New Invitation", new_invitation_path %></p>

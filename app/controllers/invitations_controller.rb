@@ -15,7 +15,7 @@ before_filter :login_required
   def create
     @invitation = Invitation.new(params[:invitation])
     if @invitation.save
-      redirect_to @invitation, :notice => "Successfully created invitation."
+      redirect_to @invitation, :notice => "Invitation was successfully created."
     else
       render :action => 'new'
     end
@@ -28,7 +28,7 @@ before_filter :login_required
   def update
     @invitation = Invitation.find(params[:id])
     if @invitation.update_attributes(params[:invitation])
-      redirect_to @invitation, :notice  => "Successfully updated invitation."
+      redirect_to @invitation, :notice  => "The invitation for this guest has been updated."
     else
       render :action => 'edit'
     end

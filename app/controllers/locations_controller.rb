@@ -17,7 +17,7 @@ before_filter :login_required
     @location.host_id = current_host.id
     
     if @location.save
-      redirect_to @location, :notice => "Successfully created location."
+      redirect_to @location, :notice => "Location was successfully created"
     else
       render :action => 'new'
     end

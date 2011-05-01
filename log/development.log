@@ -7623,3 +7623,665 @@ ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
   
 
 Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started POST "/parties" for 127.0.0.1 at 2011-04-29 19:39:35 -0400
+  Processing by PartiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OWS4HBvRhJ+CPmnjp9xfVhNv6pIflojGFIBNi+z+ICs=", "party"=>{"name"=>"Birthday for Dusty", "location_id"=>"2", "party_type_id"=>"6", "party_date(2i)"=>"1", "party_date(3i)"=>"27", "party_date(1i)"=>"2011", "start_time(1i)"=>"2011", "start_time(2i)"=>"4", "start_time(3i)"=>"29", "start_time(4i)"=>"18", "start_time(5i)"=>"00", "end_time(1i)"=>"2011", "end_time(2i)"=>"4", "end_time(3i)"=>"29", "end_time(4i)"=>"22", "end_time(5i)"=>"30", "description"=>"", "rsvp_date(2i)"=>"4", "rsvp_date(3i)"=>"29", "rsvp_date(1i)"=>"2011"}, "commit"=>"Create Party"}
+  [1m[36mSQL (2.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "parties" WHERE ("parties"."name" = 'Birthday for Dusty') LIMIT 1[0m
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[35mLocation Load (1.0ms)[0m  SELECT "locations".* FROM "locations" WHERE ("locations".host_id = 1)
+Creating scope :all. Overwriting existing method PartyType.all.
+  [1m[36mPartyType Load (1.0ms)[0m  [1mSELECT "party_types".* FROM "party_types" ORDER BY name[0m
+Rendered parties/_form.html.erb (240.0ms)
+Rendered parties/new.html.erb within layouts/application (280.0ms)
+Completed 200 OK in 2740ms (Views: 389.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 19:39:45 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-29 19:43:28 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Rendered home/index.html.erb within layouts/application (159.0ms)
+Completed 200 OK in 293ms (Views: 291.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 19:43:29 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/guest" for 127.0.0.1 at 2011-04-29 19:46:42 -0400
+  Processing by GuestsController#index as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[35mGuest Load (1.0ms)[0m  SELECT "guests".* FROM "guests" WHERE ("guests".host_id = 1) ORDER BY name
+Rendered guests/index.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 527ms (Views: 140.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 19:46:43 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/guests/new" for 127.0.0.1 at 2011-04-29 19:46:46 -0400
+  Processing by GuestsController#new as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Guest.all.
+Rendered guests/_form.html.erb (15.0ms)
+Rendered guests/new.html.erb within layouts/application (58.0ms)
+Completed 200 OK in 292ms (Views: 183.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 19:46:46 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (37.0ms)
+
+
+Started POST "/guests" for 127.0.0.1 at 2011-04-29 19:47:12 -0400
+  Processing by GuestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OWS4HBvRhJ+CPmnjp9xfVhNv6pIflojGFIBNi+z+ICs=", "guest"=>{"name"=>"Mansar Fmaily", "email"=>"smansar@example.com", "notes"=>"Your mother was a hamster and your father smelt of elderberries!"}, "commit"=>"Create Guest"}
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Mansar Fmaily') LIMIT 1[0m
+  [1m[35mAREL (2.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Mansar Fmaily', 'smansar@example.com', 1, 'Your mother was a hamster and your father smelt of elderberries!', '2011-04-29 23:47:13.442885', '2011-04-29 23:47:13.442885')
+Redirected to http://localhost:3000/guests/5
+Completed 302 Found in 255ms
+
+
+Started GET "/guests/5" for 127.0.0.1 at 2011-04-29 19:47:13 -0400
+  Processing by GuestsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[35mGuest Load (1.0ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Rendered guests/show.html.erb within layouts/application (50.0ms)
+Completed 200 OK in 308ms (Views: 165.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 19:47:14 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/guests/5/edit" for 127.0.0.1 at 2011-04-29 19:47:28 -0400
+  Processing by GuestsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[36mGuest Load (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 5 LIMIT 1[0m
+Rendered guests/_form.html.erb (21.0ms)
+Rendered guests/edit.html.erb within layouts/application (61.0ms)
+Completed 200 OK in 318ms (Views: 174.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 19:47:29 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started POST "/guests/5" for 127.0.0.1 at 2011-04-29 19:47:34 -0400
+  Processing by GuestsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OWS4HBvRhJ+CPmnjp9xfVhNv6pIflojGFIBNi+z+ICs=", "guest"=>{"name"=>"Mansar Fmaily", "email"=>"smansar@example,com", "notes"=>"Your mother was a hamster and your father smelt of elderberries!"}, "commit"=>"Update Guest", "id"=>"5"}
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[36mGuest Load (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 5 LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Mansar Fmaily') AND ("guests".id <> 5) LIMIT 1
+Rendered guests/_form.html.erb (11.0ms)
+Rendered guests/edit.html.erb within layouts/application (54.0ms)
+Completed 200 OK in 298ms (Views: 171.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 19:47:35 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/guest" for 127.0.0.1 at 2011-04-29 19:54:55 -0400
+  Processing by GuestsController#index as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[35mGuest Load (1.0ms)[0m  SELECT "guests".* FROM "guests" WHERE ("guests".host_id = 1) ORDER BY name
+Rendered guests/index.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 304ms (Views: 142.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 19:54:56 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/guest" for 127.0.0.1 at 2011-04-29 19:55:33 -0400
+  Processing by GuestsController#index as HTML
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[35mGuest Load (0.0ms)[0m  SELECT "guests".* FROM "guests" WHERE ("guests".host_id = 1) ORDER BY name
+Rendered guests/index.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 380ms (Views: 173.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 19:55:34 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/guests/5/edit" for 127.0.0.1 at 2011-04-29 19:56:40 -0400
+  Processing by GuestsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[35mGuest Load (1.0ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = 5 LIMIT 1
+Rendered guests/_form.html.erb (30.0ms)
+Rendered guests/edit.html.erb within layouts/application (87.0ms)
+Completed 200 OK in 478ms (Views: 243.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/guests/5/edit" for 127.0.0.1 at 2011-04-29 19:56:41 -0400
+  Processing by GuestsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[35mGuest Load (0.0ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = 5 LIMIT 1
+Rendered guests/_form.html.erb (29.0ms)
+Rendered guests/edit.html.erb within layouts/application (80.0ms)
+Completed 200 OK in 358ms (Views: 221.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 19:56:42 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started POST "/guests/5" for 127.0.0.1 at 2011-04-29 19:56:47 -0400
+  Processing by GuestsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OWS4HBvRhJ+CPmnjp9xfVhNv6pIflojGFIBNi+z+ICs=", "guest"=>{"name"=>"Mansar Fmaily", "email"=>"smansar@exampl,com", "notes"=>"Your mother was a hamster and your father smelt of elderberries!"}, "commit"=>"Update Guest", "id"=>"5"}
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[35mGuest Load (1.0ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = 5 LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Mansar Fmaily') AND ("guests".id <> 5) LIMIT 1[0m
+Rendered guests/_form.html.erb (13.0ms)
+Rendered guests/edit.html.erb within layouts/application (73.0ms)
+Completed 200 OK in 427ms (Views: 216.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 19:56:48 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started POST "/guests/5" for 127.0.0.1 at 2011-04-29 20:08:58 -0400
+  Processing by GuestsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OWS4HBvRhJ+CPmnjp9xfVhNv6pIflojGFIBNi+z+ICs=", "guest"=>{"name"=>"Mansar Fmaily", "email"=>"smansar@exampl,com", "notes"=>"Your mother was a hamster and your father smelt of elderberries!"}, "commit"=>"Update Guest", "id"=>"5"}
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Completed   in 121ms
+
+SyntaxError (c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/guest.rb:7: syntax error, unexpected tSTRING_BEG, expecting tASSOC
+....)+[a-z0-9]{2,4}$/i, :message "Email is not a valid format"
+...                               ^):
+  app/controllers/guests_controller.rb:30:in `update'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (28.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (150.0ms)
+
+
+Started POST "/guests/5" for 127.0.0.1 at 2011-04-29 20:09:14 -0400
+  Processing by GuestsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OWS4HBvRhJ+CPmnjp9xfVhNv6pIflojGFIBNi+z+ICs=", "guest"=>{"name"=>"Mansar Fmaily", "email"=>"smansar@exampl,com", "notes"=>"Your mother was a hamster and your father smelt of elderberries!"}, "commit"=>"Update Guest", "id"=>"5"}
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Completed   in 153ms
+
+SyntaxError (c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/guest.rb:7: syntax error, unexpected tSTRING_BEG, expecting tASSOC
+...\.)+[a-z0-9]{2,4}$/i, :message"Email is not a valid format"
+...                               ^):
+  app/controllers/guests_controller.rb:30:in `update'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (28.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (122.0ms)
+
+
+Started POST "/guests/5" for 127.0.0.1 at 2011-04-29 20:09:42 -0400
+  Processing by GuestsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OWS4HBvRhJ+CPmnjp9xfVhNv6pIflojGFIBNi+z+ICs=", "guest"=>{"name"=>"Mansar Fmaily", "email"=>"smansar@exampl,com", "notes"=>"Your mother was a hamster and your father smelt of elderberries!"}, "commit"=>"Update Guest", "id"=>"5"}
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[36mGuest Load (1.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 5 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Mansar Fmaily') AND ("guests".id <> 5) LIMIT 1
+Rendered guests/_form.html.erb (10.0ms)
+Rendered guests/edit.html.erb within layouts/application (53.0ms)
+Completed 200 OK in 345ms (Views: 188.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 20:09:42 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started POST "/guests/5" for 127.0.0.1 at 2011-04-29 20:10:19 -0400
+  Processing by GuestsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OWS4HBvRhJ+CPmnjp9xfVhNv6pIflojGFIBNi+z+ICs=", "guest"=>{"name"=>"Mansar Fmaily", "email"=>"smansar@exampl,com", "notes"=>"Your mother was a hamster and your father smelt of elderberries!"}, "commit"=>"Update Guest", "id"=>"5"}
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[35mGuest Load (0.0ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = 5 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Mansar Fmaily') AND ("guests".id <> 5) LIMIT 1[0m
+Rendered guests/_form.html.erb (18.0ms)
+Rendered guests/edit.html.erb within layouts/application (73.0ms)
+Completed 200 OK in 498ms (Views: 244.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 20:10:20 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2011-04-29 20:16:15 -0400
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-29 20:16:15 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 125ms (Views: 125.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 20:16:16 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-04-29 20:16:19 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 127ms (Views: 125.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 20:16:20 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-04-29 20:16:31 -0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OWS4HBvRhJ+CPmnjp9xfVhNv6pIflojGFIBNi+z+ICs=", "login"=>"MrsH", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."username" = 'MrsH' LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 299ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-29 20:16:32 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (158.0ms)
+Completed 200 OK in 272ms (Views: 270.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 20:16:33 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-29 20:18:32 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Rendered home/index.html.erb within layouts/application (181.0ms)
+Completed 200 OK in 339ms (Views: 337.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 20:18:33 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/party" for 127.0.0.1 at 2011-04-29 23:46:26 -0400
+  Processing by PartiesController#index as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[35mParty Load (1.0ms)[0m  SELECT "parties".* FROM "parties" WHERE ("parties".host_id = 1) ORDER BY name
+Rendered parties/index.html.erb within layouts/application (36.0ms)
+Completed 200 OK in 342ms (Views: 148.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 23:46:27 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/guest" for 127.0.0.1 at 2011-04-29 23:46:29 -0400
+  Processing by GuestsController#index as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[35mGuest Load (1.0ms)[0m  SELECT "guests".* FROM "guests" WHERE ("guests".host_id = 1) ORDER BY name
+Rendered guests/index.html.erb within layouts/application (63.0ms)
+Completed 200 OK in 299ms (Views: 175.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 23:46:30 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/invitation" for 127.0.0.1 at 2011-04-29 23:46:33 -0400
+  Processing by InvitationsController#index as HTML
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Guest.all.
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+  [1m[35mInvitation Load (2.0ms)[0m  SELECT "invitations".* FROM "invitations" INNER JOIN "guests" ON "invitations".guest_id = "guests".id WHERE (("guests".host_id = 1)) ORDER BY party_id
+Rendered invitations/index.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 349ms (Views: 145.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 23:46:34 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-29 23:46:37 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (131.0ms)
+Completed 200 OK in 246ms (Views: 245.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-29 23:46:37 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/invitation" for 127.0.0.1 at 2011-04-30 18:56:09 -0400
+  Processing by InvitationsController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Guest.all.
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+  [1m[36mInvitation Load (2.0ms)[0m  [1mSELECT "invitations".* FROM "invitations" INNER JOIN "guests" ON "invitations".guest_id = "guests".id WHERE (("guests".host_id = 1)) ORDER BY party_id[0m
+Rendered invitations/index.html.erb within layouts/application (185.0ms)
+Completed   in 526ms
+
+ActionView::Template::Error (undefined method `name' for 1:Fixnum):
+    10:   </tr>
+    11:   <% for invitation in @invitations %>
+    12:     <tr>
+    13:       <td><%= invitation.party_id.name %></td>
+    14:       <td><%= invitation.guest_id.name %></td>
+    15:       <td><%= invitation.invite_code %></td>
+    16:       <td><%= invitation.expected_attendees %></td>
+  app/views/invitations/index.html.erb:13:in `block in _app_views_invitations_index_html_erb___382007429_34940532_849196209'
+  app/views/invitations/index.html.erb:11:in `_app_views_invitations_index_html_erb___382007429_34940532_849196209'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (64.0ms)
+
+
+Started GET "/invitation" for 127.0.0.1 at 2011-04-30 18:56:29 -0400
+  Processing by InvitationsController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Guest.all.
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+  [1m[36mInvitation Load (2.0ms)[0m  [1mSELECT "invitations".* FROM "invitations" INNER JOIN "guests" ON "invitations".guest_id = "guests".id WHERE (("guests".host_id = 1)) ORDER BY party_id[0m
+Rendered invitations/index.html.erb within layouts/application (18.0ms)
+Completed   in 354ms
+
+ActionView::Template::Error (undefined method `name' for 1:Fixnum):
+    10:   </tr>
+    11:   <% for invitation in @invitations %>
+    12:     <tr>
+    13:       <td><%= invitation.party_id.name %></td>
+    14:       <td><%= invitation.guest_id.name %></td>
+    15:       <td><%= invitation.invite_code %></td>
+    16:       <td><%= invitation.expected_attendees %></td>
+  app/views/invitations/index.html.erb:13:in `block in _app_views_invitations_index_html_erb___382007429_33069396_849196209'
+  app/views/invitations/index.html.erb:11:in `_app_views_invitations_index_html_erb___382007429_33069396_849196209'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (63.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (142.0ms)
+
+
+Started GET "/invitation" for 127.0.0.1 at 2011-04-30 18:56:53 -0400
+  Processing by InvitationsController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Guest.all.
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+  [1m[36mInvitation Load (2.0ms)[0m  [1mSELECT "invitations".* FROM "invitations" INNER JOIN "guests" ON "invitations".guest_id = "guests".id WHERE (("guests".host_id = 1)) ORDER BY party_id[0m
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[35mParty Load (1.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mGuest Load (1.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 2 LIMIT 1[0m
+Rendered invitations/index.html.erb within layouts/application (182.0ms)
+Completed 200 OK in 512ms (Views: 291.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-30 18:56:54 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (35.0ms)
+
+
+Started GET "/invitations/new" for 127.0.0.1 at 2011-04-30 19:07:45 -0400
+  Processing by InvitationsController#new as HTML
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[36mParty Load (1.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE ("parties".host_id = 1)[0m
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[35mGuest Load (1.0ms)[0m  SELECT "guests".* FROM "guests" WHERE ("guests".host_id = 1)
+Rendered invitations/_form.html.erb (234.0ms)
+Rendered invitations/new.html.erb within layouts/application (274.0ms)
+Completed 200 OK in 501ms (Views: 384.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-30 19:07:46 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started POST "/invitations" for 127.0.0.1 at 2011-04-30 19:07:54 -0400
+  Processing by InvitationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OWS4HBvRhJ+CPmnjp9xfVhNv6pIflojGFIBNi+z+ICs=", "invitation"=>{"party_id"=>"1", "guest_id"=>"5", "expected_attendees"=>"5"}, "commit"=>"Create Invitation"}
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+  [1m[35mAREL (2.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 5, '9emriyu3ksyktg4u', 5, NULL, '2011-04-30 23:07:55.121945', '2011-04-30 23:07:55.121945')
+Redirected to http://localhost:3000/invitations/4
+Completed 302 Found in 275ms
+
+
+Started GET "/invitations/4" for 127.0.0.1 at 2011-04-30 19:07:55 -0400
+  Processing by InvitationsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+  [1m[35mInvitation Load (1.0ms)[0m  SELECT "invitations".* FROM "invitations" WHERE "invitations"."id" = 4 LIMIT 1
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[36mParty Load (1.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[35mGuest Load (1.0ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = 5 LIMIT 1
+Rendered invitations/show.html.erb within layouts/application (240.0ms)
+Completed 200 OK in 470ms (Views: 350.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-30 19:07:56 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/invitations/4/edit" for 127.0.0.1 at 2011-04-30 19:07:58 -0400
+  Processing by InvitationsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+  [1m[35mInvitation Load (2.0ms)[0m  SELECT "invitations".* FROM "invitations" WHERE "invitations"."id" = 4 LIMIT 1
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[36mParty Load (1.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE ("parties".host_id = 1)[0m
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[35mGuest Load (1.0ms)[0m  SELECT "guests".* FROM "guests" WHERE ("guests".host_id = 1)
+Rendered invitations/_form.html.erb (280.0ms)
+Rendered invitations/edit.html.erb within layouts/application (323.0ms)
+Completed 200 OK in 576ms (Views: 447.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-30 19:07:59 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started POST "/invitations/4" for 127.0.0.1 at 2011-04-30 19:08:01 -0400
+  Processing by InvitationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OWS4HBvRhJ+CPmnjp9xfVhNv6pIflojGFIBNi+z+ICs=", "invitation"=>{"party_id"=>"1", "guest_id"=>"5", "expected_attendees"=>"5"}, "commit"=>"Update Invitation", "id"=>"4"}
+  [1m[36mHost Load (2.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+  [1m[35mInvitation Load (1.0ms)[0m  SELECT "invitations".* FROM "invitations" WHERE "invitations"."id" = 4 LIMIT 1
+Redirected to http://localhost:3000/invitations/4
+Completed 302 Found in 183ms
+
+
+Started GET "/invitations/4" for 127.0.0.1 at 2011-04-30 19:08:01 -0400
+  Processing by InvitationsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mHost Load (3.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+  [1m[35mInvitation Load (1.0ms)[0m  SELECT "invitations".* FROM "invitations" WHERE "invitations"."id" = 4 LIMIT 1
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[36mParty Load (1.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[35mGuest Load (1.0ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = 5 LIMIT 1
+Rendered invitations/show.html.erb within layouts/application (404.0ms)
+Completed 200 OK in 829ms (Views: 586.0ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-04-30 19:08:03 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-01 12:45:42 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mSQL (2.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Rendered home/index.html.erb within layouts/application (1268.1ms)
+Completed 200 OK in 1421ms (Views: 1418.1ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-05-01 12:45:53 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/location" for 127.0.0.1 at 2011-05-01 13:10:47 -0400
+  Processing by LocationsController#index as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[35mLocation Load (1.0ms)[0m  SELECT "locations".* FROM "locations" WHERE ("locations".host_id = 1) ORDER BY name
+Rendered locations/index.html.erb within layouts/application (104.0ms)
+Completed 200 OK in 755ms (Views: 227.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-05-01 13:10:49 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
