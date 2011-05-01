@@ -6,8 +6,8 @@ class Invitation < ActiveRecord::Base
   
   has_many :gifts
   belongs_to :guest, :dependent => :destroy
-  belongs_to :parties, :dependent => :destroy
-  belongs_to :host, :through => :guest
+  belongs_to :party, :dependent => :destroy
+  has_one :host, :through => :guest
   
   scope :all, order('party_id')
   

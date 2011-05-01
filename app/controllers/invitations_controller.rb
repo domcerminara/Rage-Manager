@@ -15,7 +15,8 @@ before_filter :login_required
   def create
     @invitation = Invitation.new(params[:invitation])
     if @invitation.save
-      redirect_to @invitation, :notice => "Invitation was successfully created."
+      FriendMailer.new_invitation_msg(@invitation)
+      redirect_to @invitation, :notice => "#{@invitation.guest.name} has been notified of their invitaiton."
     else
       render :action => 'new'
     end

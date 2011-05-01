@@ -8503,3 +8503,280 @@ ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
   
 
 Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/invitation" for 127.0.0.1 at 2011-05-01 17:10:17 -0400
+  Processing by InvitationsController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[36mInvitation Load (4.0ms)[0m  [1mSELECT "invitations".* FROM "invitations" INNER JOIN "guests" ON "invitations".guest_id = "guests".id WHERE (("guests".host_id = 1))[0m
+Rendered invitations/index.html.erb within layouts/application (46.0ms)
+Completed   in 597ms
+
+ActionView::Template::Error (undefined method `party' for #<Invitation:0x4103340>):
+    10:   </tr>
+    11:   <% for invitation in @invitations %>
+    12:     <tr>
+    13:       <td><%= invitation.party.name %></td>
+    14:       <td><%= invitation.guest.name %></td>
+    15:       <td><%= invitation.invite_code %></td>
+    16:       <td><%= invitation.expected_attendees %></td>
+  app/views/invitations/index.html.erb:13:in `block in _app_views_invitations_index_html_erb___926182507_34056672_189420043'
+  app/views/invitations/index.html.erb:11:in `each'
+  app/views/invitations/index.html.erb:11:in `_app_views_invitations_index_html_erb___926182507_34056672_189420043'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (113.0ms)
+
+
+Started GET "/guest" for 127.0.0.1 at 2011-05-01 17:10:18 -0400
+  Processing by GuestsController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[36mGuest Load (1.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE ("guests".host_id = 1) ORDER BY name[0m
+Rendered guests/index.html.erb within layouts/application (42.0ms)
+Completed 200 OK in 502ms (Views: 224.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/guest" for 127.0.0.1 at 2011-05-01 17:10:20 -0400
+  Processing by GuestsController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[36mGuest Load (1.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE ("guests".host_id = 1) ORDER BY name[0m
+Rendered guests/index.html.erb within layouts/application (43.0ms)
+Completed 200 OK in 422ms (Views: 223.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-05-01 17:10:21 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/guests/new" for 127.0.0.1 at 2011-05-01 17:10:24 -0400
+  Processing by GuestsController#new as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Guest.all.
+Rendered guests/_form.html.erb (1063.1ms)
+Rendered guests/new.html.erb within layouts/application (1126.1ms)
+Completed 200 OK in 1561ms (Views: 1309.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-05-01 17:10:27 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/invitation" for 127.0.0.1 at 2011-05-01 17:10:29 -0400
+  Processing by InvitationsController#index as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[35mInvitation Load (3.0ms)[0m  SELECT "invitations".* FROM "invitations" INNER JOIN "guests" ON "invitations".guest_id = "guests".id WHERE (("guests".host_id = 1))
+Rendered invitations/index.html.erb within layouts/application (25.0ms)
+Completed   in 525ms
+
+ActionView::Template::Error (undefined method `party' for #<Invitation:0x3ac2ee8>):
+    10:   </tr>
+    11:   <% for invitation in @invitations %>
+    12:     <tr>
+    13:       <td><%= invitation.party.name %></td>
+    14:       <td><%= invitation.guest.name %></td>
+    15:       <td><%= invitation.invite_code %></td>
+    16:       <td><%= invitation.expected_attendees %></td>
+  app/views/invitations/index.html.erb:13:in `block in _app_views_invitations_index_html_erb___926182507_30550140_189420043'
+  app/views/invitations/index.html.erb:11:in `each'
+  app/views/invitations/index.html.erb:11:in `_app_views_invitations_index_html_erb___926182507_30550140_189420043'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (108.0ms)
+
+
+Started GET "/invitation" for 127.0.0.1 at 2011-05-01 17:12:27 -0400
+  Processing by InvitationsController#index as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[35mInvitation Load (3.0ms)[0m  SELECT "invitations".* FROM "invitations" INNER JOIN "guests" ON "invitations".guest_id = "guests".id WHERE (("guests".host_id = 1))
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[36mParty Load (1.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1[0m
+  [1m[35mGuest Load (1.0ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1[0m
+  [1m[35mGuest Load (1.0ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = 5 LIMIT 1
+Rendered invitations/index.html.erb within layouts/application (447.0ms)
+Completed 200 OK in 904ms (Views: 624.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-05-01 17:12:28 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/invitations/new" for 127.0.0.1 at 2011-05-01 17:12:32 -0400
+  Processing by InvitationsController#new as HTML
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Completed   in 181ms
+
+ArgumentError (Unknown key(s): through):
+  app/models/invitation.rb:10:in `<class:Invitation>'
+  app/models/invitation.rb:1:in `<top (required)>'
+  app/controllers/invitations_controller.rb:12:in `new'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (35.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (144.0ms)
+
+
+Started GET "/invitations/new" for 127.0.0.1 at 2011-05-01 17:14:11 -0400
+  Processing by InvitationsController#new as HTML
+  [1m[35mHost Load (2.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[36mParty Load (1.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE ("parties".host_id = 1)[0m
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[35mGuest Load (1.0ms)[0m  SELECT "guests".* FROM "guests" WHERE ("guests".host_id = 1)
+Rendered invitations/_form.html.erb (394.0ms)
+Rendered invitations/new.html.erb within layouts/application (460.0ms)
+Completed 200 OK in 875ms (Views: 641.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-05-01 17:14:12 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started POST "/invitations" for 127.0.0.1 at 2011-05-01 17:14:25 -0400
+  Processing by InvitationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OWS4HBvRhJ+CPmnjp9xfVhNv6pIflojGFIBNi+z+ICs=", "invitation"=>{"party_id"=>"1", "guest_id"=>"2", "expected_attendees"=>"4"}, "commit"=>"Create Invitation"}
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+  [1m[35mAREL (3.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 2, 'j84qg0e75cu8u5xl', 4, NULL, '2011-05-01 21:14:26.394587', '2011-05-01 21:14:26.394587')
+Completed   in 17861ms
+
+NameError (undefined local variable or method `invitaiton' for #<FriendMailer:0x447bca0>):
+  app/mailers/friend_mailer.rb:5:in `new_invitation_msg'
+  app/controllers/invitations_controller.rb:18:in `create'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (33.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (138.0ms)
+
+
+Started POST "/invitations" for 127.0.0.1 at 2011-05-01 17:14:44 -0400
+  Processing by InvitationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OWS4HBvRhJ+CPmnjp9xfVhNv6pIflojGFIBNi+z+ICs=", "invitation"=>{"party_id"=>"1", "guest_id"=>"2", "expected_attendees"=>"4"}, "commit"=>"Create Invitation"}
+  [1m[36mHost Load (2.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+  [1m[35mAREL (4.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 2, 'lr7z6u67dmtwcx7p', 4, NULL, '2011-05-01 21:14:45.205663', '2011-05-01 21:14:45.205663')
+Completed   in 645ms
+
+NameError (undefined local variable or method `invitaiton' for #<FriendMailer:0x61b2778>):
+  app/mailers/friend_mailer.rb:5:in `new_invitation_msg'
+  app/controllers/invitations_controller.rb:18:in `create'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (35.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (140.0ms)
+
+
+Started POST "/invitations" for 127.0.0.1 at 2011-05-01 17:15:20 -0400
+  Processing by InvitationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OWS4HBvRhJ+CPmnjp9xfVhNv6pIflojGFIBNi+z+ICs=", "invitation"=>{"party_id"=>"1", "guest_id"=>"2", "expected_attendees"=>"4"}, "commit"=>"Create Invitation"}
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+  [1m[35mAREL (3.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 2, 'l23e1fov2fdqatxi', 4, NULL, '2011-05-01 21:15:21.556742', '2011-05-01 21:15:21.556742')
+Completed   in 683ms
+
+NameError (undefined local variable or method `friend' for #<FriendMailer:0x61b8ad8>):
+  app/mailers/friend_mailer.rb:6:in `new_invitation_msg'
+  app/controllers/invitations_controller.rb:18:in `create'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (32.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (135.0ms)
+
+
+Started POST "/invitations" for 127.0.0.1 at 2011-05-01 17:15:46 -0400
+  Processing by InvitationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OWS4HBvRhJ+CPmnjp9xfVhNv6pIflojGFIBNi+z+ICs=", "invitation"=>{"party_id"=>"1", "guest_id"=>"2", "expected_attendees"=>"4"}, "commit"=>"Create Invitation"}
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+  [1m[35mAREL (3.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 2, 'jmx7nivfsr66r25h', 4, NULL, '2011-05-01 21:15:47.804244', '2011-05-01 21:15:47.804244')
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[36mGuest Load (1.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 2 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[35mParty Load (1.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+Rendered friend_mailer/new_invitation_msg.text.erb (117.0ms)
+Completed   in 2985ms
+
+ActionView::Template::Error (undefined method `invite_code' for nil:NilClass):
+    2: 
+    3: You're invited to <% @invitation.party %>!
+    4: 
+    5: Here is your invite code to RSVP: <% @invitaiton.invite_code %>
+    6: 
+    7: Hope you can make it!
+  app/views/friend_mailer/new_invitation_msg.text.erb:5:in `_app_views_friend_mailer_new_invitation_msg_text_erb__154426871_51484080_189420043'
+  app/mailers/friend_mailer.rb:6:in `new_invitation_msg'
+  app/controllers/invitations_controller.rb:18:in `create'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (33.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (136.0ms)
+
+
+Started POST "/invitations" for 127.0.0.1 at 2011-05-01 17:17:36 -0400
+  Processing by InvitationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OWS4HBvRhJ+CPmnjp9xfVhNv6pIflojGFIBNi+z+ICs=", "invitation"=>{"party_id"=>"1", "guest_id"=>"2", "expected_attendees"=>"4"}, "commit"=>"Create Invitation"}
+  [1m[36mHost Load (41.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+  [1m[35mAREL (3.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 2, 'a919ywcl3fy2r80j', 4, NULL, '2011-05-01 21:17:36.922485', '2011-05-01 21:17:36.922485')
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[36mGuest Load (1.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 2 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[35mParty Load (1.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+Rendered friend_mailer/new_invitation_msg.text.erb (117.0ms)
+Redirected to http://localhost:3000/invitations/9
+Completed 302 Found in 1815ms
+
+
+Started GET "/invitations/9" for 127.0.0.1 at 2011-05-01 17:17:38 -0400
+  Processing by InvitationsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+  [1m[35mInvitation Load (2.0ms)[0m  SELECT "invitations".* FROM "invitations" WHERE "invitations"."id" = 9 LIMIT 1
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[36mParty Load (0.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[35mGuest Load (0.0ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = 2 LIMIT 1
+Rendered invitations/show.html.erb within layouts/application (509.0ms)
+Completed 200 OK in 889ms (Views: 695.0ms | ActiveRecord: 49.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-05-01 17:17:40 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
