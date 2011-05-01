@@ -27860,3 +27860,950 @@ Started GET "/" for 127.0.0.1 at 2011-05-01 14:14:34 -0400
   Processing by HomeController#index as HTML
 Rendered home/index.html.erb within layouts/application (8.0ms)
 Completed 200 OK in 10ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+Creating scope :all. Overwriting existing method Guest.all.
+Creating scope :all. Overwriting existing method Invitation.all.
+Creating scope :all. Overwriting existing method Location.all.
+Creating scope :all. Overwriting existing method Party.all.
+Creating scope :all. Overwriting existing method PartyType.all.
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "hosts" WHERE ("hosts"."username" = 'an.heimann') LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "hosts" WHERE ("hosts"."email" = 'an.heimann@example.com') LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAREL (2.0ms)[0m  INSERT INTO "hosts" ("username", "email", "password_hash", "password_salt", "created_at", "updated_at", "first_name", "last_name") VALUES ('an.heimann', 'an.heimann@example.com', '$2a$10$Sz367jTMbp6iKJrOwYWZUOGw/lz1sfReMeXh.etPGdr/S/IupZz1W', '$2a$10$Sz367jTMbp6iKJrOwYWZUO', '2011-05-01 19:21:56.756716', '2011-05-01 19:21:56.756716', 'An', 'Heimann')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "locations" WHERE ("locations"."name" = 'My house') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "locations" ("host_id", "name", "street", "city", "state", "zip", "latitude", "longitude", "created_at", "updated_at") VALUES (1, 'My house', '10152 Sudberry Drive', 'Wexford', 'PA', 15090, 40.597761, -80.063405, '2011-05-01 19:21:56.868722', '2011-05-01 19:21:56.868722')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "locations" WHERE ("locations"."name" = 'North Park') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "locations" ("host_id", "name", "street", "city", "state", "zip", "latitude", "longitude", "created_at", "updated_at") VALUES (1, 'North Park', 'Pearce Mill Road', 'Allison Park', 'PA', 15101, 40.597761, -80.063405, '2011-05-01 19:21:56.893724', '2011-05-01 19:21:56.893724')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Heimann Family') LIMIT 1[0m
+  [1m[35mAREL (1.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Heimann Family', 'heimann@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:21:56.930726', '2011-05-01 19:21:56.930726')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Phelps Family') LIMIT 1[0m
+  [1m[35mAREL (1.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Phelps Family', 'phelps@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:21:56.947727', '2011-05-01 19:21:56.947727')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Quesenberry Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Quesenberry Family', 'quesenberry@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:21:56.952727', '2011-05-01 19:21:56.952727')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Sooriamurthi Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Sooriamurthi Family', 'sooriamurthi@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:21:56.957727', '2011-05-01 19:21:56.957727')
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Weinberg Family') LIMIT 1[0m
+  [1m[35mAREL (1.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Weinberg Family', 'weinberg@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:21:56.961727', '2011-05-01 19:21:56.961727')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Blazevich Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Blazevich Family', 'blazevich@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:21:56.966728', '2011-05-01 19:21:56.966728')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Young Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Young Family', 'young@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:21:56.971728', '2011-05-01 19:21:56.971728')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Schell Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Schell Family', 'seeschells@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:21:56.975728', '2011-05-01 19:21:56.975728')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Reay Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Reay Family', 'reay@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:21:56.980728', '2011-05-01 19:21:56.980728')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'General Party') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('General Party', 't', '2011-05-01 19:21:56.997729', '2011-05-01 19:21:56.997729')
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Birthday Party') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Birthday Party', 't', '2011-05-01 19:21:57.064733', '2011-05-01 19:21:57.064733')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Graduation Party') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Graduation Party', 't', '2011-05-01 19:21:57.068734', '2011-05-01 19:21:57.068734')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Fraternity Party') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Fraternity Party', 't', '2011-05-01 19:21:57.072734', '2011-05-01 19:21:57.072734')
+
+
+Started GET "/login" for 127.0.0.1 at 2011-05-01 15:21:57 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 155ms (Views: 154.0ms | ActiveRecord: 9.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-05-01 15:22:02 -0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "login"=>"an.heimann", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."username" = 'an.heimann' LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 497ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-01 15:22:02 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Rendered home/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 99ms (Views: 97.0ms | ActiveRecord: 1.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "parties" WHERE ("parties"."name" = 'Birthday!') LIMIT 1[0m
+  [1m[35mAREL (1.0ms)[0m  INSERT INTO "parties" ("party_type_id", "host_id", "name", "location_id", "party_date", "start_time", "end_time", "description", "rsvp_date", "created_at", "updated_at") VALUES (2, 1, 'Birthday!', 1, '2011-06-04', '2000-01-01 12:00:00.000000', '2000-01-01 15:00:00.000000', 'A great and thrilling time will be had by all.', '2011-05-22 19:21:03.212653', '2011-05-01 19:22:03.367094', '2011-05-01 19:22:03.367094')
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 1, 'hodv89citccmne45', 4, 4, '2011-05-01 19:22:03.497101', '2011-05-01 19:22:03.497101')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 2, 'jdt0uuhzqjd3ruph', 4, 4, '2011-05-01 19:22:03.514102', '2011-05-01 19:22:03.514102')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 3, 'ndfgy7wgm9l2mvri', 3, 2, '2011-05-01 19:22:03.517102', '2011-05-01 19:22:03.517102')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 4, '82owxr2kk4ox6ag7', 4, 3, '2011-05-01 19:22:03.520103', '2011-05-01 19:22:03.520103')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 5, 'vk5f3r22df4bodwx', 2, NULL, '2011-05-01 19:22:03.523103', '2011-05-01 19:22:03.523103')[0m
+  [1m[35mAREL (1.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 6, '2o2z7og33do4ew18', 5, 5, '2011-05-01 19:22:03.526103', '2011-05-01 19:22:03.526103')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 7, '3xvyxhffwdvwbx34', 5, NULL, '2011-05-01 19:22:03.528103', '2011-05-01 19:22:03.528103')[0m
+
+
+Started GET "/invitations" for 127.0.0.1 at 2011-05-01 15:22:03 -0400
+  Processing by InvitationsController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+  [1m[36mInvitation Load (2.0ms)[0m  [1mSELECT "invitations".* FROM "invitations" INNER JOIN "guests" ON "invitations".guest_id = "guests".id WHERE (("guests".host_id = 1)) ORDER BY party_id[0m
+  [1m[35mParty Load (1.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mGuest Load (1.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mGuest Load (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mGuest Load (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mGuest Load (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mGuest Load (1.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mGuest Load (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mGuest Load (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 7 LIMIT 1[0m
+Rendered invitations/index.html.erb within layouts/application (54.0ms)
+Completed 200 OK in 201ms (Views: 137.0ms | ActiveRecord: 9.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "hosts" WHERE ("hosts"."username" = 'an.heimann') LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "hosts" WHERE ("hosts"."email" = 'an.heimann@example.com') LIMIT 1[0m
+  [1m[35mAREL (2.0ms)[0m  INSERT INTO "hosts" ("username", "email", "password_hash", "password_salt", "created_at", "updated_at", "first_name", "last_name") VALUES ('an.heimann', 'an.heimann@example.com', '$2a$10$m/BcJun6u.UFqnEkr.1izuiiksiI0tB7yKxRpPD9COSeBdSiqmFiy', '$2a$10$m/BcJun6u.UFqnEkr.1izu', '2011-05-01 19:22:04.117137', '2011-05-01 19:22:04.117137', 'An', 'Heimann')
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "locations" WHERE ("locations"."name" = 'My house') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "locations" ("host_id", "name", "street", "city", "state", "zip", "latitude", "longitude", "created_at", "updated_at") VALUES (1, 'My house', '10152 Sudberry Drive', 'Wexford', 'PA', 15090, 40.597761, -80.063405, '2011-05-01 19:22:04.125137', '2011-05-01 19:22:04.125137')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "locations" WHERE ("locations"."name" = 'North Park') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "locations" ("host_id", "name", "street", "city", "state", "zip", "latitude", "longitude", "created_at", "updated_at") VALUES (1, 'North Park', 'Pearce Mill Road', 'Allison Park', 'PA', 15101, 40.597761, -80.063405, '2011-05-01 19:22:04.131137', '2011-05-01 19:22:04.131137')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Heimann Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Heimann Family', 'heimann@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:04.136138', '2011-05-01 19:22:04.136138')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Phelps Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Phelps Family', 'phelps@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:04.141138', '2011-05-01 19:22:04.141138')
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Quesenberry Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Quesenberry Family', 'quesenberry@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:04.145138', '2011-05-01 19:22:04.145138')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Sooriamurthi Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Sooriamurthi Family', 'sooriamurthi@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:04.150139', '2011-05-01 19:22:04.150139')
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Weinberg Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Weinberg Family', 'weinberg@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:04.154139', '2011-05-01 19:22:04.154139')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Blazevich Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Blazevich Family', 'blazevich@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:04.159139', '2011-05-01 19:22:04.159139')
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Young Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Young Family', 'young@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:04.163139', '2011-05-01 19:22:04.163139')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Schell Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Schell Family', 'seeschells@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:04.168140', '2011-05-01 19:22:04.168140')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Reay Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Reay Family', 'reay@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:04.172140', '2011-05-01 19:22:04.172140')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'General Party') LIMIT 1[0m
+  [1m[35mAREL (1.0ms)[0m  INSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('General Party', 't', '2011-05-01 19:22:04.176140', '2011-05-01 19:22:04.176140')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Birthday Party') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Birthday Party', 't', '2011-05-01 19:22:04.180140', '2011-05-01 19:22:04.180140')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Graduation Party') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Graduation Party', 't', '2011-05-01 19:22:04.184141', '2011-05-01 19:22:04.184141')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Fraternity Party') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Fraternity Party', 't', '2011-05-01 19:22:04.188141', '2011-05-01 19:22:04.188141')
+
+
+Started GET "/login" for 127.0.0.1 at 2011-05-01 15:22:04 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 16ms (Views: 16.0ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-05-01 15:22:04 -0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "login"=>"an.heimann", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."username" = 'an.heimann' LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 185ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-01 15:22:04 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Rendered home/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 14ms (Views: 14.0ms | ActiveRecord: 1.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "parties" WHERE ("parties"."name" = 'Birthday!') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "parties" ("party_type_id", "host_id", "name", "location_id", "party_date", "start_time", "end_time", "description", "rsvp_date", "created_at", "updated_at") VALUES (2, 1, 'Birthday!', 1, '2011-06-04', '2000-01-01 12:00:00.000000', '2000-01-01 15:00:00.000000', 'A great and thrilling time will be had by all.', '2011-05-22 19:21:03.212653', '2011-05-01 19:22:04.452156', '2011-05-01 19:22:04.452156')
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 1, '3fnpduw0zb5kmh0i', 4, 4, '2011-05-01 19:22:04.456156', '2011-05-01 19:22:04.456156')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 2, '5mndtc0kc6qgokaj', 4, 4, '2011-05-01 19:22:04.459156', '2011-05-01 19:22:04.459156')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 3, '2sibsb60rbxj99gd', 3, 2, '2011-05-01 19:22:04.462156', '2011-05-01 19:22:04.462156')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 4, 'aelfxh38i6kemmmr', 4, 3, '2011-05-01 19:22:04.465157', '2011-05-01 19:22:04.465157')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 5, '59foy5jlfkzz6eqa', 2, NULL, '2011-05-01 19:22:04.468157', '2011-05-01 19:22:04.468157')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 6, 'ovdliepuxh34b422', 5, 5, '2011-05-01 19:22:04.470157', '2011-05-01 19:22:04.470157')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 7, 'yt7vh7eemz3dyfxb', 5, NULL, '2011-05-01 19:22:04.473157', '2011-05-01 19:22:04.473157')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "hosts" WHERE ("hosts"."username" = 'john.blutarsky') LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "hosts" WHERE ("hosts"."email" = 'john.blutarsky@example.com') LIMIT 1[0m
+  [1m[35mAREL (1.0ms)[0m  INSERT INTO "hosts" ("username", "email", "password_hash", "password_salt", "created_at", "updated_at", "first_name", "last_name") VALUES ('john.blutarsky', 'john.blutarsky@example.com', '$2a$10$IPRn0yVWRs.PJTAWSj5HXeCi/Z5/rYKVhHMT8o4i7gJ.OXvcn83Lq', '$2a$10$IPRn0yVWRs.PJTAWSj5HXe', '2011-05-01 19:22:04.781175', '2011-05-01 19:22:04.781175', 'John', 'Blutarsky')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "locations" WHERE ("locations"."name" = 'Animal House') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "locations" ("host_id", "name", "street", "city", "state", "zip", "latitude", "longitude", "created_at", "updated_at") VALUES (2, 'Animal House', '10152 Sudberry Drive', 'Wexford', 'PA', 15090, 40.597761, -80.063405, '2011-05-01 19:22:04.788175', '2011-05-01 19:22:04.788175')
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Frat Party') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Frat Party', 't', '2011-05-01 19:22:04.795175', '2011-05-01 19:22:04.795175')
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Eric Stratton and Guests') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Eric Stratton and Guests', 'otter@example.com', 2, 'This is the song that runs under the credits...', '2011-05-01 19:22:04.801176', '2011-05-01 19:22:04.801176')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Schoenstein Family') LIMIT 1[0m
+  [1m[35mAREL (1.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Schoenstein Family', 'boon@example.com', 2, 'This is the song that runs under the credits...', '2011-05-01 19:22:04.806176', '2011-05-01 19:22:04.806176')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Kroger Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Kroger Family', 'pinto@example.com', 2, 'This is the song that runs under the credits...', '2011-05-01 19:22:04.812176', '2011-05-01 19:22:04.812176')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "parties" WHERE ("parties"."name" = 'Toga Party') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "parties" ("party_type_id", "host_id", "name", "location_id", "party_date", "start_time", "end_time", "description", "rsvp_date", "created_at", "updated_at") VALUES (5, 2, 'Toga Party', 3, '2011-06-01 19:21:03.057644', '2000-01-01 12:00:00.000000', '2000-01-01 15:00:00.000000', 'A great and thrilling time will be had by all.', '2011-05-22 19:21:03.212653', '2011-05-01 19:22:04.821177', '2011-05-01 19:22:04.821177')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (2, 10, 'qb8ut0w89a7oreox', 2, NULL, '2011-05-01 19:22:04.825177', '2011-05-01 19:22:04.825177')[0m
+  [1m[35mAREL (1.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (2, 11, 'zkn03nfu60yw8msq', 4, 3, '2011-05-01 19:22:04.829177', '2011-05-01 19:22:04.829177')
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (2, 12, '5xfucjiwrdu0l7s2', 5, 5, '2011-05-01 19:22:04.832178', '2011-05-01 19:22:04.832178')[0m
+
+
+Started GET "/invitations" for 127.0.0.1 at 2011-05-01 15:22:04 -0400
+  Processing by InvitationsController#index as HTML
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+  [1m[36mInvitation Load (2.0ms)[0m  [1mSELECT "invitations".* FROM "invitations" INNER JOIN "guests" ON "invitations".guest_id = "guests".id WHERE (("guests".host_id = 1)) ORDER BY party_id[0m
+  [1m[35mParty Load (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mGuest Load (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mGuest Load (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mGuest Load (1.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mGuest Load (1.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mGuest Load (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mGuest Load (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mGuest Load (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 7 LIMIT 1[0m
+Rendered invitations/index.html.erb within layouts/application (51.0ms)
+Completed 200 OK in 54ms (Views: 48.0ms | ActiveRecord: 11.0ms)
+  [1m[35mSQL (1.0ms)[0m  SELECT 1 FROM "hosts" WHERE ("hosts"."username" = 'an.heimann') LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "hosts" WHERE ("hosts"."email" = 'an.heimann@example.com') LIMIT 1[0m
+  [1m[35mAREL (3.0ms)[0m  INSERT INTO "hosts" ("username", "email", "password_hash", "password_salt", "created_at", "updated_at", "first_name", "last_name") VALUES ('an.heimann', 'an.heimann@example.com', '$2a$10$N1yv38szomY16KaQDvx9buMZ/88e3PJNioRA5Fqq9Sr1rPABPr9Ay', '$2a$10$N1yv38szomY16KaQDvx9bu', '2011-05-01 19:22:05.363208', '2011-05-01 19:22:05.363208', 'An', 'Heimann')
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "locations" WHERE ("locations"."name" = 'My house') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "locations" ("host_id", "name", "street", "city", "state", "zip", "latitude", "longitude", "created_at", "updated_at") VALUES (1, 'My house', '10152 Sudberry Drive', 'Wexford', 'PA', 15090, 40.597761, -80.063405, '2011-05-01 19:22:05.374209', '2011-05-01 19:22:05.374209')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "locations" WHERE ("locations"."name" = 'North Park') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "locations" ("host_id", "name", "street", "city", "state", "zip", "latitude", "longitude", "created_at", "updated_at") VALUES (1, 'North Park', 'Pearce Mill Road', 'Allison Park', 'PA', 15101, 40.597761, -80.063405, '2011-05-01 19:22:05.381209', '2011-05-01 19:22:05.381209')
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Heimann Family') LIMIT 1[0m
+  [1m[35mAREL (1.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Heimann Family', 'heimann@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:05.389209', '2011-05-01 19:22:05.389209')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Phelps Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Phelps Family', 'phelps@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:05.395210', '2011-05-01 19:22:05.395210')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Quesenberry Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Quesenberry Family', 'quesenberry@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:05.401210', '2011-05-01 19:22:05.401210')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Sooriamurthi Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Sooriamurthi Family', 'sooriamurthi@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:05.406210', '2011-05-01 19:22:05.406210')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Weinberg Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Weinberg Family', 'weinberg@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:05.412211', '2011-05-01 19:22:05.412211')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Blazevich Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Blazevich Family', 'blazevich@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:05.417211', '2011-05-01 19:22:05.417211')
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Young Family') LIMIT 1[0m
+  [1m[35mAREL (1.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Young Family', 'young@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:05.421211', '2011-05-01 19:22:05.421211')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Schell Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Schell Family', 'seeschells@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:05.427212', '2011-05-01 19:22:05.427212')
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Reay Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Reay Family', 'reay@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:05.431212', '2011-05-01 19:22:05.431212')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'General Party') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('General Party', 't', '2011-05-01 19:22:05.436212', '2011-05-01 19:22:05.436212')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Birthday Party') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Birthday Party', 't', '2011-05-01 19:22:05.440212', '2011-05-01 19:22:05.440212')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Graduation Party') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Graduation Party', 't', '2011-05-01 19:22:05.444213', '2011-05-01 19:22:05.444213')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Fraternity Party') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Fraternity Party', 't', '2011-05-01 19:22:05.448213', '2011-05-01 19:22:05.448213')
+
+
+Started GET "/login" for 127.0.0.1 at 2011-05-01 15:22:05 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 22ms (Views: 22.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-05-01 15:22:05 -0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "login"=>"an.heimann", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."username" = 'an.heimann' LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 194ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-01 15:22:05 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Rendered home/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 2.0ms)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "parties" WHERE ("parties"."name" = 'Birthday!') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "parties" ("party_type_id", "host_id", "name", "location_id", "party_date", "start_time", "end_time", "description", "rsvp_date", "created_at", "updated_at") VALUES (2, 1, 'Birthday!', 1, '2011-06-04', '2000-01-01 12:00:00.000000', '2000-01-01 15:00:00.000000', 'A great and thrilling time will be had by all.', '2011-05-22 19:21:03.212653', '2011-05-01 19:22:05.728229', '2011-05-01 19:22:05.728229')
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 1, '6ew5qeeuxz421rjf', 4, 4, '2011-05-01 19:22:05.732229', '2011-05-01 19:22:05.732229')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 2, '1fbm8e8hvx1gp05q', 4, 4, '2011-05-01 19:22:05.736229', '2011-05-01 19:22:05.736229')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 3, 'hyudhb3c7c4lrqjl', 3, 2, '2011-05-01 19:22:05.739229', '2011-05-01 19:22:05.739229')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 4, '8isubdcb4ocxxbj', 4, 3, '2011-05-01 19:22:05.745230', '2011-05-01 19:22:05.745230')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 5, 'iujyeuy3zp7xvf35', 2, NULL, '2011-05-01 19:22:05.748230', '2011-05-01 19:22:05.748230')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 6, 'carqsezof1iuaw8n', 5, 5, '2011-05-01 19:22:05.751230', '2011-05-01 19:22:05.751230')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 7, 'hqodt8jdztv6bl8h', 5, NULL, '2011-05-01 19:22:05.755230', '2011-05-01 19:22:05.755230')[0m
+
+
+Started GET "/parties/1" for 127.0.0.1 at 2011-05-01 15:22:05 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+  [1m[36mParty Load (0.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Rendered parties/show.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 130ms (Views: 126.0ms | ActiveRecord: 3.0ms)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "hosts" WHERE ("hosts"."username" = 'an.heimann') LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "hosts" WHERE ("hosts"."email" = 'an.heimann@example.com') LIMIT 1
+  [1m[36mAREL (3.0ms)[0m  [1mINSERT INTO "hosts" ("username", "email", "password_hash", "password_salt", "created_at", "updated_at", "first_name", "last_name") VALUES ('an.heimann', 'an.heimann@example.com', '$2a$10$0EGzP0Fsti6SVgptmZRzAe69uNiueEdKTbJ1FgFA.VHT8EKewEYoe', '$2a$10$0EGzP0Fsti6SVgptmZRzAe', '2011-05-01 19:22:06.252259', '2011-05-01 19:22:06.252259', 'An', 'Heimann')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "locations" WHERE ("locations"."name" = 'My house') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "locations" ("host_id", "name", "street", "city", "state", "zip", "latitude", "longitude", "created_at", "updated_at") VALUES (1, 'My house', '10152 Sudberry Drive', 'Wexford', 'PA', 15090, 40.597761, -80.063405, '2011-05-01 19:22:06.262259', '2011-05-01 19:22:06.262259')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "locations" WHERE ("locations"."name" = 'North Park') LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "locations" ("host_id", "name", "street", "city", "state", "zip", "latitude", "longitude", "created_at", "updated_at") VALUES (1, 'North Park', 'Pearce Mill Road', 'Allison Park', 'PA', 15101, 40.597761, -80.063405, '2011-05-01 19:22:06.268260', '2011-05-01 19:22:06.268260')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Heimann Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Heimann Family', 'heimann@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:06.274260', '2011-05-01 19:22:06.274260')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Phelps Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Phelps Family', 'phelps@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:06.284261', '2011-05-01 19:22:06.284261')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Quesenberry Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Quesenberry Family', 'quesenberry@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:06.288261', '2011-05-01 19:22:06.288261')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Sooriamurthi Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Sooriamurthi Family', 'sooriamurthi@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:06.294261', '2011-05-01 19:22:06.294261')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Weinberg Family') LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Weinberg Family', 'weinberg@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:06.298261', '2011-05-01 19:22:06.298261')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Blazevich Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Blazevich Family', 'blazevich@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:06.303262', '2011-05-01 19:22:06.303262')[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Young Family') LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Young Family', 'young@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:06.308262', '2011-05-01 19:22:06.308262')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Schell Family') LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Schell Family', 'seeschells@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:06.313262', '2011-05-01 19:22:06.313262')[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Reay Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Reay Family', 'reay@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:06.318263', '2011-05-01 19:22:06.318263')[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'General Party') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('General Party', 't', '2011-05-01 19:22:06.323263', '2011-05-01 19:22:06.323263')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Birthday Party') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Birthday Party', 't', '2011-05-01 19:22:06.327263', '2011-05-01 19:22:06.327263')[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Graduation Party') LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Graduation Party', 't', '2011-05-01 19:22:06.331263', '2011-05-01 19:22:06.331263')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Fraternity Party') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Fraternity Party', 't', '2011-05-01 19:22:06.336264', '2011-05-01 19:22:06.336264')[0m
+
+
+Started GET "/login" for 127.0.0.1 at 2011-05-01 15:22:06 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 20ms (Views: 20.0ms | ActiveRecord: 13.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-05-01 15:22:06 -0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "login"=>"an.heimann", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."username" = 'an.heimann' LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 197ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-01 15:22:06 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (83.0ms)
+Completed 200 OK in 85ms (Views: 85.0ms | ActiveRecord: 1.0ms)
+  [1m[35mSQL (1.0ms)[0m  SELECT 1 FROM "parties" WHERE ("parties"."name" = 'Birthday!') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "parties" ("party_type_id", "host_id", "name", "location_id", "party_date", "start_time", "end_time", "description", "rsvp_date", "created_at", "updated_at") VALUES (2, 1, 'Birthday!', 1, '2011-06-04', '2000-01-01 12:00:00.000000', '2000-01-01 15:00:00.000000', 'A great and thrilling time will be had by all.', '2011-05-22 19:21:03.212653', '2011-05-01 19:22:06.687284', '2011-05-01 19:22:06.687284')[0m
+  [1m[35mAREL (1.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 1, 'kthjr2rte13t4uut', 4, 4, '2011-05-01 19:22:06.692284', '2011-05-01 19:22:06.692284')
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 2, 'aelartun1hmk1v6h', 4, 4, '2011-05-01 19:22:06.695284', '2011-05-01 19:22:06.695284')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 3, 'aky7nyczq5dfv6vp', 3, 2, '2011-05-01 19:22:06.698284', '2011-05-01 19:22:06.698284')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 4, '8c1t51q054nxy0tr', 4, 3, '2011-05-01 19:22:06.701284', '2011-05-01 19:22:06.701284')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 5, 'rcwa6ky3vrf5jyp3', 2, NULL, '2011-05-01 19:22:06.704285', '2011-05-01 19:22:06.704285')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 6, 'noq43xelevb6cupn', 5, 5, '2011-05-01 19:22:06.707285', '2011-05-01 19:22:06.707285')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 7, 'xhw586fuf4q42hdw', 5, NULL, '2011-05-01 19:22:06.710285', '2011-05-01 19:22:06.710285')
+
+
+Started GET "/invitations/new" for 127.0.0.1 at 2011-05-01 15:22:06 -0400
+  Processing by InvitationsController#new as HTML
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+  [1m[35mParty Load (1.0ms)[0m  SELECT "parties".* FROM "parties" WHERE ("parties".host_id = 1)
+  [1m[36mGuest Load (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE ("guests".host_id = 1)[0m
+Rendered invitations/_form.html.erb (59.0ms)
+Rendered invitations/new.html.erb within layouts/application (140.0ms)
+Completed 200 OK in 238ms (Views: 234.0ms | ActiveRecord: 4.0ms)
+  [1m[35mSQL (1.0ms)[0m  SELECT 1 FROM "hosts" WHERE ("hosts"."username" = 'an.heimann') LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "hosts" WHERE ("hosts"."email" = 'an.heimann@example.com') LIMIT 1[0m
+  [1m[35mAREL (3.0ms)[0m  INSERT INTO "hosts" ("username", "email", "password_hash", "password_salt", "created_at", "updated_at", "first_name", "last_name") VALUES ('an.heimann', 'an.heimann@example.com', '$2a$10$wUx/LpHxvwqeKEyqsddo6e1caVmKGA4Nj6hJ8KWFc8I6INEs6U85y', '$2a$10$wUx/LpHxvwqeKEyqsddo6e', '2011-05-01 19:22:07.329320', '2011-05-01 19:22:07.329320', 'An', 'Heimann')
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "locations" WHERE ("locations"."name" = 'My house') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "locations" ("host_id", "name", "street", "city", "state", "zip", "latitude", "longitude", "created_at", "updated_at") VALUES (1, 'My house', '10152 Sudberry Drive', 'Wexford', 'PA', 15090, 40.597761, -80.063405, '2011-05-01 19:22:07.337321', '2011-05-01 19:22:07.337321')
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "locations" WHERE ("locations"."name" = 'North Park') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "locations" ("host_id", "name", "street", "city", "state", "zip", "latitude", "longitude", "created_at", "updated_at") VALUES (1, 'North Park', 'Pearce Mill Road', 'Allison Park', 'PA', 15101, 40.597761, -80.063405, '2011-05-01 19:22:07.344321', '2011-05-01 19:22:07.344321')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Heimann Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Heimann Family', 'heimann@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:07.349322', '2011-05-01 19:22:07.349322')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Phelps Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Phelps Family', 'phelps@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:07.354322', '2011-05-01 19:22:07.354322')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Quesenberry Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Quesenberry Family', 'quesenberry@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:07.359322', '2011-05-01 19:22:07.359322')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Sooriamurthi Family') LIMIT 1[0m
+  [1m[35mAREL (1.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Sooriamurthi Family', 'sooriamurthi@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:07.374323', '2011-05-01 19:22:07.374323')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Weinberg Family') LIMIT 1[0m
+  [1m[35mAREL (1.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Weinberg Family', 'weinberg@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:07.379323', '2011-05-01 19:22:07.379323')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Blazevich Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Blazevich Family', 'blazevich@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:07.384324', '2011-05-01 19:22:07.384324')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Young Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Young Family', 'young@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:07.389324', '2011-05-01 19:22:07.389324')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Schell Family') LIMIT 1[0m
+  [1m[35mAREL (1.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Schell Family', 'seeschells@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:07.394324', '2011-05-01 19:22:07.394324')
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Reay Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Reay Family', 'reay@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:07.399324', '2011-05-01 19:22:07.399324')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'General Party') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('General Party', 't', '2011-05-01 19:22:07.404325', '2011-05-01 19:22:07.404325')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Birthday Party') LIMIT 1[0m
+  [1m[35mAREL (1.0ms)[0m  INSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Birthday Party', 't', '2011-05-01 19:22:07.409325', '2011-05-01 19:22:07.409325')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Graduation Party') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Graduation Party', 't', '2011-05-01 19:22:07.414325', '2011-05-01 19:22:07.414325')
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Fraternity Party') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Fraternity Party', 't', '2011-05-01 19:22:07.421326', '2011-05-01 19:22:07.421326')
+
+
+Started GET "/login" for 127.0.0.1 at 2011-05-01 15:22:07 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 17ms (Views: 17.0ms | ActiveRecord: 12.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-05-01 15:22:07 -0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "login"=>"an.heimann", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."username" = 'an.heimann' LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 193ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-01 15:22:07 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Rendered home/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 1.0ms)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "parties" WHERE ("parties"."name" = 'Birthday!') LIMIT 1[0m
+  [1m[35mAREL (1.0ms)[0m  INSERT INTO "parties" ("party_type_id", "host_id", "name", "location_id", "party_date", "start_time", "end_time", "description", "rsvp_date", "created_at", "updated_at") VALUES (2, 1, 'Birthday!', 1, '2011-06-04', '2000-01-01 12:00:00.000000', '2000-01-01 15:00:00.000000', 'A great and thrilling time will be had by all.', '2011-05-22 19:21:03.212653', '2011-05-01 19:22:07.706342', '2011-05-01 19:22:07.706342')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 1, 'wkf9b825o0t2ilgy', 4, 4, '2011-05-01 19:22:07.710342', '2011-05-01 19:22:07.710342')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 2, 'h7q4junfd5i21lhj', 4, 4, '2011-05-01 19:22:07.714342', '2011-05-01 19:22:07.714342')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 3, 'jorhsooji2dbhn8s', 3, 2, '2011-05-01 19:22:07.717343', '2011-05-01 19:22:07.717343')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 4, 'zxl1yw7s2r7z8rjv', 4, 3, '2011-05-01 19:22:07.720343', '2011-05-01 19:22:07.720343')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 5, '53727ixpx49wq67', 2, NULL, '2011-05-01 19:22:07.723343', '2011-05-01 19:22:07.723343')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 6, 'xlv00jxk33jowzv', 5, 5, '2011-05-01 19:22:07.726343', '2011-05-01 19:22:07.726343')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 7, '8p44rbxc4x55aqkp', 5, NULL, '2011-05-01 19:22:07.730343', '2011-05-01 19:22:07.730343')[0m
+
+
+Started GET "/invitations/new" for 127.0.0.1 at 2011-05-01 15:22:07 -0400
+  Processing by InvitationsController#new as HTML
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+  [1m[36mParty Load (0.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE ("parties".host_id = 1)[0m
+  [1m[35mGuest Load (0.0ms)[0m  SELECT "guests".* FROM "guests" WHERE ("guests".host_id = 1)
+Rendered invitations/_form.html.erb (18.0ms)
+Rendered invitations/new.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 38ms (Views: 36.0ms | ActiveRecord: 2.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "hosts" WHERE ("hosts"."username" = 'an.heimann') LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "hosts" WHERE ("hosts"."email" = 'an.heimann@example.com') LIMIT 1
+  [1m[36mAREL (10.0ms)[0m  [1mINSERT INTO "hosts" ("username", "email", "password_hash", "password_salt", "created_at", "updated_at", "first_name", "last_name") VALUES ('an.heimann', 'an.heimann@example.com', '$2a$10$O0ccLa/dryQDJiutt/trJukhuItgegZAvpI8A5Uls6OrqUmfrrOgG', '$2a$10$O0ccLa/dryQDJiutt/trJu', '2011-05-01 19:22:08.123366', '2011-05-01 19:22:08.123366', 'An', 'Heimann')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "locations" WHERE ("locations"."name" = 'My house') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "locations" ("host_id", "name", "street", "city", "state", "zip", "latitude", "longitude", "created_at", "updated_at") VALUES (1, 'My house', '10152 Sudberry Drive', 'Wexford', 'PA', 15090, 40.597761, -80.063405, '2011-05-01 19:22:08.140367', '2011-05-01 19:22:08.140367')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "locations" WHERE ("locations"."name" = 'North Park') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "locations" ("host_id", "name", "street", "city", "state", "zip", "latitude", "longitude", "created_at", "updated_at") VALUES (1, 'North Park', 'Pearce Mill Road', 'Allison Park', 'PA', 15101, 40.597761, -80.063405, '2011-05-01 19:22:08.147367', '2011-05-01 19:22:08.147367')[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Heimann Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Heimann Family', 'heimann@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:08.158368', '2011-05-01 19:22:08.158368')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Phelps Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Phelps Family', 'phelps@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:08.163368', '2011-05-01 19:22:08.163368')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Quesenberry Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Quesenberry Family', 'quesenberry@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:08.169368', '2011-05-01 19:22:08.169368')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Sooriamurthi Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Sooriamurthi Family', 'sooriamurthi@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:08.175369', '2011-05-01 19:22:08.175369')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Weinberg Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Weinberg Family', 'weinberg@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:08.180369', '2011-05-01 19:22:08.180369')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Blazevich Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Blazevich Family', 'blazevich@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:08.185369', '2011-05-01 19:22:08.185369')[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Young Family') LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Young Family', 'young@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:08.190370', '2011-05-01 19:22:08.190370')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Schell Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Schell Family', 'seeschells@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:08.196370', '2011-05-01 19:22:08.196370')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Reay Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Reay Family', 'reay@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:08.201370', '2011-05-01 19:22:08.201370')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'General Party') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('General Party', 't', '2011-05-01 19:22:08.207371', '2011-05-01 19:22:08.207371')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Birthday Party') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Birthday Party', 't', '2011-05-01 19:22:08.212371', '2011-05-01 19:22:08.212371')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Graduation Party') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Graduation Party', 't', '2011-05-01 19:22:08.216371', '2011-05-01 19:22:08.216371')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Fraternity Party') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Fraternity Party', 't', '2011-05-01 19:22:08.221371', '2011-05-01 19:22:08.221371')[0m
+
+
+Started GET "/login" for 127.0.0.1 at 2011-05-01 15:22:08 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 13.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-05-01 15:22:08 -0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "login"=>"an.heimann", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."username" = 'an.heimann' LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 287ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-01 15:22:08 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 22ms (Views: 22.0ms | ActiveRecord: 0.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "parties" WHERE ("parties"."name" = 'Birthday!') LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "parties" ("party_type_id", "host_id", "name", "location_id", "party_date", "start_time", "end_time", "description", "rsvp_date", "created_at", "updated_at") VALUES (2, 1, 'Birthday!', 1, '2011-06-04', '2000-01-01 12:00:00.000000', '2000-01-01 15:00:00.000000', 'A great and thrilling time will be had by all.', '2011-05-22 19:21:03.212653', '2011-05-01 19:22:08.622394', '2011-05-01 19:22:08.622394')[0m
+  [1m[35mAREL (1.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 1, 'ihga483kut60dvs2', 4, 4, '2011-05-01 19:22:08.628395', '2011-05-01 19:22:08.628395')
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 2, '5dhuogmy2ntes0hi', 4, 4, '2011-05-01 19:22:08.631395', '2011-05-01 19:22:08.631395')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 3, '7gvi2f1sx3ylpel5', 3, 2, '2011-05-01 19:22:08.635395', '2011-05-01 19:22:08.635395')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 4, 'qkylqujmi5csy12i', 4, 3, '2011-05-01 19:22:08.638395', '2011-05-01 19:22:08.638395')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 5, 'so0wrv5t8a9kwi15', 2, NULL, '2011-05-01 19:22:08.642396', '2011-05-01 19:22:08.642396')
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 6, 'crqi1sxhll2u1q9h', 5, 5, '2011-05-01 19:22:08.645396', '2011-05-01 19:22:08.645396')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 7, 'loerdsz0s0tk8woc', 5, NULL, '2011-05-01 19:22:08.648396', '2011-05-01 19:22:08.648396')
+
+
+Started GET "/invitations/new" for 127.0.0.1 at 2011-05-01 15:22:08 -0400
+  Processing by InvitationsController#new as HTML
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+  [1m[35mParty Load (1.0ms)[0m  SELECT "parties".* FROM "parties" WHERE ("parties".host_id = 1)
+  [1m[36mGuest Load (1.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE ("guests".host_id = 1)[0m
+Rendered invitations/_form.html.erb (19.0ms)
+Rendered invitations/new.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 38ms (Views: 35.0ms | ActiveRecord: 6.0ms)
+
+
+Started POST "/invitations" for 127.0.0.1 at 2011-05-01 15:22:08 -0400
+  Processing by InvitationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "invitation"=>{"party_id"=>"1", "guest_id"=>"8", "expected_attendees"=>"5"}, "commit"=>"Create Invitation"}
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 8, '7kg0r9nw0mqoxxji', 5, NULL, '2011-05-01 19:22:08.768403', '2011-05-01 19:22:08.768403')[0m
+Redirected to http://www.example.com/invitations/8
+Completed 302 Found in 10ms
+
+
+Started GET "/invitations/8" for 127.0.0.1 at 2011-05-01 15:22:08 -0400
+  Processing by InvitationsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+  [1m[36mInvitation Load (0.0ms)[0m  [1mSELECT "invitations".* FROM "invitations" WHERE "invitations"."id" = 8 LIMIT 1[0m
+  [1m[35mParty Load (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mGuest Load (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 8 LIMIT 1[0m
+Rendered invitations/show.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 81ms (Views: 77.0ms | ActiveRecord: 0.0ms)
+  [1m[35mSQL (1.0ms)[0m  SELECT 1 FROM "hosts" WHERE ("hosts"."username" = 'an.heimann') LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "hosts" WHERE ("hosts"."email" = 'an.heimann@example.com') LIMIT 1[0m
+  [1m[35mAREL (3.0ms)[0m  INSERT INTO "hosts" ("username", "email", "password_hash", "password_salt", "created_at", "updated_at", "first_name", "last_name") VALUES ('an.heimann', 'an.heimann@example.com', '$2a$10$FC2gu3CHQL4EtBtbqO.NxeCUo7cH.dJrrPDCGFKeXhMZqu5hvVNqS', '$2a$10$FC2gu3CHQL4EtBtbqO.Nxe', '2011-05-01 19:22:09.327435', '2011-05-01 19:22:09.327435', 'An', 'Heimann')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "locations" WHERE ("locations"."name" = 'My house') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "locations" ("host_id", "name", "street", "city", "state", "zip", "latitude", "longitude", "created_at", "updated_at") VALUES (1, 'My house', '10152 Sudberry Drive', 'Wexford', 'PA', 15090, 40.597761, -80.063405, '2011-05-01 19:22:09.337435', '2011-05-01 19:22:09.337435')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "locations" WHERE ("locations"."name" = 'North Park') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "locations" ("host_id", "name", "street", "city", "state", "zip", "latitude", "longitude", "created_at", "updated_at") VALUES (1, 'North Park', 'Pearce Mill Road', 'Allison Park', 'PA', 15101, 40.597761, -80.063405, '2011-05-01 19:22:09.416440', '2011-05-01 19:22:09.416440')
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Heimann Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Heimann Family', 'heimann@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:09.421440', '2011-05-01 19:22:09.421440')
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Phelps Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Phelps Family', 'phelps@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:09.426440', '2011-05-01 19:22:09.426440')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Quesenberry Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Quesenberry Family', 'quesenberry@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:09.431441', '2011-05-01 19:22:09.431441')
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Sooriamurthi Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Sooriamurthi Family', 'sooriamurthi@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:09.435441', '2011-05-01 19:22:09.435441')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Weinberg Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Weinberg Family', 'weinberg@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:09.440441', '2011-05-01 19:22:09.440441')
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Blazevich Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Blazevich Family', 'blazevich@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:09.444441', '2011-05-01 19:22:09.444441')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Young Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Young Family', 'young@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:09.449442', '2011-05-01 19:22:09.449442')
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Schell Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Schell Family', 'seeschells@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:09.453442', '2011-05-01 19:22:09.453442')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "guests" WHERE ("guests"."name" = 'Reay Family') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Reay Family', 'reay@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:09.458442', '2011-05-01 19:22:09.458442')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'General Party') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('General Party', 't', '2011-05-01 19:22:09.462442', '2011-05-01 19:22:09.462442')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Birthday Party') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Birthday Party', 't', '2011-05-01 19:22:09.467443', '2011-05-01 19:22:09.467443')
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Graduation Party') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Graduation Party', 't', '2011-05-01 19:22:09.472443', '2011-05-01 19:22:09.472443')
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Fraternity Party') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Fraternity Party', 't', '2011-05-01 19:22:09.476443', '2011-05-01 19:22:09.476443')
+
+
+Started GET "/login" for 127.0.0.1 at 2011-05-01 15:22:09 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-05-01 15:22:09 -0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "login"=>"an.heimann", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."username" = 'an.heimann' LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 189ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-01 15:22:09 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Rendered home/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 15ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "parties" WHERE ("parties"."name" = 'Birthday!') LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "parties" ("party_type_id", "host_id", "name", "location_id", "party_date", "start_time", "end_time", "description", "rsvp_date", "created_at", "updated_at") VALUES (2, 1, 'Birthday!', 1, '2011-06-04', '2000-01-01 12:00:00.000000', '2000-01-01 15:00:00.000000', 'A great and thrilling time will be had by all.', '2011-05-22 19:21:03.212653', '2011-05-01 19:22:09.744459', '2011-05-01 19:22:09.744459')
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 1, 'qrw350fszu65bc88', 4, 4, '2011-05-01 19:22:09.748459', '2011-05-01 19:22:09.748459')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 2, 'rzbbli7g4a0emwlx', 4, 4, '2011-05-01 19:22:09.752459', '2011-05-01 19:22:09.752459')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 3, 'gc6d8ex9kw1uya46', 3, 2, '2011-05-01 19:22:09.755459', '2011-05-01 19:22:09.755459')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 4, 'pe3jkkb4jnyna0vh', 4, 3, '2011-05-01 19:22:09.758459', '2011-05-01 19:22:09.758459')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 5, 'vclxgd2r3vywomld', 2, NULL, '2011-05-01 19:22:09.761460', '2011-05-01 19:22:09.761460')[0m
+  [1m[35mAREL (1.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 6, 'jntwcszbs701e67z', 5, 5, '2011-05-01 19:22:09.763460', '2011-05-01 19:22:09.763460')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 7, 'bn1evv2xb38eawrh', 5, NULL, '2011-05-01 19:22:09.766460', '2011-05-01 19:22:09.766460')[0m
+
+
+Started GET "/invitations/new" for 127.0.0.1 at 2011-05-01 15:22:09 -0400
+  Processing by InvitationsController#new as HTML
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+  [1m[36mParty Load (0.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE ("parties".host_id = 1)[0m
+  [1m[35mGuest Load (1.0ms)[0m  SELECT "guests".* FROM "guests" WHERE ("guests".host_id = 1)
+Rendered invitations/_form.html.erb (14.0ms)
+Rendered invitations/new.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 31ms (Views: 28.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/invitations" for 127.0.0.1 at 2011-05-01 15:22:09 -0400
+  Processing by InvitationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "invitation"=>{"party_id"=>"1", "guest_id"=>"1", "expected_attendees"=>"5"}, "commit"=>"Create Invitation"}
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 1, 'sdk10fg9v40jq9eg', 5, NULL, '2011-05-01 19:22:09.852465', '2011-05-01 19:22:09.852465')
+Redirected to http://www.example.com/invitations/8
+Completed 302 Found in 7ms
+
+
+Started GET "/invitations/8" for 127.0.0.1 at 2011-05-01 15:22:09 -0400
+  Processing by InvitationsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+  [1m[35mInvitation Load (1.0ms)[0m  SELECT "invitations".* FROM "invitations" WHERE "invitations"."id" = 8 LIMIT 1
+  [1m[36mParty Load (1.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1[0m
+  [1m[35mGuest Load (1.0ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = 1 LIMIT 1
+Rendered invitations/show.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 26ms (Views: 21.0ms | ActiveRecord: 4.0ms)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "hosts" WHERE ("hosts"."username" = 'an.heimann') LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT 1 FROM "hosts" WHERE ("hosts"."email" = 'an.heimann@example.com') LIMIT 1
+  [1m[36mAREL (3.0ms)[0m  [1mINSERT INTO "hosts" ("username", "email", "password_hash", "password_salt", "created_at", "updated_at", "first_name", "last_name") VALUES ('an.heimann', 'an.heimann@example.com', '$2a$10$A.Bg8pEl6tF5TyCezSQefOYRY.tTRkQijBVD8lrGqqGuRxkq3Cage', '$2a$10$A.Bg8pEl6tF5TyCezSQefO', '2011-05-01 19:22:10.148482', '2011-05-01 19:22:10.148482', 'An', 'Heimann')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "locations" WHERE ("locations"."name" = 'My house') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "locations" ("host_id", "name", "street", "city", "state", "zip", "latitude", "longitude", "created_at", "updated_at") VALUES (1, 'My house', '10152 Sudberry Drive', 'Wexford', 'PA', 15090, 40.597761, -80.063405, '2011-05-01 19:22:10.157482', '2011-05-01 19:22:10.157482')[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT 1 FROM "locations" WHERE ("locations"."name" = 'North Park') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "locations" ("host_id", "name", "street", "city", "state", "zip", "latitude", "longitude", "created_at", "updated_at") VALUES (1, 'North Park', 'Pearce Mill Road', 'Allison Park', 'PA', 15101, 40.597761, -80.063405, '2011-05-01 19:22:10.163483', '2011-05-01 19:22:10.163483')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Heimann Family') LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Heimann Family', 'heimann@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:10.169483', '2011-05-01 19:22:10.169483')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Phelps Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Phelps Family', 'phelps@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:10.175483', '2011-05-01 19:22:10.175483')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Quesenberry Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Quesenberry Family', 'quesenberry@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:10.180483', '2011-05-01 19:22:10.180483')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Sooriamurthi Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Sooriamurthi Family', 'sooriamurthi@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:10.185484', '2011-05-01 19:22:10.185484')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Weinberg Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Weinberg Family', 'weinberg@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:10.191484', '2011-05-01 19:22:10.191484')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Blazevich Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Blazevich Family', 'blazevich@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:10.196484', '2011-05-01 19:22:10.196484')[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Young Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Young Family', 'young@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:10.201485', '2011-05-01 19:22:10.201485')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Schell Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Schell Family', 'seeschells@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:10.207485', '2011-05-01 19:22:10.207485')[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Reay Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Reay Family', 'reay@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:10.212485', '2011-05-01 19:22:10.212485')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'General Party') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('General Party', 't', '2011-05-01 19:22:10.218486', '2011-05-01 19:22:10.218486')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Birthday Party') LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Birthday Party', 't', '2011-05-01 19:22:10.222486', '2011-05-01 19:22:10.222486')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Graduation Party') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Graduation Party', 't', '2011-05-01 19:22:10.227486', '2011-05-01 19:22:10.227486')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Fraternity Party') LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Fraternity Party', 't', '2011-05-01 19:22:10.231486', '2011-05-01 19:22:10.231486')[0m
+
+
+Started GET "/login" for 127.0.0.1 at 2011-05-01 15:22:10 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 16ms (Views: 16.0ms | ActiveRecord: 11.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-05-01 15:22:10 -0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "login"=>"an.heimann", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."username" = 'an.heimann' LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 183ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-01 15:22:10 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 2.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "parties" WHERE ("parties"."name" = 'Birthday!') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "parties" ("party_type_id", "host_id", "name", "location_id", "party_date", "start_time", "end_time", "description", "rsvp_date", "created_at", "updated_at") VALUES (2, 1, 'Birthday!', 1, '2011-06-04', '2000-01-01 12:00:00.000000', '2000-01-01 15:00:00.000000', 'A great and thrilling time will be had by all.', '2011-05-22 19:21:03.212653', '2011-05-01 19:22:10.490501', '2011-05-01 19:22:10.490501')[0m
+  [1m[35mAREL (1.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 1, 'ir3qdzv8fk2csk8p', 4, 4, '2011-05-01 19:22:10.494501', '2011-05-01 19:22:10.494501')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 2, 'o5c3958xpag4ft5f', 4, 4, '2011-05-01 19:22:10.497502', '2011-05-01 19:22:10.497502')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 3, 'iigd7ylqwy04e939', 3, 2, '2011-05-01 19:22:10.500502', '2011-05-01 19:22:10.500502')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 4, '6dmxrbbm9gox0xvw', 4, 3, '2011-05-01 19:22:10.503502', '2011-05-01 19:22:10.503502')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 5, 'h7si377v9a982deq', 2, NULL, '2011-05-01 19:22:10.506502', '2011-05-01 19:22:10.506502')
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 6, 'fyr8wjjfzonauoz2', 5, 5, '2011-05-01 19:22:10.509502', '2011-05-01 19:22:10.509502')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 7, 'bhddk0z22mfyjgzh', 5, NULL, '2011-05-01 19:22:10.512502', '2011-05-01 19:22:10.512502')
+
+
+Started GET "/invitations/new" for 127.0.0.1 at 2011-05-01 15:22:10 -0400
+  Processing by InvitationsController#new as HTML
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+  [1m[35mParty Load (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE ("parties".host_id = 1)
+  [1m[36mGuest Load (1.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE ("guests".host_id = 1)[0m
+Rendered invitations/_form.html.erb (16.0ms)
+Rendered invitations/new.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 36ms (Views: 33.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/invitations" for 127.0.0.1 at 2011-05-01 15:22:10 -0400
+  Processing by InvitationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "invitation"=>{"party_id"=>"1", "guest_id"=>"8", "expected_attendees"=>""}, "commit"=>"Create Invitation"}
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+  [1m[36mParty Load (1.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE ("parties".host_id = 1)[0m
+  [1m[35mGuest Load (1.0ms)[0m  SELECT "guests".* FROM "guests" WHERE ("guests".host_id = 1)
+Rendered invitations/_form.html.erb (32.0ms)
+Rendered invitations/new.html.erb within layouts/application (47.0ms)
+Completed 200 OK in 144ms (Views: 47.0ms | ActiveRecord: 3.0ms)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "hosts" WHERE ("hosts"."username" = 'an.heimann') LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "hosts" WHERE ("hosts"."email" = 'an.heimann@example.com') LIMIT 1
+  [1m[36mAREL (3.0ms)[0m  [1mINSERT INTO "hosts" ("username", "email", "password_hash", "password_salt", "created_at", "updated_at", "first_name", "last_name") VALUES ('an.heimann', 'an.heimann@example.com', '$2a$10$XwNg5x5MWjavDMFg7BqDm.ovRsQe9tVbIGKRghmxfcHacdktsbrtC', '$2a$10$XwNg5x5MWjavDMFg7BqDm.', '2011-05-01 19:22:11.072535', '2011-05-01 19:22:11.072535', 'An', 'Heimann')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "locations" WHERE ("locations"."name" = 'My house') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "locations" ("host_id", "name", "street", "city", "state", "zip", "latitude", "longitude", "created_at", "updated_at") VALUES (1, 'My house', '10152 Sudberry Drive', 'Wexford', 'PA', 15090, 40.597761, -80.063405, '2011-05-01 19:22:11.081535', '2011-05-01 19:22:11.081535')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "locations" WHERE ("locations"."name" = 'North Park') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "locations" ("host_id", "name", "street", "city", "state", "zip", "latitude", "longitude", "created_at", "updated_at") VALUES (1, 'North Park', 'Pearce Mill Road', 'Allison Park', 'PA', 15101, 40.597761, -80.063405, '2011-05-01 19:22:11.088535', '2011-05-01 19:22:11.088535')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Heimann Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Heimann Family', 'heimann@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:11.095536', '2011-05-01 19:22:11.095536')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Phelps Family') LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Phelps Family', 'phelps@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:11.101536', '2011-05-01 19:22:11.101536')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Quesenberry Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Quesenberry Family', 'quesenberry@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:11.107537', '2011-05-01 19:22:11.107537')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Sooriamurthi Family') LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Sooriamurthi Family', 'sooriamurthi@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:11.112537', '2011-05-01 19:22:11.112537')[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Weinberg Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Weinberg Family', 'weinberg@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:11.117537', '2011-05-01 19:22:11.117537')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Blazevich Family') LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Blazevich Family', 'blazevich@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:11.123537', '2011-05-01 19:22:11.123537')[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Young Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Young Family', 'young@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:11.132538', '2011-05-01 19:22:11.132538')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Schell Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Schell Family', 'seeschells@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:11.137538', '2011-05-01 19:22:11.137538')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Reay Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Reay Family', 'reay@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:11.142539', '2011-05-01 19:22:11.142539')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'General Party') LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('General Party', 't', '2011-05-01 19:22:11.146539', '2011-05-01 19:22:11.146539')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Birthday Party') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Birthday Party', 't', '2011-05-01 19:22:11.150539', '2011-05-01 19:22:11.150539')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Graduation Party') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Graduation Party', 't', '2011-05-01 19:22:11.155539', '2011-05-01 19:22:11.155539')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Fraternity Party') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Fraternity Party', 't', '2011-05-01 19:22:11.159539', '2011-05-01 19:22:11.159539')[0m
+
+
+Started GET "/login" for 127.0.0.1 at 2011-05-01 15:22:11 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 16ms (Views: 16.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-05-01 15:22:11 -0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "login"=>"an.heimann", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."username" = 'an.heimann' LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 186ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-01 15:22:11 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 16ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "parties" WHERE ("parties"."name" = 'Birthday!') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "parties" ("party_type_id", "host_id", "name", "location_id", "party_date", "start_time", "end_time", "description", "rsvp_date", "created_at", "updated_at") VALUES (2, 1, 'Birthday!', 1, '2011-06-04', '2000-01-01 12:00:00.000000', '2000-01-01 15:00:00.000000', 'A great and thrilling time will be had by all.', '2011-05-22 19:21:03.212653', '2011-05-01 19:22:11.423555', '2011-05-01 19:22:11.423555')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 1, '2p3iklh4bto2z3vq', 4, 4, '2011-05-01 19:22:11.427555', '2011-05-01 19:22:11.427555')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 2, 's6vcvp4svxsus6mc', 4, 4, '2011-05-01 19:22:11.430555', '2011-05-01 19:22:11.430555')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 3, 'cmi1rekpv6q89a96', 3, 2, '2011-05-01 19:22:11.433555', '2011-05-01 19:22:11.433555')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 4, '1logydh3m29mni5e', 4, 3, '2011-05-01 19:22:11.436555', '2011-05-01 19:22:11.436555')[0m
+  [1m[35mAREL (1.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 5, 'gabc06mm9jj3ni1w', 2, NULL, '2011-05-01 19:22:11.438555', '2011-05-01 19:22:11.438555')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 6, '1bp905tk2wl8gb6c', 5, 5, '2011-05-01 19:22:11.441556', '2011-05-01 19:22:11.441556')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 7, 'ih290umeb0k5zgo8', 5, NULL, '2011-05-01 19:22:11.444556', '2011-05-01 19:22:11.444556')
+
+
+Started GET "/invitations/new" for 127.0.0.1 at 2011-05-01 15:22:11 -0400
+  Processing by InvitationsController#new as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+  [1m[35mParty Load (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE ("parties".host_id = 1)
+  [1m[36mGuest Load (1.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE ("guests".host_id = 1)[0m
+Rendered invitations/_form.html.erb (13.0ms)
+Rendered invitations/new.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 29ms (Views: 27.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/invitations" for 127.0.0.1 at 2011-05-01 15:22:11 -0400
+  Processing by InvitationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "invitation"=>{"party_id"=>"1", "guest_id"=>"8", "expected_attendees"=>"-5"}, "commit"=>"Create Invitation"}
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+  [1m[36mParty Load (0.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE ("parties".host_id = 1)[0m
+  [1m[35mGuest Load (1.0ms)[0m  SELECT "guests".* FROM "guests" WHERE ("guests".host_id = 1)
+Rendered invitations/_form.html.erb (16.0ms)
+Rendered invitations/new.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 40ms (Views: 30.0ms | ActiveRecord: 2.0ms)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "hosts" WHERE ("hosts"."username" = 'an.heimann') LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "hosts" WHERE ("hosts"."email" = 'an.heimann@example.com') LIMIT 1
+  [1m[36mAREL (3.0ms)[0m  [1mINSERT INTO "hosts" ("username", "email", "password_hash", "password_salt", "created_at", "updated_at", "first_name", "last_name") VALUES ('an.heimann', 'an.heimann@example.com', '$2a$10$RFbP2kBvHaonOl1P7t1pEec21NcnkXfzAUc0gfMkaR1e2ZEl85Cw.', '$2a$10$RFbP2kBvHaonOl1P7t1pEe', '2011-05-01 19:22:11.794576', '2011-05-01 19:22:11.794576', 'An', 'Heimann')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "locations" WHERE ("locations"."name" = 'My house') LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "locations" ("host_id", "name", "street", "city", "state", "zip", "latitude", "longitude", "created_at", "updated_at") VALUES (1, 'My house', '10152 Sudberry Drive', 'Wexford', 'PA', 15090, 40.597761, -80.063405, '2011-05-01 19:22:11.803576', '2011-05-01 19:22:11.803576')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "locations" WHERE ("locations"."name" = 'North Park') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "locations" ("host_id", "name", "street", "city", "state", "zip", "latitude", "longitude", "created_at", "updated_at") VALUES (1, 'North Park', 'Pearce Mill Road', 'Allison Park', 'PA', 15101, 40.597761, -80.063405, '2011-05-01 19:22:11.810577', '2011-05-01 19:22:11.810577')[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Heimann Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Heimann Family', 'heimann@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:11.815577', '2011-05-01 19:22:11.815577')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Phelps Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Phelps Family', 'phelps@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:11.821577', '2011-05-01 19:22:11.821577')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Quesenberry Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Quesenberry Family', 'quesenberry@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:11.827578', '2011-05-01 19:22:11.827578')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Sooriamurthi Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Sooriamurthi Family', 'sooriamurthi@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:11.832578', '2011-05-01 19:22:11.832578')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Weinberg Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Weinberg Family', 'weinberg@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:11.837578', '2011-05-01 19:22:11.837578')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Blazevich Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Blazevich Family', 'blazevich@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:11.842579', '2011-05-01 19:22:11.842579')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Young Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Young Family', 'young@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:11.847579', '2011-05-01 19:22:11.847579')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Schell Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Schell Family', 'seeschells@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:11.852579', '2011-05-01 19:22:11.852579')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Reay Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Reay Family', 'reay@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:11.858579', '2011-05-01 19:22:11.858579')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'General Party') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('General Party', 't', '2011-05-01 19:22:11.863580', '2011-05-01 19:22:11.863580')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Birthday Party') LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Birthday Party', 't', '2011-05-01 19:22:11.867580', '2011-05-01 19:22:11.867580')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Graduation Party') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Graduation Party', 't', '2011-05-01 19:22:11.872580', '2011-05-01 19:22:11.872580')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Fraternity Party') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Fraternity Party', 't', '2011-05-01 19:22:11.876580', '2011-05-01 19:22:11.876580')[0m
+
+
+Started GET "/login" for 127.0.0.1 at 2011-05-01 15:22:11 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 18ms (Views: 18.0ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-05-01 15:22:11 -0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "login"=>"an.heimann", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."username" = 'an.heimann' LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 186ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-01 15:22:12 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "parties" WHERE ("parties"."name" = 'Birthday!') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "parties" ("party_type_id", "host_id", "name", "location_id", "party_date", "start_time", "end_time", "description", "rsvp_date", "created_at", "updated_at") VALUES (2, 1, 'Birthday!', 1, '2011-06-04', '2000-01-01 12:00:00.000000', '2000-01-01 15:00:00.000000', 'A great and thrilling time will be had by all.', '2011-05-22 19:21:03.212653', '2011-05-01 19:22:12.216600', '2011-05-01 19:22:12.216600')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 1, '9j0fkrg013huq7l1', 4, 4, '2011-05-01 19:22:12.220600', '2011-05-01 19:22:12.220600')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 2, 'bq5lr93qw6xggdu1', 4, 4, '2011-05-01 19:22:12.223600', '2011-05-01 19:22:12.223600')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 3, 'nin2f00gl6hs9s15', 3, 2, '2011-05-01 19:22:12.226601', '2011-05-01 19:22:12.226601')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 4, 'rcl9qmkpk8xcizqb', 4, 3, '2011-05-01 19:22:12.228601', '2011-05-01 19:22:12.228601')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 5, '5723oxk6h9nccs1d', 2, NULL, '2011-05-01 19:22:12.231601', '2011-05-01 19:22:12.231601')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 6, 'yg26hrglkn1fddvv', 5, 5, '2011-05-01 19:22:12.234601', '2011-05-01 19:22:12.234601')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 7, 'kr727hlukm42casz', 5, NULL, '2011-05-01 19:22:12.237601', '2011-05-01 19:22:12.237601')
+
+
+Started GET "/invitations/new" for 127.0.0.1 at 2011-05-01 15:22:12 -0400
+  Processing by InvitationsController#new as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+  [1m[35mParty Load (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE ("parties".host_id = 1)
+  [1m[36mGuest Load (1.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE ("guests".host_id = 1)[0m
+Rendered invitations/_form.html.erb (14.0ms)
+Rendered invitations/new.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 29ms (Views: 27.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/invitations" for 127.0.0.1 at 2011-05-01 15:22:12 -0400
+  Processing by InvitationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "invitation"=>{"party_id"=>"1", "guest_id"=>"8", "expected_attendees"=>"3.14159"}, "commit"=>"Create Invitation"}
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+  [1m[36mParty Load (1.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE ("parties".host_id = 1)[0m
+  [1m[35mGuest Load (1.0ms)[0m  SELECT "guests".* FROM "guests" WHERE ("guests".host_id = 1)
+Rendered invitations/_form.html.erb (17.0ms)
+Rendered invitations/new.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 40ms (Views: 30.0ms | ActiveRecord: 2.0ms)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT 1 FROM "hosts" WHERE ("hosts"."username" = 'an.heimann') LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "hosts" WHERE ("hosts"."email" = 'an.heimann@example.com') LIMIT 1
+  [1m[36mAREL (3.0ms)[0m  [1mINSERT INTO "hosts" ("username", "email", "password_hash", "password_salt", "created_at", "updated_at", "first_name", "last_name") VALUES ('an.heimann', 'an.heimann@example.com', '$2a$10$4LDJLUG4vrYM4w6DfhXMlurC92yLjHPuWuXJfQuo9SC7ftNo8U07q', '$2a$10$4LDJLUG4vrYM4w6DfhXMlu', '2011-05-01 19:22:12.594622', '2011-05-01 19:22:12.594622', 'An', 'Heimann')[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT 1 FROM "locations" WHERE ("locations"."name" = 'My house') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "locations" ("host_id", "name", "street", "city", "state", "zip", "latitude", "longitude", "created_at", "updated_at") VALUES (1, 'My house', '10152 Sudberry Drive', 'Wexford', 'PA', 15090, 40.597761, -80.063405, '2011-05-01 19:22:12.604622', '2011-05-01 19:22:12.604622')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "locations" WHERE ("locations"."name" = 'North Park') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "locations" ("host_id", "name", "street", "city", "state", "zip", "latitude", "longitude", "created_at", "updated_at") VALUES (1, 'North Park', 'Pearce Mill Road', 'Allison Park', 'PA', 15101, 40.597761, -80.063405, '2011-05-01 19:22:12.610622', '2011-05-01 19:22:12.610622')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Heimann Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Heimann Family', 'heimann@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:12.648625', '2011-05-01 19:22:12.648625')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Phelps Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Phelps Family', 'phelps@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:12.653625', '2011-05-01 19:22:12.653625')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Quesenberry Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Quesenberry Family', 'quesenberry@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:12.658625', '2011-05-01 19:22:12.658625')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Sooriamurthi Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Sooriamurthi Family', 'sooriamurthi@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:12.663626', '2011-05-01 19:22:12.663626')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Weinberg Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Weinberg Family', 'weinberg@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:12.668626', '2011-05-01 19:22:12.668626')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Blazevich Family') LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Blazevich Family', 'blazevich@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:12.674626', '2011-05-01 19:22:12.674626')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Young Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Young Family', 'young@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:12.680626', '2011-05-01 19:22:12.680626')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Schell Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Schell Family', 'seeschells@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:12.685627', '2011-05-01 19:22:12.685627')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "guests" WHERE ("guests"."name" = 'Reay Family') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "guests" ("name", "email", "host_id", "notes", "created_at", "updated_at") VALUES ('Reay Family', 'reay@example.com', 1, 'This is the song that runs under the credits...', '2011-05-01 19:22:12.690627', '2011-05-01 19:22:12.690627')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'General Party') LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('General Party', 't', '2011-05-01 19:22:12.695627', '2011-05-01 19:22:12.695627')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Birthday Party') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Birthday Party', 't', '2011-05-01 19:22:12.700628', '2011-05-01 19:22:12.700628')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Graduation Party') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Graduation Party', 't', '2011-05-01 19:22:12.705628', '2011-05-01 19:22:12.705628')[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "party_types" WHERE ("party_types"."name" = 'Fraternity Party') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "party_types" ("name", "active", "created_at", "updated_at") VALUES ('Fraternity Party', 't', '2011-05-01 19:22:12.709628', '2011-05-01 19:22:12.709628')[0m
+
+
+Started GET "/login" for 127.0.0.1 at 2011-05-01 15:22:12 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-05-01 15:22:12 -0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "login"=>"an.heimann", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."username" = 'an.heimann' LIMIT 1
+Redirected to http://www.example.com/
+Completed 302 Found in 199ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-01 15:22:12 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.0ms)
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "parties" WHERE ("parties"."name" = 'Birthday!') LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "parties" ("party_type_id", "host_id", "name", "location_id", "party_date", "start_time", "end_time", "description", "rsvp_date", "created_at", "updated_at") VALUES (2, 1, 'Birthday!', 1, '2011-06-04', '2000-01-01 12:00:00.000000', '2000-01-01 15:00:00.000000', 'A great and thrilling time will be had by all.', '2011-05-22 19:21:03.212653', '2011-05-01 19:22:13.002645', '2011-05-01 19:22:13.002645')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 1, '1krl93o0vcuzaw3j', 4, 4, '2011-05-01 19:22:13.007645', '2011-05-01 19:22:13.007645')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 2, 'qifq0uopuwtep0q7', 4, 4, '2011-05-01 19:22:13.018646', '2011-05-01 19:22:13.018646')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 3, 'jvc3hpmxds5x973c', 3, 2, '2011-05-01 19:22:13.021646', '2011-05-01 19:22:13.021646')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 4, 'yoctfqo9kvserhhb', 4, 3, '2011-05-01 19:22:13.026646', '2011-05-01 19:22:13.026646')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 5, 'a05guxzupwg6xk9j', 2, NULL, '2011-05-01 19:22:13.034647', '2011-05-01 19:22:13.034647')
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 6, 'hw15ebnbohh0q8hn', 5, 5, '2011-05-01 19:22:13.041647', '2011-05-01 19:22:13.041647')[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 7, 'mzlm2pv6qqda2jfl', 5, NULL, '2011-05-01 19:22:13.054648', '2011-05-01 19:22:13.054648')
+
+
+Started GET "/invitations/new" for 127.0.0.1 at 2011-05-01 15:22:13 -0400
+  Processing by InvitationsController#new as HTML
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+  [1m[35mParty Load (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE ("parties".host_id = 1)
+  [1m[36mGuest Load (1.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE ("guests".host_id = 1)[0m
+Rendered invitations/_form.html.erb (15.0ms)
+Rendered invitations/new.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 33ms (Views: 29.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/invitations" for 127.0.0.1 at 2011-05-01 15:22:13 -0400
+  Processing by InvitationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "invitation"=>{"party_id"=>"1", "guest_id"=>"2", "expected_attendees"=>"5"}, "commit"=>"Create Invitation"}
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "invitations" ("party_id", "guest_id", "invite_code", "expected_attendees", "actual_attendees", "created_at", "updated_at") VALUES (1, 2, 'jnu2wojrl3huuyhu', 5, NULL, '2011-05-01 19:22:13.183655', '2011-05-01 19:22:13.183655')[0m
+Redirected to http://www.example.com/invitations/8
+Completed 302 Found in 33ms
+
+
+Started GET "/invitations/8" for 127.0.0.1 at 2011-05-01 15:22:13 -0400
+  Processing by InvitationsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+  [1m[36mInvitation Load (1.0ms)[0m  [1mSELECT "invitations".* FROM "invitations" WHERE "invitations"."id" = 8 LIMIT 1[0m
+  [1m[35mParty Load (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mGuest Load (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 2 LIMIT 1[0m
+Rendered invitations/show.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 90ms (Views: 86.0ms | ActiveRecord: 1.0ms)
