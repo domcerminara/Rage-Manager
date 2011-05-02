@@ -32,6 +32,7 @@
   <strong>Rsvp Date:</strong>
   <%= @party.rsvp_date.strftime("%B %e, %Y") %>
 </p>
+<%= image_tag @party.location.create_map_link %>
 
 <p>
   <%= link_to "Edit", edit_party_path(@party) %> |
