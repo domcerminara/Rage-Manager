@@ -29,8 +29,32 @@
   <%= @party.description %>
 </p>
 <p>
-  <strong>Rsvp Date:</strong>
-  <%= @party.rsvp_date.strftime("%B %e, %Y") %>
+  <% if @party.rsvp_date == nil %>
+  <% else %>
+    <b>Confirmed Attendance:</b>
+    <%= @party.attending %> 
+  <% end %>  
+</p>
+
+<p>
+  <% if @party.rsvp_date == nil %>
+  <% else %>
+    <b>Expected Attendance:</b>
+    <%= @party.expected %> 
+  <% end %>
+</p>
+
+<p>
+  <% if @party.rsvp_date == nil %>
+  <% else %>
+    <b>Invited Guests</b>
+    <br />
+    <% for guest in @party.guests %>
+      <tr>
+        <td><%= guest.name %></td><br />
+      </tr>
+    <% end %> 
+  <% end %>
 </p>
 <%= image_tag @party.location.create_map_link %>
 

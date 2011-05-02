@@ -1,8 +1,8 @@
 <% title "Gift" %>
 
 <p>
-  <strong>Invitation:</strong>
-  <%= @gift.invitation_id %>
+  <strong>Guest:</strong>
+  <%= link_to link_to @gift.invitation.guest.name, guest_path(guest) %>
 </p>
 <p>
   <strong>Description:</strong>

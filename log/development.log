@@ -11826,3 +11826,929 @@ ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
   
 
 Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/parties/4" for 127.0.0.1 at 2011-05-02 03:32:43 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[36mParty Load (0.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE "parties"."id" = 4 LIMIT 1[0m
+Creating scope :all. Overwriting existing method PartyType.all.
+  [1m[35mPartyType Load (1.0ms)[0m  SELECT "party_types".* FROM "party_types" WHERE "party_types"."id" = 7 LIMIT 1
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[36mLocation Load (1.0ms)[0m  [1mSELECT "locations".* FROM "locations" WHERE "locations"."id" = 3 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+  [1m[35mSQL (1.0ms)[0m  SELECT SUM("invitations"."expected_attendees") AS sum_id FROM "invitations" WHERE ("invitations".party_id = 4)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT SUM("invitations"."actual_attendees") AS sum_id FROM "invitations" WHERE ("invitations".party_id = 4)[0m
+Rendered parties/show.html.erb within layouts/application (388.0ms)
+Completed 200 OK in 774ms (Views: 522.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-05-02 03:32:44 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/parties/4" for 127.0.0.1 at 2011-05-02 03:37:01 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[36mParty Load (0.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE "parties"."id" = 4 LIMIT 1[0m
+Creating scope :all. Overwriting existing method PartyType.all.
+  [1m[35mPartyType Load (1.0ms)[0m  SELECT "party_types".* FROM "party_types" WHERE "party_types"."id" = 7 LIMIT 1
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[36mLocation Load (1.0ms)[0m  [1mSELECT "locations".* FROM "locations" WHERE "locations"."id" = 3 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+  [1m[35mSQL (1.0ms)[0m  SELECT SUM("invitations"."expected_attendees") AS sum_id FROM "invitations" WHERE ("invitations".party_id = 4)
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT SUM("invitations"."actual_attendees") AS sum_id FROM "invitations" WHERE ("invitations".party_id = 4)[0m
+Rendered parties/show.html.erb within layouts/application (446.0ms)
+Completed 200 OK in 818ms (Views: 600.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-05-02 03:37:02 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-02 03:37:05 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Rendered home/index.html.erb within layouts/application (230.0ms)
+Completed 200 OK in 368ms (Views: 367.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-05-02 03:37:06 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/party" for 127.0.0.1 at 2011-05-02 03:39:08 -0400
+  Processing by PartiesController#index as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[35mParty Load (1.0ms)[0m  SELECT "parties".* FROM "parties" WHERE ("parties".host_id = 1) ORDER BY name
+Creating scope :all. Overwriting existing method PartyType.all.
+  [1m[36mPartyType Load (0.0ms)[0m  [1mSELECT "party_types".* FROM "party_types" WHERE "party_types"."id" = 7 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[35mLocation Load (2.0ms)[0m  SELECT "locations".* FROM "locations" WHERE "locations"."id" = 3 LIMIT 1
+  [1m[36mPartyType Load (1.0ms)[0m  [1mSELECT "party_types".* FROM "party_types" WHERE "party_types"."id" = 4 LIMIT 1[0m
+  [1m[35mLocation Load (1.0ms)[0m  SELECT "locations".* FROM "locations" WHERE "locations"."id" = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "party_types".* FROM "party_types" WHERE "party_types"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "locations".* FROM "locations" WHERE "locations"."id" = 2 LIMIT 1
+Rendered parties/index.html.erb within layouts/application (324.0ms)
+Completed 200 OK in 703ms (Views: 459.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-05-02 03:39:10 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/parties/3" for 127.0.0.1 at 2011-05-02 03:39:13 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[35mParty Load (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 3 LIMIT 1
+Creating scope :all. Overwriting existing method PartyType.all.
+  [1m[36mPartyType Load (1.0ms)[0m  [1mSELECT "party_types".* FROM "party_types" WHERE "party_types"."id" = 4 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[35mLocation Load (1.0ms)[0m  SELECT "locations".* FROM "locations" WHERE "locations"."id" = 2 LIMIT 1
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+  [1m[36mSQL (2.0ms)[0m  [1mSELECT SUM("invitations"."actual_attendees") AS sum_id FROM "invitations" WHERE ("invitations".party_id = 3)[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT SUM("invitations"."expected_attendees") AS sum_id FROM "invitations" WHERE ("invitations".party_id = 3)
+Rendered parties/show.html.erb within layouts/application (421.0ms)
+Completed   in 846ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+    49:   <% else %>
+    50:     <b>Invited Guests</b>
+    51:     <br />
+    52:     <% for guest in @guests %>
+    53:       <tr>
+    54:         <td><%= guest.name %></td><br />
+    55:       </tr>
+  app/views/parties/show.html.erb:52:in `_app_views_parties_show_html_erb___891160697_49494984__603862646'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (36.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (122.0ms)
+
+
+Started GET "/parties/3" for 127.0.0.1 at 2011-05-02 03:41:06 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[35mParty Load (1.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 3 LIMIT 1
+ERROR: compiling _app_views_parties_show_html_erb___891160697_33136392__603862646 RAISED c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/views/parties/show.html.erb:52: syntax error, unexpected tIVAR
+');     for guest in party.@guests 
+                                  ^
+c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/views/parties/show.html.erb:67: syntax error, unexpected keyword_ensure, expecting $end
+Function body:           def _app_views_parties_show_html_erb___891160697_33136392__603862646(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "parties/show";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new; title "Party" 
+@output_buffer.safe_concat('
+<p>
+  <strong>Party Type:</strong>
+  ');@output_buffer.append= ( @party.party_type.name );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</p>
+<p>
+  <strong>Name:</strong>
+  ');@output_buffer.append= ( @party.name );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</p>
+<p>
+  <strong>Location:</strong>
+  ');@output_buffer.append= ( @party.location.name );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</p>
+<p>
+  <strong>Party Date:</strong>
+  ');@output_buffer.append= ( @party.party_date.strftime("%B %e, %Y") );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</p>
+<p>
+  <strong>Start Time:</strong>
+  ');@output_buffer.append= ( @party.start_time.strftime("%I:%M %p") );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</p>
+<p>
+  <strong>End Time:</strong>
+  ');@output_buffer.append= ( @party.end_time.strftime("%I:%M %p") );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</p>
+<p>
+  <strong>Description:</strong>
+  ');@output_buffer.append= ( @party.description );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</p>
+<p>
+');   if @party.rsvp_date == nil 
+   else 
+@output_buffer.safe_concat('    <b>Confirmed Attendance:</b>
+    ');@output_buffer.append= ( @party.attending );@output_buffer.safe_concat(' 
+');   end   
+@output_buffer.safe_concat('</p>
+
+<p>
+');   if @party.rsvp_date == nil 
+   else 
+@output_buffer.safe_concat('    <b>Expected Attendance:</b>
+    ');@output_buffer.append= ( @party.expected );@output_buffer.safe_concat(' 
+');   end 
+@output_buffer.safe_concat('</p>
+
+<p>
+');   if @party.rsvp_date == nil 
+   else 
+@output_buffer.safe_concat('    <b>Invited Guests</b>
+    <br />
+');     for guest in party.@guests 
+@output_buffer.safe_concat('      <tr>
+        <td>');@output_buffer.append= ( guest.name );@output_buffer.safe_concat('</td><br />
+      </tr>
+');     end  
+   end 
+@output_buffer.safe_concat('</p>
+');@output_buffer.append= ( image_tag @party.location.create_map_link );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+<p>
+  ');@output_buffer.append= ( link_to "Edit", edit_party_path(@party) );@output_buffer.safe_concat(' |
+  ');@output_buffer.append= ( link_to "Destroy", @party, :confirm => 'Are you sure?', :method => :delete );@output_buffer.safe_concat(' |
+  ');@output_buffer.append= ( link_to "View All", parties_path );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</p>
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_view/template.rb:255:in `module_eval'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_view/template.rb:255:in `compile'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_view/template.rb:134:in `block in render'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.7/lib/active_support/notifications.rb:54:in `instrument'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_view/template.rb:127:in `render'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `block in instrument'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:56:in `_render_template'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:26:in `render'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:115:in `_render_template'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:93:in `render'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:17:in `render'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+c:/Ruby192/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activerecord-3.0.7/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:39:in `render'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:14:in `default_render'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:6:in `send_action'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:150:in `process_action'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:11:in `process_action'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:441:in `_run__1057482361__process_action__776810952__callbacks'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:94:in `run_callbacks'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:17:in `process_action'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `block in instrument'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal/rescue.rb:17:in `process_action'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:119:in `process'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:41:in `process'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal.rb:138:in `dispatch'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal.rb:178:in `block in action'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:27:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `block in call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:89:in `optimized_each'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:493:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/head.rb:14:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.2/lib/rack/methodoverride.rb:24:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/flash.rb:182:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:32:in `block in call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:12:in `cache'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:31:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.2/lib/rack/sendfile.rb:107:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/railties-3.0.7/lib/rails/rack/logger.rb:13:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.2/lib/rack/runtime.rb:17:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.7/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.2/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/static.rb:30:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/railties-3.0.7/lib/rails/application.rb:168:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/railties-3.0.7/lib/rails/application.rb:77:in `method_missing'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/railties-3.0.7/lib/rails/rack/log_tailer.rb:14:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.2/lib/rack/content_length.rb:13:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.2/lib/rack/handler/webrick.rb:52:in `service'
+c:/Ruby192/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+c:/Ruby192/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+c:/Ruby192/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered parties/show.html.erb within layouts/application (8.0ms)
+Completed   in 413ms
+
+ActionView::Template::Error (c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/views/parties/show.html.erb:52: syntax error, unexpected tIVAR
+');     for guest in party.@guests 
+                                  ^
+c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/views/parties/show.html.erb:67: syntax error, unexpected keyword_ensure, expecting $end):
+    49:   <% else %>
+    50:     <b>Invited Guests</b>
+    51:     <br />
+    52:     <% for guest in party.@guests %>
+    53:       <tr>
+    54:         <td><%= guest.name %></td><br />
+    55:       </tr>
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (45.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (205.0ms)
+
+
+Started GET "/parties/3" for 127.0.0.1 at 2011-05-02 03:41:13 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[35mParty Load (1.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 3 LIMIT 1
+Creating scope :all. Overwriting existing method PartyType.all.
+  [1m[36mPartyType Load (1.0ms)[0m  [1mSELECT "party_types".* FROM "party_types" WHERE "party_types"."id" = 4 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[35mLocation Load (1.0ms)[0m  SELECT "locations".* FROM "locations" WHERE "locations"."id" = 2 LIMIT 1
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT SUM("invitations"."actual_attendees") AS sum_id FROM "invitations" WHERE ("invitations".party_id = 3)[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT SUM("invitations"."expected_attendees") AS sum_id FROM "invitations" WHERE ("invitations".party_id = 3)
+Rendered parties/show.html.erb within layouts/application (545.0ms)
+Completed   in 947ms
+
+ActionView::Template::Error (undefined local variable or method `party' for #<#<Class:0x5b132b0>:0x5b10eb0>):
+    49:   <% else %>
+    50:     <b>Invited Guests</b>
+    51:     <br />
+    52:     <% for guest in party.guests %>
+    53:       <tr>
+    54:         <td><%= guest.name %></td><br />
+    55:       </tr>
+  app/views/parties/show.html.erb:52:in `_app_views_parties_show_html_erb___891160697_47417628__603862646'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (92.0ms)
+
+
+Started GET "/parties/3" for 127.0.0.1 at 2011-05-02 03:41:23 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[35mParty Load (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 3 LIMIT 1
+Creating scope :all. Overwriting existing method PartyType.all.
+  [1m[36mPartyType Load (1.0ms)[0m  [1mSELECT "party_types".* FROM "party_types" WHERE "party_types"."id" = 4 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[35mLocation Load (1.0ms)[0m  SELECT "locations".* FROM "locations" WHERE "locations"."id" = 2 LIMIT 1
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT SUM("invitations"."actual_attendees") AS sum_id FROM "invitations" WHERE ("invitations".party_id = 3)[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT SUM("invitations"."expected_attendees") AS sum_id FROM "invitations" WHERE ("invitations".party_id = 3)
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[36mGuest Load (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" INNER JOIN "invitations" ON "guests".id = "invitations".guest_id WHERE (("invitations".party_id = 3))[0m
+Rendered parties/show.html.erb within layouts/application (496.0ms)
+Completed 200 OK in 786ms (Views: 624.0ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-05-02 03:41:24 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/guest" for 127.0.0.1 at 2011-05-02 03:52:19 -0400
+  Processing by GuestsController#index as HTML
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[36mGuest Load (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE ("guests".host_id = 1) ORDER BY name[0m
+Rendered guests/index.html.erb within layouts/application (54.0ms)
+Completed 200 OK in 442ms (Views: 212.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-05-02 03:52:20 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/location" for 127.0.0.1 at 2011-05-02 03:52:22 -0400
+  Processing by LocationsController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[36mLocation Load (0.0ms)[0m  [1mSELECT "locations".* FROM "locations" WHERE ("locations".host_id = 1) ORDER BY name[0m
+Rendered locations/index.html.erb within layouts/application (44.0ms)
+Completed 200 OK in 504ms (Views: 212.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-05-02 03:52:23 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/invitation" for 127.0.0.1 at 2011-05-02 03:52:24 -0400
+  Processing by InvitationsController#index as HTML
+  [1m[35mHost Load (2.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Guest.all.
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+  [1m[36mInvitation Load (56.0ms)[0m  [1mSELECT "invitations".* FROM "invitations" INNER JOIN "guests" ON "invitations".guest_id = "guests".id WHERE (("guests".host_id = 1)) ORDER BY party_id[0m
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[35mParty Load (1.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mGuest Load (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mGuest Load (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mGuest Load (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 6 LIMIT 1[0m
+  [1m[35mParty Load (1.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "parties".* FROM "parties" WHERE "parties"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 6 LIMIT 1[0m
+Rendered invitations/index.html.erb within layouts/application (526.0ms)
+Completed 200 OK in 936ms (Views: 629.0ms | ActiveRecord: 60.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-05-02 03:52:25 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/gift" for 127.0.0.1 at 2011-05-02 03:52:26 -0400
+  Processing by GiftsController#index as HTML
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+  [1m[36mGift Load (0.0ms)[0m  [1mSELECT "gifts".* FROM "gifts"[0m
+Rendered gifts/index.html.erb within layouts/application (40.0ms)
+Completed 200 OK in 336ms (Views: 201.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-05-02 03:52:27 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/gifts/1" for 127.0.0.1 at 2011-05-02 03:53:07 -0400
+  Processing by GiftsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+  [1m[36mGift Load (1.0ms)[0m  [1mSELECT "gifts".* FROM "gifts" WHERE "gifts"."id" = 1 LIMIT 1[0m
+Rendered gifts/show.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 428ms (Views: 193.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-05-02 03:53:08 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/gifts/1" for 127.0.0.1 at 2011-05-02 03:54:03 -0400
+  Processing by GiftsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+  [1m[36mGift Load (0.0ms)[0m  [1mSELECT "gifts".* FROM "gifts" WHERE "gifts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+  [1m[35mInvitation Load (1.0ms)[0m  SELECT "invitations".* FROM "invitations" WHERE "invitations"."id" = 3 LIMIT 1
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[36mGuest Load (1.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 4 LIMIT 1[0m
+Rendered gifts/show.html.erb within layouts/application (255.0ms)
+Completed 200 OK in 547ms (Views: 405.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-05-02 03:54:05 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (105.0ms)
+
+
+Started GET "/gifts/1" for 127.0.0.1 at 2011-05-02 03:54:08 -0400
+  Processing by GiftsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mHost Load (2.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+  [1m[36mGift Load (0.0ms)[0m  [1mSELECT "gifts".* FROM "gifts" WHERE "gifts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+  [1m[35mInvitation Load (1.0ms)[0m  SELECT "invitations".* FROM "invitations" WHERE "invitations"."id" = 3 LIMIT 1
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[36mGuest Load (0.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 4 LIMIT 1[0m
+Rendered gifts/show.html.erb within layouts/application (251.0ms)
+Completed 200 OK in 862ms (Views: 500.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-05-02 03:54:09 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-02 03:55:19 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 163ms (Views: 162.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-05-02 03:55:21 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/gift" for 127.0.0.1 at 2011-05-02 03:55:24 -0400
+  Processing by GiftsController#index as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms
+
+
+Started GET "/login" for 127.0.0.1 at 2011-05-02 03:55:25 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 168ms (Views: 167.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-05-02 03:55:26 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-05-02 03:55:33 -0400
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Edbell7SGuHUZIrFtQ5worWu+flLZxUn4nDGJu4G1Mw=", "login"=>"MrsH", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."username" = 'MrsH' LIMIT 1
+Redirected to http://localhost:3000/gift
+Completed 302 Found in 351ms
+
+
+Started GET "/gift" for 127.0.0.1 at 2011-05-02 03:55:34 -0400
+  Processing by GiftsController#index as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+  [1m[35mGift Load (1.0ms)[0m  SELECT "gifts".* FROM "gifts"
+Rendered gifts/index.html.erb within layouts/application (37.0ms)
+Completed 200 OK in 272ms (Views: 171.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/javascripts/jquery.js" for 127.0.0.1 at 2011-05-02 03:55:35 -0400
+
+ActionController::RoutingError (No route matches "/javascripts/jquery.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/gifts/1" for 127.0.0.1 at 2011-05-02 03:55:39 -0400
+  Processing by GiftsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+  [1m[35mGift Load (0.0ms)[0m  SELECT "gifts".* FROM "gifts" WHERE "gifts"."id" = 1 LIMIT 1
+ERROR: compiling _app_views_gifts_show_html_erb__899238509_49351128__603862646 RAISED c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/views/gifts/show.html.erb:8: unknown regexp options - trg
+c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/views/gifts/show.html.erb:12: unknown regexp options - trg
+c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/views/gifts/show.html.erb:20: unknown regexp option - p
+unmatched close parenthesis: /p>
+
+<p>
+  ');@output_buffer.append= ( link_to "Edit", edit_gift_path(@gift) );@output_buffer.safe_concat(' |
+  ');@output_buffer.append= ( link_to "Destroy", @gift, :confirm => 'Are you sure?', :method => :delete );@output_buffer.safe_concat(' |
+  ');@output_buffer.append= ( link_to "View All", gifts_path );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</
+c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/views/gifts/show.html.erb:21: unterminated string meets end of file
+c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/views/gifts/show.html.erb:21: syntax error, unexpected $end, expecting ')'
+Function body:           def _app_views_gifts_show_html_erb__899238509_49351128__603862646(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "gifts/show";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new; title "Gift" 
+@output_buffer.safe_concat('
+<p>
+  <strong>Guest:</strong>
+  ');@output_buffer.append= ( link_to #{@gift.invitation.guest}, guest_path );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</p>
+<p>
+  <strong>Description:</strong>
+  ');@output_buffer.append= ( @gift.description );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</p>
+<p>
+  <strong>Note Sent On:</strong>
+  ');@output_buffer.append= ( @gift.note_sent_on );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</p>
+
+<p>
+  ');@output_buffer.append= ( link_to "Edit", edit_gift_path(@gift) );@output_buffer.safe_concat(' |
+  ');@output_buffer.append= ( link_to "Destroy", @gift, :confirm => 'Are you sure?', :method => :delete );@output_buffer.safe_concat(' |
+  ');@output_buffer.append= ( link_to "View All", gifts_path );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</p>
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_view/template.rb:255:in `module_eval'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_view/template.rb:255:in `compile'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_view/template.rb:134:in `block in render'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.7/lib/active_support/notifications.rb:54:in `instrument'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_view/template.rb:127:in `render'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `block in instrument'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:56:in `_render_template'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:26:in `render'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:115:in `_render_template'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:93:in `render'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:17:in `render'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+c:/Ruby192/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activerecord-3.0.7/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:39:in `render'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:14:in `default_render'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:6:in `send_action'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:150:in `process_action'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:11:in `process_action'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:441:in `_run__176411956__process_action__776810952__callbacks'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:94:in `run_callbacks'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:17:in `process_action'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `block in instrument'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal/rescue.rb:17:in `process_action'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:119:in `process'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:41:in `process'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal.rb:138:in `dispatch'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_controller/metal.rb:178:in `block in action'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:27:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `block in call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:89:in `optimized_each'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:493:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/head.rb:14:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.2/lib/rack/methodoverride.rb:24:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/flash.rb:182:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:32:in `block in call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:12:in `cache'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:31:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.2/lib/rack/sendfile.rb:107:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/railties-3.0.7/lib/rails/rack/logger.rb:13:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.2/lib/rack/runtime.rb:17:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/activesupport-3.0.7/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.2/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/static.rb:30:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/railties-3.0.7/lib/rails/application.rb:168:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/railties-3.0.7/lib/rails/application.rb:77:in `method_missing'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/railties-3.0.7/lib/rails/rack/log_tailer.rb:14:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.2/lib/rack/content_length.rb:13:in `call'
+c:/Ruby192/lib/ruby/gems/1.9.1/gems/rack-1.2.2/lib/rack/handler/webrick.rb:52:in `service'
+c:/Ruby192/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+c:/Ruby192/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+c:/Ruby192/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered gifts/show.html.erb within layouts/application (126.0ms)
+Completed   in 484ms
+
+ActionView::Template::Error (c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/views/gifts/show.html.erb:8: unknown regexp options - trg
+c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/views/gifts/show.html.erb:12: unknown regexp options - trg
+c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/views/gifts/show.html.erb:20: unknown regexp option - p
+unmatched close parenthesis: /p>
+
+<p>
+  ');@output_buffer.append= ( link_to "Edit", edit_gift_path(@gift) );@output_buffer.safe_concat(' |
+  ');@output_buffer.append= ( link_to "Destroy", @gift, :confirm => 'Are you sure?', :method => :delete );@output_buffer.safe_concat(' |
+  ');@output_buffer.append= ( link_to "View All", gifts_path );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</
+c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/views/gifts/show.html.erb:21: unterminated string meets end of file
+c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/views/gifts/show.html.erb:21: syntax error, unexpected $end, expecting ')'):
+    5:   <%= link_to #{@gift.invitation.guest}, guest_path %>
+    6: </p>
+    7: <p>
+    8:   <strong>Description:</strong>
+    9:   <%= @gift.description %>
+    10: </p>
+    11: <p>
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (39.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (125.0ms)
+
+
+Started GET "/gifts/1" for 127.0.0.1 at 2011-05-02 03:58:14 -0400
+  Processing by GiftsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+  [1m[35mGift Load (1.0ms)[0m  SELECT "gifts".* FROM "gifts" WHERE "gifts"."id" = 1 LIMIT 1
+Rendered gifts/show.html.erb within layouts/application (40.0ms)
+Completed   in 335ms
+
+ActionView::Template::Error (undefined local variable or method `gift' for #<#<Class:0x5cf42a0>:0x5cee9d8>):
+    2: 
+    3: <p>
+    4:   <strong>Guest:</strong>
+    5:   <%= link_to link_to gift.invitation.guest.name, guest_path(guest) %>
+    6: </p>
+    7: <p>
+    8:   <strong>Description:</strong>
+  app/views/gifts/show.html.erb:5:in `_app_views_gifts_show_html_erb__899238509_48720564__603862646'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (74.0ms)
+
+
+Started GET "/gifts/1" for 127.0.0.1 at 2011-05-02 03:58:22 -0400
+  Processing by GiftsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+  [1m[35mGift Load (1.0ms)[0m  SELECT "gifts".* FROM "gifts" WHERE "gifts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+  [1m[36mInvitation Load (1.0ms)[0m  [1mSELECT "invitations".* FROM "invitations" WHERE "invitations"."id" = 3 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[35mGuest Load (1.0ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = 4 LIMIT 1
+Rendered gifts/show.html.erb within layouts/application (351.0ms)
+Completed   in 679ms
+
+ActionView::Template::Error (undefined local variable or method `guest' for #<#<Class:0x5e266c0>:0x5e24ec0>):
+    2: 
+    3: <p>
+    4:   <strong>Guest:</strong>
+    5:   <%= link_to link_to @gift.invitation.guest.name, guest_path(guest) %>
+    6: </p>
+    7: <p>
+    8:   <strong>Description:</strong>
+  app/views/gifts/show.html.erb:5:in `_app_views_gifts_show_html_erb__899238509_49356024__603862646'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (67.0ms)
+
+
+Started GET "/gifts/1" for 127.0.0.1 at 2011-05-02 03:59:31 -0400
+  Processing by GiftsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Completed   in 134ms
+
+ArgumentError (Unknown key(s): through):
+  app/models/gift.rb:7:in `<class:Gift>'
+  app/models/gift.rb:1:in `<top (required)>'
+  app/controllers/gifts_controller.rb:8:in `show'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (18.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (82.0ms)
+
+
+Started GET "/gifts/1" for 127.0.0.1 at 2011-05-02 04:00:00 -0400
+  Processing by GiftsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+  [1m[36mGift Load (0.0ms)[0m  [1mSELECT "gifts".* FROM "gifts" WHERE "gifts"."id" = 1 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+  [1m[35mInvitation Load (1.0ms)[0m  SELECT "invitations".* FROM "invitations" WHERE "invitations"."id" = 3 LIMIT 1
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[36mGuest Load (1.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 4 LIMIT 1[0m
+Rendered gifts/show.html.erb within layouts/application (297.0ms)
+Completed   in 518ms
+
+ActionView::Template::Error (undefined local variable or method `guest' for #<#<Class:0x35e4ef8>:0x35e2870>):
+    2: 
+    3: <p>
+    4:   <strong>Guest:</strong>
+    5:   <%= link_to link_to @gift.invitation.guest.name, guest_path(guest) %>
+    6: </p>
+    7: <p>
+    8:   <strong>Description:</strong>
+  app/views/gifts/show.html.erb:5:in `_app_views_gifts_show_html_erb__899238509_28228080__603862646'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (66.0ms)
+
+
+Started GET "/gifts/1" for 127.0.0.1 at 2011-05-02 04:00:35 -0400
+  Processing by GiftsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Completed   in 109ms
+
+ArgumentError (Unknown key(s): through):
+  app/models/gift.rb:7:in `<class:Gift>'
+  app/models/gift.rb:1:in `<top (required)>'
+  app/controllers/gifts_controller.rb:8:in `show'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (19.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (84.0ms)
+
+
+Started GET "/gifts/1" for 127.0.0.1 at 2011-05-02 04:00:40 -0400
+  Processing by GiftsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+Completed   in 145ms
+
+ArgumentError (Unknown key(s): through):
+  app/models/gift.rb:7:in `<class:Gift>'
+  app/models/gift.rb:1:in `<top (required)>'
+  app/controllers/gifts_controller.rb:8:in `show'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (22.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (92.0ms)
+
+
+Started GET "/gifts/1" for 127.0.0.1 at 2011-05-02 04:00:46 -0400
+  Processing by GiftsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Completed   in 101ms
+
+ArgumentError (Unknown key(s): through):
+  app/models/gift.rb:7:in `<class:Gift>'
+  app/models/gift.rb:1:in `<top (required)>'
+  app/controllers/gifts_controller.rb:8:in `show'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (19.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (85.0ms)
+
+
+Started GET "/gifts/1" for 127.0.0.1 at 2011-05-02 04:00:59 -0400
+  Processing by GiftsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1[0m
+  [1m[35mGift Load (1.0ms)[0m  SELECT "gifts".* FROM "gifts" WHERE "gifts"."id" = 1 LIMIT 1
+Creating scope :all. Overwriting existing method Invitation.all.
+DEPRECATION WARNING: before_validation_on_create is deprecated. Please use before_validation(arguments, :on => :create. (called from <class:Invitation> at c:/Users/Dom/My Documents/67-272/phase4/PartyManager/app/models/invitation.rb:15)
+  [1m[36mInvitation Load (1.0ms)[0m  [1mSELECT "invitations".* FROM "invitations" WHERE "invitations"."id" = 3 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[35mGuest Load (1.0ms)[0m  SELECT "guests".* FROM "guests" WHERE "guests"."id" = 4 LIMIT 1
+Rendered gifts/show.html.erb within layouts/application (218.0ms)
+Completed   in 492ms
+
+ActionView::Template::Error (undefined local variable or method `guest' for #<#<Class:0x445aaa8>:0x5cc7ff0>):
+    2: 
+    3: <p>
+    4:   <strong>Guest:</strong>
+    5:   <%= link_to link_to @gift.invitation.guest.name, guest_path(guest) %>
+    6: </p>
+    7: <p>
+    8:   <strong>Description:</strong>
+  app/views/gifts/show.html.erb:5:in `_app_views_gifts_show_html_erb__899238509_48737916__603862646'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (77.0ms)

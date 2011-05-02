@@ -9,11 +9,10 @@ class Guest < ActiveRecord::Base
   #Relationships
   belongs_to :host, :dependent => :destroy
   has_many :invitations
-  has_one :gift, :through => :invitation
+  has_many :gifts, :through => :invitation
   
   #Scopes
   #scope :all, where(:host_id => current_host)
-  scope :all, order('name')
-  
+  scope :all, order('name') 
   
 end
