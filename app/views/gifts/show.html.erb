@@ -2,7 +2,7 @@
 
 <p>
   <strong>Guest:</strong>
-  <%= link_to link_to @gift.invitation.guest.name, guest_path(guest) %>
+  <%= link_to @gift.invitation.guest.name, guest_path(@gift.invitation.guest) %>
 </p>
 <p>
   <strong>Description:</strong>

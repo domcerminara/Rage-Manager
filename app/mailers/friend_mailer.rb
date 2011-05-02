@@ -3,7 +3,7 @@ class FriendMailer < ActionMailer::Base
   
   def new_invitation_msg(invitation)
     @invitation = invitation
-    mail(:to => invitation.guest.email, :subject => "You're Invited!")
+    mail(:to => invitation.guest.email, :subject => "Join the Party!")
   end
 
 end

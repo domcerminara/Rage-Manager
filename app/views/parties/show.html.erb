@@ -1,5 +1,13 @@
 <% title "Party" %>
-
+<p>
+  <b>RSVP date:</b>
+  <% if @party.rsvp_date.nil? %>
+    <b>No RSVP Required</b>
+  <% else %>
+    <b>RSVP date:</b>
+    <%= @party.rsvp_date.strftime("%B %e, %Y") %> 
+  <% end %>  
+</p>
 <p>
   <strong>Party Type:</strong>
   <%= @party.party_type.name %>
@@ -17,12 +25,8 @@
   <%= @party.party_date.strftime("%B %e, %Y") %>
 </p>
 <p>
-  <strong>Start Time:</strong>
-  <%= @party.start_time.strftime("%I:%M %p") %>
-</p>
-<p>
-  <strong>End Time:</strong>
-  <%= @party.end_time.strftime("%I:%M %p") %>
+  <b>Time:</b>
+  <%= @party.start_time.strftime("%I:%M %p") %> - <%= @party.end_time.strftime("%I:%M %p") %>
 </p>
 <p>
   <strong>Description:</strong>
@@ -37,7 +41,7 @@
 </p>
 
 <p>
-  <% if @party.rsvp_date == nil %>
+  <% if @party.rsvp_date.nil? %>
   <% else %>
     <b>Expected Attendance:</b>
     <%= @party.expected %> 
@@ -45,13 +49,13 @@
 </p>
 
 <p>
-  <% if @party.rsvp_date == nil %>
+  <% if @party.rsvp_date.nil? %>
   <% else %>
     <b>Invited Guests</b>
     <br />
     <% for guest in @party.guests %>
       <tr>
-        <td><%= guest.name %></td><br />
+        <td><%= link_to guest.name, guest_path(guest) %></td><br />
       </tr>
     <% end %> 
   <% end %>

@@ -1,14 +1,18 @@
 class Invitation < ActiveRecord::Base
   attr_accessible :party_id, :guest_id, :invite_code, :expected_attendees, :actual_attendees
 
+  #Validations
   validates_presence_of :party_id, :guest_id, :expected_attendees
   validates_numericality_of :expected_attendees, :only_integer => true, :greater_than => 0
-  
+  validates_numericality_of :party_id, :guest_id
+   
+  #Relationships
   has_many :gifts
   belongs_to :guest, :dependent => :destroy
   belongs_to :party, :dependent => :destroy
   has_one :host, :through => :guest
   
+  #Scopes
   scope :all, order('party_id')
   
   #Callbacks

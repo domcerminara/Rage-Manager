@@ -16,7 +16,7 @@ before_filter :login_required
     @guest = Guest.new(params[:guest])
     @guest.host_id = current_host.id
     if @guest.save
-      redirect_to @guest, :notice => "Successfully created guest."
+      redirect_to @guest, :notice => "Guest was successfully created"
     else
       render :action => 'new'
     end
@@ -29,7 +29,7 @@ before_filter :login_required
   def update
     @guest = Guest.find(params[:id])
     if @guest.update_attributes(params[:guest])
-      redirect_to @guest, :notice  => "Successfully updated guest."
+      redirect_to @guest, :notice  => "Guest was successfully created."
     else
       render :action => 'edit'
     end
@@ -38,6 +38,6 @@ before_filter :login_required
   def destroy
     @guest = Guest.find(params[:id])
     @guest.destroy
-    redirect_to guests_url, :notice => "Successfully destroyed guest."
+    redirect_to guests_url, :notice => "Guest was successfully updated."
   end
 end

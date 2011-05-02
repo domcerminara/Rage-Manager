@@ -2,11 +2,11 @@ class Party < ActiveRecord::Base
   attr_accessible :party_type_id, :host_id, :name, :location_id, :party_date, :start_time, :end_time, :description, :rsvp_date
 
   #Validations
+  validates_numericality_of :party_type_id
   validates_presence_of :party_type_id, :host_id, :name, :location_id, :party_date, :start_time, :end_time
   validates_date :party_date, :on_or_after => lambda {Date.current}
-  validates_date :rsvp_date, :on_or_after => lambda {Date.current}
-  validates_date :rsvp_date, :on_or_before => :party_date
-  validates_date :rsvp_date, :on_or_after => lambda {Date.current}
+  validates_date :rsvp_date, :on_or_after => lambda {Date.current}, :allow_blank => true
+  validates_date :rsvp_date, :on_or_before => :party_date, :allow_blank => true
   validates_time :end_time, :after => :start_time
 
   #Relationships

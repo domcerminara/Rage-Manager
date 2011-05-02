@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Party Type</th>
+    <th>RSVPs</th>
     <th>Name</th>
     <th>Location</th>
     <th>Party Date</th>
@@ -14,6 +15,7 @@
   <% for party in @parties %>
     <tr>
       <td><%= party.party_type.name %></td>
+      <td><%= party.attending %></td>
       <td><%= party.name %></td>
       <td><%= party.location.name %></td>
       <td><%= party.party_date %></td>
