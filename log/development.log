@@ -12752,3 +12752,23 @@ ActionView::Template::Error (undefined local variable or method `guest' for #<#<
 Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
 Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.0ms)
 Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (77.0ms)
+
+
+Started GET "/gifts/1" for 127.0.0.1 at 2011-05-02 04:05:03 -0400
+  Processing by GiftsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (2.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 1 LIMIT 1
+Completed   in 1234ms
+
+ArgumentError (Unknown key(s): through):
+  app/models/gift.rb:7:in `<class:Gift>'
+  app/models/gift.rb:1:in `<top (required)>'
+  app/controllers/gifts_controller.rb:8:in `show'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (21.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (113.0ms)
