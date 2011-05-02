@@ -6,6 +6,7 @@ class Party < ActiveRecord::Base
   validates_date :party_date, :on_or_after => lambda {Date.current}
   validates_date :rsvp_date, :on_or_after => lambda {Date.current}
   validates_date :rsvp_date, :on_or_before => :party_date
+  validates_date :rsvp_date, :on_or_after => lambda {Date.current}
   validates_time :end_time, :after => :start_time
 
   belongs_to :host, :dependent => :destroy

@@ -4,4 +4,5 @@ ActionMailer::Base.smtp_settings = {
   :user_name => "dompkt2013",
   :password => "gennaro1",
   :authentication => "plain",
-  :enable_starttls_auto => true}
+  :enable_starttls_auto => true
+}

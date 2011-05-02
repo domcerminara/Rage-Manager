@@ -1,9 +1,8 @@
-<% title "Parties" %>
+<h1>My Parties</h1>
 
 <table>
   <tr>
     <th>Party Type</th>
-    <th>Host</th>
     <th>Name</th>
     <th>Location</th>
     <th>Party Date</th>
@@ -14,10 +13,9 @@
   </tr>
   <% for party in @parties %>
     <tr>
-      <td><%= party.party_type_id %></td>
-      <td><%= party.host_id %></td>
+      <td><%= party.party_type.name %></td>
       <td><%= party.name %></td>
-      <td><%= party.location_id %></td>
+      <td><%= party.location.name %></td>
       <td><%= party.party_date %></td>
       <td><%= party.start_time %></td>
       <td><%= party.end_time %></td>
@@ -30,4 +28,4 @@
   <% end %>
 </table>
 
-<p><%= link_to "New Party", new_party_path %></p>
+<p><%= link_to "Add A New Party", new_party_path %></p>

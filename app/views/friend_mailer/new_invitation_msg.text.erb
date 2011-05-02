@@ -1,7 +1,7 @@
-Hey <% @invitation.guest %>,
+Hey <%= @invitation.guest.name %>,
 
-You're invited to <% @invitation.party %>!
+You're invited to <%= @invitation.party.name %>!
 
-Here is your invite code to RSVP: <% @invitation.invite_code %>
+Here is your invite code to RSVP: <%= @invitation.invite_code %>
 
 Hope you can make it!
