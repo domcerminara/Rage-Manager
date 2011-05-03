@@ -42,6 +42,8 @@ PartyManager::Application.routes.draw do
   match 'invitation' => 'invitations#index', :as => :invitation_path
   
   match 'gift' => 'gifts#index', :as => :gift_path
+  
+  match 'rsvp' => 'invitations#start_rsvp', :as => :rsvp_path
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

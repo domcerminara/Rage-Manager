@@ -1,6 +1,17 @@
 require 'test_helper'
 
 class HostTest < ActiveSupport::TestCase
+  should validate_presence_of :first_name
+  should validate_presence_of :last_name
+  should validate_presence_of :username 
+  should validate_numericality_of :expected_attendees
+
+  should allow_value("Bro").for(:name)
+  should allow_value("My Man").for(:name)
+  should_not allow_value("Bro@bro,com").for(:email)
+  should allow_value("Bro@bro.com").for(:email)
+  should allow_value("").for(:actual_attenddees)
+
   def new_host(attributes = {})
     attributes[:username] ||= 'foo'
     attributes[:email] ||= 'foo@example.com'
@@ -82,5 +93,16 @@ class HostTest < ActiveSupport::TestCase
     Host.delete_all
     new_host(:username => 'foobar', :password => 'secret').save!
     assert_nil Host.authenticate('foobar', 'badpassword')
+  end
+  
+  #test name
+  setup do
+    @partyman = Factory.create(:host, :first_name => party, :last_name => man)
+  end
+  
+  assert_equal "party man", @partyman.name
+  
+  teardown
+    @partyman.destroy
   end
 end

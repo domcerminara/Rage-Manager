@@ -36,6 +36,10 @@ before_filter :login_required
   def edit
     @invitation = Invitation.find(params[:id])
   end
+  
+  def details
+    
+  end
 
   def update
     @invitation = Invitation.find(params[:id])
