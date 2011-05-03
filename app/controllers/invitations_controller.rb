@@ -14,9 +14,19 @@ before_filter :login_required
 
   def create
     @invitation = Invitation.new(params[:invitation])
+    old = @invitation.already_invited
+    if !old.nil?
+      @invitation.invite_code = old.invite_code
+    end
     if @invitation.save
-      FriendMailer.new_invitation_msg(@invitation).deliver
-      redirect_to @invitation, :notice => "Invitation was successfully created"
+      if old.nil?
+        @invitation.random_invite_code
+        FriendMailer.new_invitation_msg(@invitation).deliver
+        redirect_to @invitation, :notice => "Invitation was successfully created" 
+      else
+        old.destroy
+        redirect_to @invitation, :notice  => "The invitation for this guest has been updated."
+      end
     else
       render :action => 'new'
     end

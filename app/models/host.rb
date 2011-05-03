@@ -13,9 +13,9 @@ class Host < ActiveRecord::Base
   validates_confirmation_of :password
   validates_length_of :password, :minimum => 4, :allow_blank => true
   
-  has_many :parties
-  has_many :locations
-  has_many :guests
+  has_many :parties, :dependent => :destroy
+  has_many :locations, :dependent => :destroy
+  has_many :guests, :dependent => :destroy
   has_many :invitations, :through => :guests
 
   # login can be either username or email address

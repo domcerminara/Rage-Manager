@@ -10,10 +10,10 @@ class Party < ActiveRecord::Base
   validates_time :end_time, :after => :start_time
 
   #Relationships
-  belongs_to :host, :dependent => :destroy
+  belongs_to :host
   belongs_to :party_type
   belongs_to :location
-  has_many :invitations
+  has_many :invitations, :dependent => :destroy
   has_many :guests, :through => :invitations
   
   #Scopes

@@ -7,8 +7,8 @@ class Guest < ActiveRecord::Base
   validates_format_of :email, :with => /^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}$/i, :message => " is not a valid format"
   
   #Relationships
-  belongs_to :host, :dependent => :destroy
-  has_many :invitations
+  belongs_to :host
+  has_many :invitations, :dependent => :destroy
   has_many :gifts, :through => :invitations
   
   #Scopes

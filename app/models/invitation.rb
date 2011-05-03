@@ -8,8 +8,8 @@ class Invitation < ActiveRecord::Base
    
   #Relationships
   has_many :gifts
-  belongs_to :guest, :dependent => :destroy
-  belongs_to :party, :dependent => :destroy
+  belongs_to :guest
+  belongs_to :party
   has_one :host, :through => :guest
   
   #Scopes
@@ -21,6 +21,11 @@ class Invitation < ActiveRecord::Base
   #Adds random invite code
   def random_invite_code
     self.invite_code = rand(36**16).to_s(36)
+  end
+  
+  #Checks if already invited
+  def already_invited
+    Invitation.find_by_guest_id_and_party_id(guest_id, party_id)
   end
   
 end
