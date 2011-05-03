@@ -17423,3 +17423,9 @@ Creating scope :all. Overwriting existing method Guest.all.
   [1m[36mGuest Load (1.0ms)[0m  [1mSELECT "guests".* FROM "guests" WHERE "guests"."id" = 1 LIMIT 1[0m
 Rendered invitations/show.html.erb within layouts/application (452.0ms)
 Completed 200 OK in 1008ms (Views: 687.0ms | ActiveRecord: 14.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-02 20:33:43 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 249ms (Views: 248.0ms | ActiveRecord: 0.0ms)
