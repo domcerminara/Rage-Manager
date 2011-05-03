@@ -34,12 +34,12 @@
       <% end %>
       <%= content_tag :h1, yield(:title) if show_title? %>
       <%= yield %>
-  </div>  
-  </body>
-  
-  <div id="footer">
+    <div id="footer">
     <%= link_to 'Contact Us', :contact_path %> | <%= link_to 'About Us', :about_path %> | <%= link_to 'Privacy Policy', :privacy_path %>
     <br />
     Property of Dominic Cerminara, Webmaster 
   </div>
+  </div>  
+  </body>
+
 </html>
