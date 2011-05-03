@@ -38,13 +38,19 @@ before_filter :login_required
   end
   
   def details
-    
+    @invitation = Invitation.find_by_invite_code(params[:invite_code])
+    if @invitation.nil?
+      redirect_to :rsvp, :notice => "Invalid invite code"
+    end 
+  end
+  
+  def start_rsvp
   end
 
   def update
     @invitation = Invitation.find(params[:id])
     if @invitation.update_attributes(params[:invitation])
-      redirect_to @invitation, :notice  => "The invitation for this guest has been updated."
+      redirect_to @invitation, :notice  => "Your RSVP is complete. Thank you."
     else
       render :action => 'edit'
     end

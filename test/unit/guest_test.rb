@@ -23,7 +23,7 @@ class GuestTest < ActiveSupport::TestCase
     @man = Factory.create(:guest, :name => man)
   end
   
-  should "have 2 parties" do
+  should "have 2 guests" do
     assert_eqaul 2, Guest.all.size
   end
     

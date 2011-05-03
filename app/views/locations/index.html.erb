@@ -2,7 +2,6 @@
 
 <table>
   <tr>
-    <th>Host</th>
     <th>Name</th>
     <th>Street</th>
     <th>City</th>
@@ -11,13 +10,11 @@
   </tr>
   <% for location in @locations %>
     <tr>
-      <td><%= location.host_id %></td>
-      <td><%= location.name %></td>
+      <td><%= link_to location.name, location %></td>
       <td><%= location.street %></td>
       <td><%= location.city %></td>
       <td><%= location.state %></td>
       <td><%= location.zip %></td>
-      <td><%= link_to "Show", location %></td>
       <td><%= link_to "Edit", edit_location_path(location) %></td>
       <td><%= link_to "Destroy", location, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>

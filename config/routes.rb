@@ -23,29 +23,17 @@ PartyManager::Application.routes.draw do
 
   resources :guests
   
-  match 'party' => 'parties#index', :as => :party_path
-  
-  match 'guest' => 'guests#index', :as => :guest_path
-  
-  match 'contact' => 'home#contact', :as => :contact_path
+  match 'contact' => 'home#contact', :as => :contact
                   
-  match 'webmaster' => 'home#webmaster', :as => :webmaster_path
+  match 'webmaster' => 'home#webmaster', :as => :webmaster
   
-  match 'about' => 'home#about', :as => :about_path
+  match 'about' => 'home#about', :as => :about
   
-  match 'privacy' => 'home#privacy', :as => :privacy_path
+  match 'privacy' => 'home#privacy', :as => :privacy
+   
+  match 'rsvp' => 'invitations#start_rsvp', :as => :rsvp
   
-  match 'party_type' => 'party_types#index', :as => :party_type_path
-  
-  match 'location' => 'locations#index', :as => :location_path
-  
-  match 'invitation' => 'invitations#index', :as => :invitation_path
-  
-  match 'gift' => 'gifts#index', :as => :gift_path
-  
-  match 'rsvp' => 'invitations#start_rsvp', :as => :rsvp_path
-  
-  match 'details' => 'invitations#details', :as => :details_path
+  match 'details' => 'invitations#details', :as => :details
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

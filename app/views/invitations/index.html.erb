@@ -4,15 +4,13 @@
   <tr>
     <th>Party</th>
     <th>Guest</th>
-    <th>Invite Code</th>
     <th>Expected Attendees</th>
     <th>Actual Attendees</th>
   </tr>
   <% for invitation in @invitations %>
     <tr>
-      <td><%= invitation.party.name %></td>
-      <td><%= invitation.guest.name %></td>
-      <td><%= invitation.invite_code %></td>
+      <td><%= link_to invitation.party.name, party_path(invitation.party) %></td>
+      <td><%= link_to invitation.guest.name, guest_path(invitation.guest) %></td>
       <td><%= invitation.expected_attendees %></td>
       <td><%= invitation.actual_attendees %></td>
       <td><%= link_to "Show", invitation %></td>

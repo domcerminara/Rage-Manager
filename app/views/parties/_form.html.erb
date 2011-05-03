@@ -6,11 +6,11 @@
   </p>
   <p>
     <%= f.label :location_id %><br />
-    <%= f.collection_select :location_id, current_host.locations, :id, :name %>
+    <%= f.collection_select :location_id, current_host.locations, :id, :name, :prompt => "Select..." %>
   </p>
   <p>
     <%= f.label :party_type_id %><br />
-    <%= f.collection_select :party_type_id, PartyType.all, :id, :name %>
+    <%= f.collection_select :party_type_id, PartyType.all, :id, :name, :prompt => "Select..." %>
   </p>
   <p>
     <%= f.label :party_date %><br />
@@ -30,7 +30,7 @@
   </p>
   <p>
     <%= f.label :rsvp_date %><br />
-    <%= f.date_select :rsvp_date, :order => [:month, :day, :year] %>
+    <%= f.date_select :rsvp_date, :order => [:month, :day, :year], :prompt => "Select..." %>
   </p>
   <p><%= f.submit %></p>
 <% end %>

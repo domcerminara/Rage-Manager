@@ -1,0 +1,26 @@
+<% title "Details" %>
+<p>
+  <strong>Name:</strong>
+  <%= link_to @invitation.party.name, party_path(@invitation.party) %>
+</p>
+<p>
+  <strong>Party Type:</strong>
+  <%= @invitation.party.party_type.name %>
+</p>
+<p>
+  <strong>Location:</strong>
+  <%= link_to @invitation.party.location.name, location_path(@invitation.party.location) %>
+</p>
+<p>
+  <strong>Party Date:</strong>
+  <%= @invitation.party.party_date.strftime("%B %d, %Y") %>
+</p>
+<p>
+  <b>Time:</b>
+  <%= @invitation.party.start_time.strftime("%I:%M %p") %> - <%= @invitation.party.end_time.strftime("%I:%M %p") %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @invitation.party.description %>
+</p>
+<%= render 'rsvp_form' %>

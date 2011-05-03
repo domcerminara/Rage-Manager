@@ -2,28 +2,25 @@
 
 <table>
   <tr>
+    <th>Name</th>
     <th>Party Type</th>
     <th>RSVPs</th>
-    <th>Name</th>
     <th>Location</th>
     <th>Party Date</th>
     <th>Start Time</th>
     <th>End Time</th>
-    <th>Description</th>
     <th>Rsvp Date</th>
   </tr>
   <% for party in @parties %>
     <tr>
+      <td><%= link_to party.name, party %></td>
       <td><%= party.party_type.name %></td>
       <td><%= party.attending %></td>
-      <td><%= party.name %></td>
-      <td><%= party.location.name %></td>
+      <td><%= link_to party.location.name, location_path(party.location) %></td>
       <td><%= party.party_date %></td>
       <td><%= party.start_time %></td>
       <td><%= party.end_time %></td>
-      <td><%= party.description %></td>
       <td><%= party.rsvp_date %></td>
-      <td><%= link_to "Show", party %></td>
       <td><%= link_to "Edit", edit_party_path(party) %></td>
       <td><%= link_to "Destroy", party, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>

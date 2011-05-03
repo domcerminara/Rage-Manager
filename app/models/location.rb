@@ -18,16 +18,14 @@ class Location < ActiveRecord::Base
   scope :all, order('name')
   
   def create_map_link(zoom=13,width=800,height=800)
+      markers = "&markers=color:red%7Ccolor:red%7Clabel:#{1}%7C#{self.latitude},#{self.longitude}"
     map =
-    "http://maps.google.com/maps/api/staticmap?center=#{latitude},#{longitude}&zoom=13&size=800x800&maptype=roadmap&sensor=false"
+    "http://maps.google.com/maps/api/staticmap?center=#{latitude},#{longitude}&zoom=#{zoom}&size=#{width}x#{height}&maptype=roadmap#{markers}&sensor=false"
   end
   
   private
   def find_location_coordinates
-    str = self.street
-    cit = self.city
-    st = self.state
-    coord =  Geokit::Geocoders::GoogleGeocoder.geocode "#{str}, #{cit}, #{st}"
+    coord =  Geokit::Geocoders::GoogleGeocoder.geocode "#{self.street}, #{self.city}, #{self.state}"
     if coord.success
       self.latitude, self.longitude = coord.ll.split(',')
     else

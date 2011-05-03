@@ -24,10 +24,5 @@ class Invitation < ActiveRecord::Base
   def already_invited
     Invitation.find_by_guest_id_and_party_id(guest_id, party_id)
   end
-  
-  #Finds invitation for invite code
-  def match_invite_code
-    Invitation.find_by_invite_code(invite_code)  
-  end
-  
+   
 end

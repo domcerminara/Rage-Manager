@@ -1,16 +1,6 @@
 require 'test_helper'
 
 class HostTest < ActiveSupport::TestCase
-  should validate_presence_of :first_name
-  should validate_presence_of :last_name
-  should validate_presence_of :username 
-  should validate_numericality_of :expected_attendees
-
-  should allow_value("Bro").for(:name)
-  should allow_value("My Man").for(:name)
-  should_not allow_value("Bro@bro,com").for(:email)
-  should allow_value("Bro@bro.com").for(:email)
-  should allow_value("").for(:actual_attenddees)
 
   def new_host(attributes = {})
     attributes[:username] ||= 'foo'
@@ -102,7 +92,7 @@ class HostTest < ActiveSupport::TestCase
   
   assert_equal "party man", @partyman.name
   
-  teardown
+  teardown do
     @partyman.destroy
   end
 end

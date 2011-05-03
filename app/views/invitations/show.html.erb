@@ -16,6 +16,12 @@
   <strong>Expected attendees:</strong>
   <%= @invitation.expected_attendees %>
 </p>
+<% if !@invitation.actual_attendees.nil? %>
+<p>
+  <strong>Actual attendees:</strong>
+  <%= @invitation.actual_attendees %>
+</p>
+<% end %>
 
 <p>
   <%= link_to "Edit", edit_invitation_path(@invitation) %> |
