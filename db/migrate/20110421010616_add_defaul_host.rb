@@ -1,6 +1,8 @@
 class AddDefaulHost < ActiveRecord::Migration
   def self.up
     default = Host.new
+    default.first_name = "Mrs"
+    default.last_name ="H"
     default.username = "MrsH"
     default.email = "dcermina@andrew.cmu.edu"
     default.password = "alex&mark"
