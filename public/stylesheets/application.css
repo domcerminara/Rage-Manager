@@ -1,3 +1,6 @@
+#banner {
+  background-position: center;}
+
 body {
   background-color: #880C0E;
   font-family: verdana;
@@ -17,6 +20,16 @@ a:hover {
   list-style-type: none;
   display: inline;
 }
+
+#nav li a {
+  font-weight: bold;
+  color: gray;
+  font-size: 16px;
+  background-color: yellow;
+  }
+  
+#nav li a:hover {
+  background-color: white;}
 
 #footer {
   text-align: center;
@@ -87,7 +100,7 @@ a:hover {
 
 td {
   text-align: center;
-  background-color: #ADECFF;
+  background-color: yellow;
 }
 
 th {
@@ -95,3 +108,8 @@ th {
   text-decoration: underline;
   margin: auto;
 }
+
+#nav {
+  padding-left: 10px;
+  position: relative;
+  }

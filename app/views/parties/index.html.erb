@@ -7,8 +7,7 @@
     <th>RSVPs</th>
     <th>Location</th>
     <th>Party Date</th>
-    <th>Start Time</th>
-    <th>End Time</th>
+    <th>Party Time</th>
     <th>Rsvp Date</th>
   </tr>
   <% for party in @parties %>
@@ -17,10 +16,13 @@
       <td><%= party.party_type.name %></td>
       <td><%= party.attending %></td>
       <td><%= link_to party.location.name, location_path(party.location) %></td>
-      <td><%= party.party_date %></td>
-      <td><%= party.start_time %></td>
-      <td><%= party.end_time %></td>
-      <td><%= party.rsvp_date %></td>
+      <td><%= party.party_date.strftime("%B %d, %Y") %></td>
+      <td><%= party.start_time.strftime("%I:%M %p") %> - <%= party.end_time.strftime("%I:%M %p") %></td>
+      <% if !party.rsvp_date.nil? %>
+        <td><%= party.rsvp_date.strftime("%B %d, %Y") %></td>
+      <% else %>
+        <td>No RSVP Required</td>
+      <% end %>
       <td><%= link_to "Edit", edit_party_path(party) %></td>
       <td><%= link_to "Destroy", party, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>

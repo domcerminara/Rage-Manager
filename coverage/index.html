@@ -21,21 +21,21 @@
       <img src="./assets/0.4.4/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2011-05-03T19:24:32-04:00">2011-05-03T19:24:32-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2011-05-03T20:00:44-04:00">2011-05-03T20:00:44-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     All Files
-    (<span class="red">52.27%</span>)
+    (<span class="red">52.72%</span>)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>31</b> files in total.
-    <b>352</b> relevant lines. 
+    <b>349</b> relevant lines. 
     <span class="green"><b>184</b> lines covered</span> and
-    <span class="red"><b>168</b> lines missed </span>
+    <span class="red"><b>165</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -295,11 +295,11 @@
       
       <tr>
         <td><a href="#57cc41ebdcad1a3ddff463a32e62a8f43ed645c7" class="src_link" title="./app/models/location.rb">./app/models/location.rb</a></td>
-        <td class="red">59.09 %</td>
-        <td>39</td>
-        <td>22</td>
+        <td class="red">68.42 %</td>
+        <td>36</td>
+        <td>19</td>
         <td>13</td>
-        <td>9</td>
+        <td>6</td>
       </tr>
       
       <tr>
@@ -456,14 +456,14 @@
           <div class="file_list_container" id="Models">
   <h2>
     Models
-    (<span class="yellow">80.39%</span>)
+    (<span class="yellow">82.83%</span>)
   </h2>
   <a name="Models"></a>
   <div>
     <b>7</b> files in total.
-    <b>102</b> relevant lines. 
+    <b>99</b> relevant lines. 
     <span class="green"><b>82</b> lines covered</span> and
-    <span class="red"><b>20</b> lines missed </span>
+    <span class="red"><b>17</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -516,11 +516,11 @@
       
       <tr>
         <td><a href="#57cc41ebdcad1a3ddff463a32e62a8f43ed645c7" class="src_link" title="./app/models/location.rb">./app/models/location.rb</a></td>
-        <td class="red">59.09 %</td>
-        <td>39</td>
-        <td>22</td>
+        <td class="red">68.42 %</td>
+        <td>36</td>
+        <td>19</td>
         <td>13</td>
-        <td>9</td>
+        <td>6</td>
       </tr>
       
       <tr>
@@ -8026,7 +8026,7 @@
     <tr>
       <td colspan="3">
         <h3>./app/models/location.rb</h3>
-        <h4><span class="red">59.09 %</span> covered</h4>
+        <h4><span class="red">68.42 %</span> covered</h4>
       </td>
     </tr>
     <tr>
@@ -8394,7 +8394,7 @@
         <pre>28</pre>
       </td>
       <td>
-        <pre>    str = self.street</pre>
+        <pre>    coord =  Geokit::Geocoders::GoogleGeocoder.geocode &quot;#{self.street}, #{self.city}, #{self.state}&quot;</pre>
       </td>
       <td class="hits">
         0
@@ -8407,7 +8407,7 @@
         <pre>29</pre>
       </td>
       <td>
-        <pre>    cit = self.city</pre>
+        <pre>    if coord.success</pre>
       </td>
       <td class="hits">
         0
@@ -8420,45 +8420,6 @@
         <pre>30</pre>
       </td>
       <td>
-        <pre>    st = self.state</pre>
-      </td>
-      <td class="hits">
-        0
-      </td>
-    </tr>
-  
-    
-    <tr class="miss" data-hits="0">
-      <td class="line_number">
-        <pre>31</pre>
-      </td>
-      <td>
-        <pre>    coord =  Geokit::Geocoders::GoogleGeocoder.geocode &quot;#{str}, #{cit}, #{st}&quot;</pre>
-      </td>
-      <td class="hits">
-        0
-      </td>
-    </tr>
-  
-    
-    <tr class="miss" data-hits="0">
-      <td class="line_number">
-        <pre>32</pre>
-      </td>
-      <td>
-        <pre>    if coord.success</pre>
-      </td>
-      <td class="hits">
-        0
-      </td>
-    </tr>
-  
-    
-    <tr class="miss" data-hits="0">
-      <td class="line_number">
-        <pre>33</pre>
-      </td>
-      <td>
         <pre>      self.latitude, self.longitude = coord.ll.split(',')</pre>
       </td>
       <td class="hits">
@@ -8469,7 +8430,7 @@
     
     <tr class="never" >
       <td class="line_number">
-        <pre>34</pre>
+        <pre>31</pre>
       </td>
       <td>
         <pre>    else</pre>
@@ -8482,7 +8443,7 @@
     
     <tr class="miss" data-hits="0">
       <td class="line_number">
-        <pre>35</pre>
+        <pre>32</pre>
       </td>
       <td>
         <pre>      errors.add_to_base(&quot;Error with geocoding&quot;)</pre>
@@ -8495,7 +8456,7 @@
     
     <tr class="never" >
       <td class="line_number">
-        <pre>36</pre>
+        <pre>33</pre>
       </td>
       <td>
         <pre>    end</pre>
@@ -8508,7 +8469,7 @@
     
     <tr class="never" >
       <td class="line_number">
-        <pre>37</pre>
+        <pre>34</pre>
       </td>
       <td>
         <pre>  end</pre>
@@ -8521,7 +8482,7 @@
     
     <tr class="never" >
       <td class="line_number">
-        <pre>38</pre>
+        <pre>35</pre>
       </td>
       <td>
         <pre>  </pre>
@@ -8534,7 +8495,7 @@
     
     <tr class="never" >
       <td class="line_number">
-        <pre>39</pre>
+        <pre>36</pre>
       </td>
       <td>
         <pre>end</pre>
