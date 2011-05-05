@@ -13,6 +13,27 @@ gem 'nested_form'
 gem 'rails3-jquery-autocomplete'
 
 
+group :development do
+  gem 'wirble'
+	gem 'hirb'
+	gem 'populator3'
+	gem 'faker'
+end
+
+group :test do
+	gem 'shoulda'
+	gem 'factory_girl_rails'
+	gem 'mocha'
+	gem 'cucumber-rails'
+	gem 'capybara'
+	gem 'database_cleaner'
+	gem 'launchy'
+	gem 'email_spec'
+	gem 'nokogiri'
+	gem 'simplecov'
+end
+
+
 
 
 
