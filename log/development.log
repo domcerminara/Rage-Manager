@@ -22110,3 +22110,252 @@ Creating scope :all. Overwriting existing method Location.all.
   [1m[36mLocation Load (1.0ms)[0m  [1mSELECT "locations".* FROM "locations" WHERE ("locations".host_id = 1) ORDER BY name[0m
 Rendered locations/index.html.erb within layouts/application (54.0ms)
 Completed 200 OK in 466ms (Views: 242.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-04 17:17:32 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 118ms (Views: 118.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-05-04 17:18:02 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 117ms (Views: 116.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-05-04 17:18:11 -0400
+  Processing by HostsController#new as HTML
+Rendered hosts/_form.html.erb (822.0ms)
+Rendered hosts/new.html.erb within layouts/application (860.0ms)
+Completed 200 OK in 1032ms (Views: 970.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/hosts" for 127.0.0.1 at 2011-05-04 17:18:23 -0400
+  Processing by HostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J66lJHFtVHHjiV+0D56nh/L9rNbU9kfvTYfbnWyvED8=", "host"=>{"first_name"=>"steph", "last_name"=>"gill", "username"=>"stephgill", "email"=>"sgill0301@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT 1 FROM "hosts" WHERE ("hosts"."username" = 'stephgill') LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT 1 FROM "hosts" WHERE ("hosts"."email" = 'sgill0301@gmail.com') LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAREL (2.0ms)[0m  INSERT INTO "hosts" ("username", "email", "password_hash", "password_salt", "created_at", "updated_at", "first_name", "last_name") VALUES ('stephgill', 'sgill0301@gmail.com', '$2a$10$O1/p2rUVhlECj/kS96zB6Og9Kx8M32cHLXTLwEavDqxOUOMA3shE6', '$2a$10$O1/p2rUVhlECj/kS96zB6O', '2011-05-04 21:18:25.313648', '2011-05-04 21:18:25.313648', 'steph', 'gill')
+Redirected to http://localhost:3000/
+Completed 302 Found in 1710ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-04 17:18:25 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (126.0ms)
+Completed 200 OK in 230ms (Views: 229.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/parties" for 127.0.0.1 at 2011-05-04 17:18:31 -0400
+  Processing by PartiesController#index as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[36mParty Load (1.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE ("parties".host_id = 2) ORDER BY name[0m
+Rendered parties/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 403ms (Views: 115.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/locations" for 127.0.0.1 at 2011-05-04 17:18:33 -0400
+  Processing by LocationsController#index as HTML
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[36mLocation Load (0.0ms)[0m  [1mSELECT "locations".* FROM "locations" WHERE ("locations".host_id = 2) ORDER BY name[0m
+Rendered locations/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 242ms (Views: 119.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/locations/new" for 127.0.0.1 at 2011-05-04 17:18:38 -0400
+  Processing by LocationsController#new as HTML
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1
+Creating scope :all. Overwriting existing method Location.all.
+Rendered locations/_form.html.erb (21.0ms)
+Rendered locations/new.html.erb within layouts/application (60.0ms)
+Completed 200 OK in 316ms (Views: 169.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/locations" for 127.0.0.1 at 2011-05-04 17:19:03 -0400
+  Processing by LocationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J66lJHFtVHHjiV+0D56nh/L9rNbU9kfvTYfbnWyvED8=", "location"=>{"name"=>"dom's house", "street"=>"5458 Wilkins Ave", "city"=>"Pittsburgh", "state"=>"Pennsylvania", "zip"=>"15217"}, "commit"=>"Create Location"}
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[35mSQL (0.0ms)[0m  SELECT 1 FROM "locations" WHERE ("locations"."name" = 'dom''s house') LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "locations" ("host_id", "name", "street", "city", "state", "zip", "latitude", "longitude", "created_at", "updated_at") VALUES (2, 'dom''s house', '5458 Wilkins Ave', 'Pittsburgh', 'Pennsylvania', 15217, 40.445724, -79.931669, '2011-05-04 21:19:04.153870', '2011-05-04 21:19:04.153870')[0m
+Redirected to http://localhost:3000/locations/2
+Completed 302 Found in 764ms
+
+
+Started GET "/locations/2" for 127.0.0.1 at 2011-05-04 17:19:04 -0400
+  Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[36mLocation Load (0.0ms)[0m  [1mSELECT "locations".* FROM "locations" WHERE "locations"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1
+Rendered locations/show.html.erb within layouts/application (89.0ms)
+Completed 200 OK in 303ms (Views: 191.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/parties" for 127.0.0.1 at 2011-05-04 17:19:09 -0400
+  Processing by PartiesController#index as HTML
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[35mParty Load (1.0ms)[0m  SELECT "parties".* FROM "parties" WHERE ("parties".host_id = 2) ORDER BY name
+Rendered parties/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 295ms (Views: 152.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/parties/new" for 127.0.0.1 at 2011-05-04 17:19:11 -0400
+  Processing by PartiesController#new as HTML
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Party.all.
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[35mLocation Load (1.0ms)[0m  SELECT "locations".* FROM "locations" WHERE ("locations".host_id = 2)
+Creating scope :all. Overwriting existing method PartyType.all.
+  [1m[36mPartyType Load (1.0ms)[0m  [1mSELECT "party_types".* FROM "party_types" ORDER BY name[0m
+Rendered parties/_form.html.erb (223.0ms)
+Rendered parties/new.html.erb within layouts/application (261.0ms)
+Completed 200 OK in 530ms (Views: 365.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/parties" for 127.0.0.1 at 2011-05-04 17:20:31 -0400
+  Processing by PartiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J66lJHFtVHHjiV+0D56nh/L9rNbU9kfvTYfbnWyvED8=", "party"=>{"name"=>"steph's birthday!!!!!", "location_id"=>"2", "party_type_id"=>"2", "party_date(2i)"=>"5", "party_date(3i)"=>"5", "party_date(1i)"=>"2011", "start_time(1i)"=>"2011", "start_time(2i)"=>"5", "start_time(3i)"=>"4", "start_time(4i)"=>"22", "start_time(5i)"=>"01", "end_time(1i)"=>"2011", "end_time(2i)"=>"5", "end_time(3i)"=>"4", "end_time(4i)"=>"23", "end_time(5i)"=>"59", "description"=>"ITS STEPH'S BIRTHDAY (not really)\r\nBUT YEAh.", "rsvp_date(2i)"=>"", "rsvp_date(3i)"=>"", "rsvp_date(1i)"=>""}, "commit"=>"Create Party"}
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[36mAREL (3.0ms)[0m  [1mINSERT INTO "parties" ("party_type_id", "host_id", "name", "location_id", "party_date", "start_time", "end_time", "description", "rsvp_date", "created_at", "updated_at") VALUES (2, 2, 'steph''s birthday!!!!!', 2, '2011-05-05', '2011-05-04 22:01:00.000000', '2011-05-04 23:59:00.000000', 'ITS STEPH''S BIRTHDAY (not really)
+BUT YEAh.', NULL, '2011-05-04 21:20:31.980893', '2011-05-04 21:20:31.980893')[0m
+Redirected to http://localhost:3000/parties/3
+Completed 302 Found in 395ms
+
+
+Started GET "/parties/3" for 127.0.0.1 at 2011-05-04 17:20:32 -0400
+  Processing by PartiesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mHost Load (1.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1
+Creating scope :all. Overwriting existing method Party.all.
+  [1m[36mParty Load (1.0ms)[0m  [1mSELECT "parties".* FROM "parties" WHERE "parties"."id" = 3 LIMIT 1[0m
+Creating scope :all. Overwriting existing method PartyType.all.
+  [1m[35mPartyType Load (1.0ms)[0m  SELECT "party_types".* FROM "party_types" WHERE "party_types"."id" = 2 LIMIT 1
+Creating scope :all. Overwriting existing method Location.all.
+  [1m[36mLocation Load (0.0ms)[0m  [1mSELECT "locations".* FROM "locations" WHERE "locations"."id" = 2 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Invitation.all.
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[35mGuest Load (0.0ms)[0m  SELECT "guests".* FROM "guests" INNER JOIN "invitations" ON "guests".id = "invitations".guest_id WHERE (("invitations".party_id = 3))
+Rendered parties/show.html.erb within layouts/application (523.0ms)
+Completed 200 OK in 796ms (Views: 630.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/guests" for 127.0.0.1 at 2011-05-04 17:20:44 -0400
+  Processing by GuestsController#index as HTML
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Guest.all.
+  [1m[35mGuest Load (1.0ms)[0m  SELECT "guests".* FROM "guests" WHERE ("guests".host_id = 2) ORDER BY name
+Rendered guests/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 363ms (Views: 119.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/invitations" for 127.0.0.1 at 2011-05-04 17:20:57 -0400
+  Processing by InvitationsController#index as HTML
+  [1m[36mHost Load (0.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Guest.all.
+Creating scope :all. Overwriting existing method Invitation.all.
+  [1m[35mInvitation Load (1.0ms)[0m  SELECT "invitations".* FROM "invitations" INNER JOIN "guests" ON "invitations".guest_id = "guests".id WHERE (("guests".host_id = 2)) ORDER BY party_id
+Rendered invitations/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 329ms (Views: 120.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/gifts" for 127.0.0.1 at 2011-05-04 17:21:02 -0400
+  Processing by GiftsController#index as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1[0m
+Creating scope :all. Overwriting existing method Gift.all.
+  [1m[35mGift Load (1.0ms)[0m  SELECT "gifts".* FROM "gifts" ORDER BY invitation_id
+Rendered gifts/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 240ms (Views: 139.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-04 17:21:06 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (131.0ms)
+Completed 200 OK in 271ms (Views: 269.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/rsvp" for 127.0.0.1 at 2011-05-04 17:21:10 -0400
+  Processing by InvitationsController#start_rsvp as HTML
+  [1m[35mHost Load (0.0ms)[0m  SELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1
+Rendered invitations/start_rsvp.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 226ms (Views: 125.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-04 17:21:29 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mHost Load (1.0ms)[0m  [1mSELECT "hosts".* FROM "hosts" WHERE "hosts"."id" = 2 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (130.0ms)
+Completed 200 OK in 241ms (Views: 239.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2011-05-04 17:21:33 -0400
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-04 17:21:34 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (45.0ms)
+Completed 200 OK in 153ms (Views: 152.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/host/edit" for 127.0.0.1 at 2011-05-04 17:21:39 -0400
+  Processing by HostsController#edit as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms
+
+
+Started GET "/login" for 127.0.0.1 at 2011-05-04 17:21:39 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 124ms (Views: 124.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-04 17:21:41 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 132ms (Views: 131.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gifts" for 127.0.0.1 at 2011-05-04 17:21:43 -0400
+  Processing by GiftsController#index as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms
+
+
+Started GET "/login" for 127.0.0.1 at 2011-05-04 17:21:44 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 120ms (Views: 119.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-04 17:26:52 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 119ms (Views: 119.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-05-04 17:27:22 -0400
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 121ms (Views: 120.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-05-04 17:27:24 -0400
+  Processing by HostsController#new as HTML
+Rendered hosts/_form.html.erb (20.0ms)
+Rendered hosts/new.html.erb within layouts/application (66.0ms)
+Completed 200 OK in 243ms (Views: 179.0ms | ActiveRecord: 0.0ms)
